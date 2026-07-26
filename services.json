@@ -1,9 +1,9 @@
 [
   {
-    "id": "bp",
-    "name": "血壓與用藥紀錄",
-    "domain": "bp-722.vercel.app",
-    "url": "https://bp-722.vercel.app",
+    "id": "careTrail",
+    "name": "照護紀錄 CareTrail",
+    "domain": "caretrail.vercel.app/",
+    "url": "https://caretrail.vercel.app/",
     "buttonText": "血壓與用藥紀錄",
     "summary": "輕鬆紀錄每日血壓趨勢與用藥提醒，隨時追蹤健康數據。",
     "targetAudience": "需要定期紀錄血壓與用藥時程的高血壓患者、長輩或照護者。",
