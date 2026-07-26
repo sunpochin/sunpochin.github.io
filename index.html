@@ -6,15 +6,16 @@
   
   <!-- SEO 與社群分享 Meta 設定 -->
   <title>SunPoChin | 數位服務門牌</title>
-  <meta name="description" content="SunPoChin 的個人服務門牌，提供照護記家庭健康紀錄，以及雙人舞、音樂與歌詞翻譯連結。">
-  <meta name="keywords" content="SunPoChin, 門牌, 照護記, CareTrail, Salsa, BrZouk, Bachata, 雙人舞">
+  <!-- 更新品牌名稱為家健錄 JiaJian Log，確保搜尋引擎索引與社群分享預覽精確 -->
+  <meta name="description" content="SunPoChin 的個人服務門牌，提供家健錄 JiaJian Log 家人的健康與照護紀錄，以及雙人舞、音樂與歌詞翻譯連結。">
+  <meta name="keywords" content="SunPoChin, 門牌, 家健錄, JiaJian Log, Family Health Log, 照護紀錄, Salsa, BrZouk, Bachata, 雙人舞">
   <meta name="author" content="SunPoChin">
   
   <!-- Open Graph / Facebook / LINE 分享卡片資訊 -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sunpochin.github.io/">
   <meta property="og:title" content="SunPoChin | 數位服務門牌">
-  <meta property="og:description" content="個人服務門牌。包含照護記 Core Tool 與雙人舞、音樂生活筆記。">
+  <meta property="og:description" content="個人服務門牌。包含家健錄 JiaJian Log 家人的健康與照護紀錄，以及雙人舞、音樂生活筆記。">
   
   <!-- 向量 SVG 門牌圖示 -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -42,7 +43,7 @@
 
       <!-- 
         區塊一：核心照護與數位工具 (Core Care Services)
-        維持高顯眼度單張大卡片，突顯照護記 CareTrail 作為正經事的優先層級。
+        維持高顯眼度單張大卡片，突顯家健錄 JiaJian Log 作為正經事的優先層級。
       -->
       <section class="section-block" aria-label="核心照護服務">
         <div class="section-header">
@@ -52,7 +53,8 @@
           <span class="section-badge">正經事 Core</span>
         </div>
 
-        <article class="service-card" data-id="careTrail">
+        <!-- 採用家健錄 JiaJian Log 全新品牌識別與副標，提供明確的家庭照護與血壓/用藥紀錄入口 -->
+        <article class="service-card" data-id="jiaJianLog">
           <div class="card-header">
             <div class="card-icon-wrapper" aria-hidden="true">
               <!-- SVG 脈搏心律圖示 -->
@@ -63,16 +65,16 @@
             <span class="status-badge status-active">公開使用</span>
           </div>
           <div class="card-title-group">
-            <h3 class="card-title">照護記 CareTrail</h3>
-            <span class="card-domain">caretrail.vercel.app</span>
+            <h3 class="card-title">家健錄 JiaJian Log <span class="card-subtitle">Family Health Log</span></h3>
+            <span class="card-domain">jia-jian-log.vercel.app</span>
           </div>
-          <p class="card-summary">輕鬆紀錄每日血壓趨勢與用藥提醒，隨時追蹤家庭健康數據。</p>
+          <p class="card-summary">家健錄 JiaJian Log 家人的健康與照護紀錄。輕鬆紀錄每日血壓趨勢與用藥提醒，隨時追蹤家庭健康數據。</p>
           <div class="card-target-box">
             <span class="card-target-label">適合誰使用</span>
             <p class="card-target-text">需要定期紀錄血壓與用藥時程的高血壓患者、長輩或照護者。</p>
           </div>
           <div class="card-action">
-            <a href="https://caretrail.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-open">
+            <a href="https://jia-jian-log.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-open">
               <span class="btn-text">血壓與用藥紀錄</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -249,7 +251,14 @@
               const linkEl = card.querySelector('.btn-open');
               const btnTextEl = card.querySelector('.btn-text');
 
-              if (titleEl) titleEl.textContent = item.name;
+              // 支援動態注入英文副標 (Family Health Log)，維持靜態與水合 HTML 的視覺一致性
+              if (titleEl) {
+                if (item.subtitle) {
+                  titleEl.innerHTML = `${item.name} <span class="card-subtitle">${item.subtitle}</span>`;
+                } else {
+                  titleEl.textContent = item.name;
+                }
+              }
               if (domainEl) domainEl.textContent = item.domain;
               if (summaryEl) summaryEl.textContent = item.summary;
               if (targetEl) targetEl.textContent = item.targetAudience;
