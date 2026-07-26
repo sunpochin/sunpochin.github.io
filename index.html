@@ -6,15 +6,15 @@
   
   <!-- SEO 與社群分享 Meta 設定 -->
   <title>SunPoChin | 數位服務門牌</title>
-  <meta name="description" content="SunPoChin 的個人與家庭數位健康工具門牌，提供血壓與用藥紀錄服務。">
-  <meta name="keywords" content="SunPoChin, 門牌, 血壓紀錄, bp-722">
+  <meta name="description" content="SunPoChin 的個人服務門牌，提供照護記家庭健康紀錄，以及雙人舞、音樂與歌詞翻譯連結。">
+  <meta name="keywords" content="SunPoChin, 門牌, 照護記, CareTrail, Salsa, BrZouk, Bachata, 雙人舞">
   <meta name="author" content="SunPoChin">
   
   <!-- Open Graph / Facebook / LINE 分享卡片資訊 -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sunpochin.github.io/">
   <meta property="og:title" content="SunPoChin | 數位服務門牌">
-  <meta property="og:description" content="首頁是門牌，簡單極速。提供血壓與用藥紀錄。">
+  <meta property="og:description" content="個人服務門牌。包含照護記 Core Tool 與雙人舞、音樂生活筆記。">
   
   <!-- 向量 SVG 門牌圖示 -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -32,22 +32,27 @@
         <span class="brand-domain">sunpochin.xyz</span>
       </div>
       <h1 class="site-title">SunPoChin 服務入口</h1>
-      <p class="site-subtitle">精簡極速的服務門牌。按鈕明確標示服務名稱，讓網址回到最單純的底層門牌。</p>
+      <p class="site-subtitle">精簡極速的數位門牌。整合核心照護工具與雙人舞、音樂生活連結。</p>
     </div>
   </header>
 
-  <!-- 主要服務卡片區塊 Main Content -->
+  <!-- 主要服務與生活卡片區塊 Main Content -->
   <main class="main-content">
     <div class="container">
+
       <!-- 
-        服務網格容器 (Services Grid): 
-        門牌首頁僅保留單一核心服務「血壓與用藥紀錄」(bp-722.vercel.app)。
-        其他工程作品與履歷獨立置於 /work/ 頁面。
+        區塊一：核心照護與數位工具 (Core Care Services)
+        維持高顯眼度單張大卡片，突顯照護記 CareTrail 作為正經事的優先層級。
       -->
-      <section id="services-grid" class="services-grid" aria-label="服務項目列表">
-        
-        <!-- 單一服務卡片: 血壓與用藥紀錄 -->
-        <article class="service-card" data-id="bp">
+      <section class="section-block" aria-label="核心照護服務">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span aria-hidden="true">🩺</span> 核心照護與數位工具
+          </h2>
+          <span class="section-badge">正經事 Core</span>
+        </div>
+
+        <article class="service-card" data-id="careTrail">
           <div class="card-header">
             <div class="card-icon-wrapper" aria-hidden="true">
               <!-- SVG 脈搏心律圖示 -->
@@ -58,17 +63,16 @@
             <span class="status-badge status-active">公開使用</span>
           </div>
           <div class="card-title-group">
-            <h2 class="card-title">照護記 CareTrail</h2>
-            <p class="card-subtitle">家庭健康與用藥紀錄</p>
+            <h3 class="card-title">照護記 CareTrail</h3>
             <span class="card-domain">caretrail.vercel.app</span>
           </div>
-          <p class="card-summary">輕鬆紀錄每日血壓趨勢與用藥提醒，隨時追蹤健康數據。</p>
+          <p class="card-summary">輕鬆紀錄每日血壓趨勢與用藥提醒，隨時追蹤家庭健康數據。</p>
           <div class="card-target-box">
             <span class="card-target-label">適合誰使用</span>
             <p class="card-target-text">需要定期紀錄血壓與用藥時程的高血壓患者、長輩或照護者。</p>
           </div>
           <div class="card-action">
-            <a href="https://caretrail.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-open">
+            <a href="https://caretrail.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-open">
               <span class="btn-text">血壓與用藥紀錄</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -76,8 +80,139 @@
             </a>
           </div>
         </article>
-
       </section>
+
+      <!-- 
+        區塊二：雙人舞、音樂與生活筆記 (Leisure & Dance Links)
+        採用雙欄靈活網格收納 5 個吃喝玩樂連結，與正經事區塊明確切割，風格視覺優化。
+      -->
+      <section class="section-block" aria-label="雙人舞與生活連結">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span aria-hidden="true">💃</span> 雙人舞、音樂與生活筆記
+          </h2>
+          <span class="section-badge">吃喝玩樂 Life</span>
+        </div>
+
+        <div class="leisure-grid">
+          
+          <!-- 連結 1: Leo & Latiifah Salsa 莎莎舞新手班 -->
+          <article class="leisure-card" data-id="leo-latiifah-salsa">
+            <div class="leisure-card-header">
+              <div class="leisure-icon-wrapper" aria-hidden="true">
+                <!-- Instagram 相機圖示 -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <span class="tag-badge tag-instagram">Instagram · Salsa</span>
+            </div>
+            <h3 class="leisure-card-title">Leo & Latiifah Salsa 莎莎舞新手班</h3>
+            <p class="leisure-card-summary">Leo & Latiifah 的 Salsa 莎莎舞新手班課程資訊與 IG 專頁。</p>
+            <a href="https://www.instagram.com/latiitoo/" target="_blank" rel="noopener noreferrer" class="btn-leisure">
+              <span>前往 IG 專頁</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </article>
+
+          <!-- 連結 2: Dan & Sherry Salsa 莎莎舞新手班 -->
+          <article class="leisure-card" data-id="dan-sherry-salsa">
+            <div class="leisure-card-header">
+              <div class="leisure-icon-wrapper" aria-hidden="true">
+                <!-- Instagram 相機圖示 -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <span class="tag-badge tag-instagram">Instagram · Salsa</span>
+            </div>
+            <h3 class="leisure-card-title">Dan & Sherry Salsa 莎莎舞新手班</h3>
+            <p class="leisure-card-summary">Dan & Sherry 的 Salsa 莎莎舞新手班 IG 專頁與課程資訊。</p>
+            <a href="https://www.instagram.com/sherry_is_dancing/" target="_blank" rel="noopener noreferrer" class="btn-leisure">
+              <span>前往 IG 專頁</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </article>
+
+          <!-- 連結 3: 一些雙人舞 podcast 全文翻譯 -->
+          <article class="leisure-card" data-id="social-dancing-notes">
+            <div class="leisure-card-header">
+              <div class="leisure-icon-wrapper" aria-hidden="true">
+                <!-- GitBook / 筆記圖示 -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+              </div>
+              <span class="tag-badge tag-gitbook">GitBook · 翻譯筆記</span>
+            </div>
+            <h3 class="leisure-card-title">一些雙人舞 podcast 全文翻譯</h3>
+            <p class="leisure-card-summary">社交雙人舞 Podcast 精選集數全文翻譯與心得筆記整理。</p>
+            <a href="https://sunpochin.gitbook.io/social-dancing-notes" target="_blank" rel="noopener noreferrer" class="btn-leisure">
+              <span>閱讀 Podcast 翻譯</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </article>
+
+          <!-- 連結 4: pachinko 的 Spotify 歌單 -->
+          <article class="leisure-card" data-id="pachinko-spotify-playlist">
+            <div class="leisure-card-header">
+              <div class="leisure-icon-wrapper" aria-hidden="true">
+                <!-- 音樂與表單圖示 -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 18V5l12-2v13"></path>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+              </div>
+              <span class="tag-badge tag-form">Google Form · 歌單</span>
+            </div>
+            <h3 class="leisure-card-title">pachinko 的 Spotify 歌單</h3>
+            <p class="leisure-card-summary">pachinko 的 Spotify 雙人舞精選歌單推薦與點歌表單。</p>
+            <a href="https://forms.gle/BX6eccCHhBU4E4f98" target="_blank" rel="noopener noreferrer" class="btn-leisure">
+              <span>開啟點歌/歌單表單</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </article>
+
+          <!-- 連結 5: 我的 Salsa, BrZouk, Bachata 歌詞翻譯 -->
+          <article class="leisure-card" data-id="lyrics-translation-blog">
+            <div class="leisure-card-header">
+              <div class="leisure-icon-wrapper" aria-hidden="true">
+                <!-- Hashnode 部落格圖示 -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <span class="tag-badge tag-hashnode">Hashnode · 歌詞翻譯</span>
+            </div>
+            <h3 class="leisure-card-title">Salsa, BrZouk, Bachata 歌詞翻譯</h3>
+            <p class="leisure-card-summary">Salsa、Brazilian Zouk 與 Bachata 經典舞曲的中文字幕與歌詞翻譯部落格。</p>
+            <a href="https://salsa-br-zouk-bachata-lyrics.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="btn-leisure">
+              <span>閱讀歌詞翻譯部落格</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </article>
+
+        </div>
+      </section>
+
     </div>
   </main>
 
@@ -88,38 +223,60 @@
     </div>
   </footer>
 
-  <!-- 原生 Vanilla JS 腳本水合處理 -->
+  <!-- 原生 Vanilla JS 腳本水合處理 (相容新版與舊版 services.json 結構) -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // 判斷當前年份動態顯示 Footer 年份
       const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+      // 嘗試讀取 services.json 進行動態水合，維持靜態 HTML 預先渲染 (SSR/Static HTML First) 避免首屏閃爍
       fetch('services.json')
         .then(response => {
           if (!response.ok) throw new Error('HTTP error ' + response.status);
           return response.json();
         })
-        .then(services => {
-          if (!Array.isArray(services) || services.length === 0) return;
-          const item = services[0];
-          const card = document.querySelector(`.service-card[data-id="${item.id}"]`);
-          if (card) {
-            const titleEl = card.querySelector('.card-title');
-            const domainEl = card.querySelector('.card-domain');
-            const summaryEl = card.querySelector('.card-summary');
-            const targetEl = card.querySelector('.card-target-text');
-            const linkEl = card.querySelector('.btn-open');
-            const btnTextEl = card.querySelector('.btn-text');
+        .then(data => {
+          // 處理 core 陣列資料
+          const coreItems = Array.isArray(data) ? data : (data.core || []);
+          coreItems.forEach(item => {
+            const card = document.querySelector(`.service-card[data-id="${item.id}"]`);
+            if (card) {
+              const titleEl = card.querySelector('.card-title');
+              const domainEl = card.querySelector('.card-domain');
+              const summaryEl = card.querySelector('.card-summary');
+              const targetEl = card.querySelector('.card-target-text');
+              const linkEl = card.querySelector('.btn-open');
+              const btnTextEl = card.querySelector('.btn-text');
 
-            if (titleEl) titleEl.textContent = item.name;
-            if (domainEl) domainEl.textContent = item.domain;
-            if (summaryEl) summaryEl.textContent = item.summary;
-            if (targetEl) targetEl.textContent = item.targetAudience;
-            if (linkEl) linkEl.href = item.url;
-            if (btnTextEl && item.buttonText) btnTextEl.textContent = item.buttonText;
-          }
+              if (titleEl) titleEl.textContent = item.name;
+              if (domainEl) domainEl.textContent = item.domain;
+              if (summaryEl) summaryEl.textContent = item.summary;
+              if (targetEl) targetEl.textContent = item.targetAudience;
+              if (linkEl) linkEl.href = item.url;
+              if (btnTextEl && item.buttonText) btnTextEl.textContent = item.buttonText;
+            }
+          });
+
+          // 處理 leisure 陣列資料
+          const leisureItems = data.leisure || [];
+          leisureItems.forEach(item => {
+            const card = document.querySelector(`.leisure-card[data-id="${item.id}"]`);
+            if (card) {
+              const titleEl = card.querySelector('.leisure-card-title');
+              const summaryEl = card.querySelector('.leisure-card-summary');
+              const linkEl = card.querySelector('.btn-leisure');
+              const btnTextSpan = linkEl ? linkEl.querySelector('span') : null;
+
+              if (titleEl) titleEl.textContent = item.name;
+              if (summaryEl) summaryEl.textContent = item.summary;
+              if (linkEl) linkEl.href = item.url;
+              if (btnTextSpan && item.buttonText) btnTextSpan.textContent = item.buttonText;
+            }
+          });
         })
         .catch(err => {
+          // 若 fetch 失敗則安全回退使用原 HTML 靜態卡片，不影響網頁顯示
           console.log('Using static card fallback:', err.message);
         });
     });
