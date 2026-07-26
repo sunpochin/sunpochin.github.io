@@ -11,18 +11,5 @@
     "statusLabel": "公開使用",
     "category": "醫療健康",
     "icon": "heart-pulse"
-  },
-  {
-    "id": "github",
-    "name": "GitHub 開源專案",
-    "domain": "github.com/sunpochin",
-    "url": "https://github.com/sunpochin",
-    "buttonText": "GitHub 專案庫",
-    "summary": "探索 SunPoChin 的開放原始碼專案、技術實驗與開發歷程。",
-    "targetAudience": "開發者、開源社群愛好者與技術交流夥伴。",
-    "status": "active",
-    "statusLabel": "公開使用",
-    "category": "程式開發",
-    "icon": "code"
   }
 ]

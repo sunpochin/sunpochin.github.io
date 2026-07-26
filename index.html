@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO 與社群分享 Meta 設定 -->
-  <title>SunPoChin | 數位服務門牌總覽</title>
-  <meta name="description" content="SunPoChin 的個人與家庭數位工具服務門牌，提供血壓紀錄與 GitHub 開源專案。">
-  <meta name="keywords" content="SunPoChin, 門牌, 血壓紀錄, bp-722, GitHub">
+  <title>SunPoChin | 數位服務門牌</title>
+  <meta name="description" content="SunPoChin 的個人與家庭數位健康工具門牌，提供血壓與用藥紀錄服務。">
+  <meta name="keywords" content="SunPoChin, 門牌, 血壓紀錄, bp-722">
   <meta name="author" content="SunPoChin">
   
   <!-- Open Graph / Facebook / LINE 分享卡片資訊 -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sunpochin.github.io/">
-  <meta property="og:title" content="SunPoChin | 數位服務門牌總覽">
-  <meta property="og:description" content="首頁是門牌，簡單極速。探索血壓與用藥紀錄及 GitHub 專案。">
+  <meta property="og:title" content="SunPoChin | 數位服務門牌">
+  <meta property="og:description" content="首頁是門牌，簡單極速。提供血壓與用藥紀錄。">
   
   <!-- 向量 SVG 門牌圖示 -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -32,7 +32,7 @@
         <span class="brand-domain">sunpochin.xyz</span>
       </div>
       <h1 class="site-title">SunPoChin 服務入口</h1>
-      <p class="site-subtitle">精簡、極速的個人服務門牌。按鈕明確標示服務名稱，讓網址回到最單純的底層門牌。</p>
+      <p class="site-subtitle">精簡極速的服務門牌。按鈕明確標示服務名稱，讓網址回到最單純的底層門牌。</p>
     </div>
   </header>
 
@@ -41,12 +41,12 @@
     <div class="container">
       <!-- 
         服務網格容器 (Services Grid): 
-        目前僅保留最核心且運作中之服務 (bp-722.vercel.app 與 GitHub Profile)。
-        卡片按鈕直接顯示服務名稱（如「血壓與用藥紀錄」），不再只顯示抽象網址，提升點擊認知。
+        門牌首頁僅保留單一核心服務「血壓與用藥紀錄」(bp-722.vercel.app)。
+        其他工程作品與履歷獨立置於 /work/ 頁面。
       -->
       <section id="services-grid" class="services-grid" aria-label="服務項目列表">
         
-        <!-- 1. 血壓與用藥紀錄 (bp-722.vercel.app) -->
+        <!-- 單一服務卡片: 血壓與用藥紀錄 -->
         <article class="service-card" data-id="bp">
           <div class="card-header">
             <div class="card-icon-wrapper" aria-hidden="true">
@@ -67,40 +67,8 @@
             <p class="card-target-text">需要定期紀錄血壓與用藥時程的高血壓患者、長輩或照護者。</p>
           </div>
           <div class="card-action">
-            <!-- 按鈕名稱強調服務本體「血壓與用藥紀錄」，而不單純顯示網址 -->
             <a href="https://bp-722.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-open">
               <span class="btn-text">血壓與用藥紀錄</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- 2. GitHub 開源專案 -->
-        <article class="service-card" data-id="github">
-          <div class="card-header">
-            <div class="card-icon-wrapper" aria-hidden="true">
-              <!-- SVG Code/GitHub 圖示 -->
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
-            </div>
-            <span class="status-badge status-active">公開使用</span>
-          </div>
-          <div class="card-title-group">
-            <h2 class="card-title">GitHub 開源專案</h2>
-            <span class="card-domain">github.com/sunpochin</span>
-          </div>
-          <p class="card-summary">探索 SunPoChin 的開放原始碼專案、技術實驗與開發歷程。</p>
-          <div class="card-target-box">
-            <span class="card-target-label">適合誰使用</span>
-            <p class="card-target-text">開發者、開源社群愛好者與技術交流夥伴。</p>
-          </div>
-          <div class="card-action">
-            <!-- 按鈕名稱強調「GitHub 專案庫」 -->
-            <a href="https://github.com/sunpochin" target="_blank" rel="noopener noreferrer" class="btn-open">
-              <span class="btn-text">GitHub 專案庫</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -116,24 +84,15 @@
   <footer class="site-footer">
     <div class="container">
       <p>&copy; <span id="year">2026</span> SunPoChin. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="https://github.com/sunpochin" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Profile</a>
-        <span>&bull;</span>
-        <a href="services.json" target="_blank" class="footer-link">services.json</a>
-      </div>
     </div>
   </footer>
 
   <!-- 原生 Vanilla JS 腳本水合處理 -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 動態更新頁尾年份
       const yearEl = document.getElementById('year');
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-      }
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // 拉取 services.json，動態更新卡片內容與按鈕文字
       fetch('services.json')
         .then(response => {
           if (!response.ok) throw new Error('HTTP error ' + response.status);
@@ -141,28 +100,26 @@
         })
         .then(services => {
           if (!Array.isArray(services) || services.length === 0) return;
-          
-          services.forEach(item => {
-            const card = document.querySelector(`.service-card[data-id="${item.id}"]`);
-            if (card) {
-              const titleEl = card.querySelector('.card-title');
-              const domainEl = card.querySelector('.card-domain');
-              const summaryEl = card.querySelector('.card-summary');
-              const targetEl = card.querySelector('.card-target-text');
-              const linkEl = card.querySelector('.btn-open');
-              const btnTextEl = card.querySelector('.btn-text');
+          const item = services[0];
+          const card = document.querySelector(`.service-card[data-id="${item.id}"]`);
+          if (card) {
+            const titleEl = card.querySelector('.card-title');
+            const domainEl = card.querySelector('.card-domain');
+            const summaryEl = card.querySelector('.card-summary');
+            const targetEl = card.querySelector('.card-target-text');
+            const linkEl = card.querySelector('.btn-open');
+            const btnTextEl = card.querySelector('.btn-text');
 
-              if (titleEl) titleEl.textContent = item.name;
-              if (domainEl) domainEl.textContent = item.domain;
-              if (summaryEl) summaryEl.textContent = item.summary;
-              if (targetEl) targetEl.textContent = item.targetAudience;
-              if (linkEl) linkEl.href = item.url;
-              if (btnTextEl && item.buttonText) btnTextEl.textContent = item.buttonText;
-            }
-          });
+            if (titleEl) titleEl.textContent = item.name;
+            if (domainEl) domainEl.textContent = item.domain;
+            if (summaryEl) summaryEl.textContent = item.summary;
+            if (targetEl) targetEl.textContent = item.targetAudience;
+            if (linkEl) linkEl.href = item.url;
+            if (btnTextEl && item.buttonText) btnTextEl.textContent = item.buttonText;
+          }
         })
         .catch(err => {
-          console.log('Using pre-rendered static cards fallback:', err.message);
+          console.log('Using static card fallback:', err.message);
         });
     });
   </script>
