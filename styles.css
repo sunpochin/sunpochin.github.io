@@ -237,6 +237,16 @@ body {
   line-height: 1.3;
 }
 
+/* 支援英文副標題 (Family Health Log) 輔助顯示，提升品牌識別與視覺層次感 */
+.card-subtitle {
+  display: inline-block;
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
 .card-domain {
   font-size: 0.875rem;
   font-weight: 500;
@@ -336,7 +346,7 @@ body {
 
 /* 
   多區塊結構 (Section Blocks & Dividers):
-  建立明確的視覺分隔線與燈號，讓正經事 (照護記) 與吃喝玩樂 (雙人舞/音樂) 在同一頁面卻保有清晰的層次感。
+  建立明確的視覺分隔線與燈號，讓正經事 (家健錄 JiaJian Log) 與吃喝玩樂 (雙人舞/音樂) 在同一頁面卻保有清晰的層次感。
 */
 .section-block {
   margin-bottom: 3.5rem;
