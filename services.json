@@ -15,16 +15,6 @@
   ],
   "leisure": [
     {
-      "id": "leo-latiifah-salsa",
-      "name": "Leo & Latiifah Salsa 莎莎舞新手班",
-      "domain": "instagram.com/latiitoo",
-      "url": "https://www.instagram.com/latiitoo/",
-      "buttonText": "前往 IG 專頁",
-      "summary": "Leo & Latiifah 的 Salsa 莎莎舞新手班課程資訊與 IG 專頁。",
-      "category": "Instagram",
-      "badge": "Salsa 舞蹈"
-    },
-    {
       "id": "dan-sherry-salsa",
       "name": "Dan & Sherry Salsa 莎莎舞新手班",
       "domain": "instagram.com/sherry_is_dancing",
@@ -35,14 +25,14 @@
       "badge": "Salsa 舞蹈"
     },
     {
-      "id": "social-dancing-notes",
-      "name": "一些雙人舞 podcast 全文翻譯",
-      "domain": "sunpochin.gitbook.io",
-      "url": "https://sunpochin.gitbook.io/social-dancing-notes",
-      "buttonText": "閱讀 Podcast 翻譯",
-      "summary": "社交雙人舞 Podcast 精選集數全文翻譯與心得筆記整理。",
-      "category": "GitBook",
-      "badge": "筆記翻譯"
+      "id": "leo-latiifah-salsa",
+      "name": "Leo & Latiifah Salsa 莎莎舞新手班",
+      "domain": "instagram.com/latiitoo",
+      "url": "https://www.instagram.com/taipeisalsa_fafa/",
+      "buttonText": "前往 IG 專頁",
+      "summary": "Leo & Latiifah 的 Salsa 莎莎舞新手班課程資訊與 IG 專頁。",
+      "category": "Instagram",
+      "badge": "Salsa 舞蹈"
     },
     {
       "id": "pachinko-spotify-playlist",
@@ -53,6 +43,16 @@
       "summary": "pachinko 的 Spotify 雙人舞精選歌單推薦與點歌表單。",
       "category": "Google Form",
       "badge": "音樂歌單"
+    },
+    {
+      "id": "social-dancing-notes",
+      "name": "一些雙人舞 podcast 全文翻譯",
+      "domain": "sunpochin.gitbook.io",
+      "url": "https://sunpochin.gitbook.io/social-dancing-notes",
+      "buttonText": "閱讀 Podcast 翻譯",
+      "summary": "社交雙人舞 Podcast 精選集數全文翻譯與心得筆記整理。",
+      "category": "GitBook",
+      "badge": "筆記翻譯"
     },
     {
       "id": "lyrics-translation-blog",
