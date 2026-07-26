@@ -1,0 +1,62 @@
+[
+  {
+    "id": "bp",
+    "name": "血壓與用藥紀錄",
+    "domain": "bp.sunpochin.xyz",
+    "url": "https://bp.sunpochin.xyz",
+    "summary": "輕鬆紀錄每日血壓趨勢與用藥提醒，隨時追蹤健康數據。",
+    "targetAudience": "需要定期紀錄血壓與用藥時程的高血壓患者、長輩或照護者。",
+    "status": "active",
+    "statusLabel": "公開使用",
+    "category": "醫療健康",
+    "icon": "heart-pulse"
+  },
+  {
+    "id": "translate",
+    "name": "台灣・印尼翻譯服務",
+    "domain": "translate.sunpochin.xyz",
+    "url": "https://translate.sunpochin.xyz",
+    "summary": "專為台灣家庭與印尼看護設計的台印雙向即時溝通與翻譯助手。",
+    "targetAudience": "聘有印尼移工/看護的家庭、新住民家庭與溝通輔助人員。",
+    "status": "beta",
+    "statusLabel": "測試中",
+    "category": "語言溝通",
+    "icon": "languages"
+  },
+  {
+    "id": "care",
+    "name": "家庭照護工具",
+    "domain": "care.sunpochin.xyz",
+    "url": "https://care.sunpochin.xyz",
+    "summary": "整合照護排班、日常護理日誌與照護物資追蹤的家庭協作平台。",
+    "targetAudience": "多人共同分擔長者照護責任的家庭成員與專業照護夥伴。",
+    "status": "beta",
+    "statusLabel": "測試中",
+    "category": "家庭照護",
+    "icon": "home-heart"
+  },
+  {
+    "id": "music",
+    "name": "音樂與舞蹈工具",
+    "domain": "music.sunpochin.xyz",
+    "url": "https://music.sunpochin.xyz",
+    "summary": "音樂節奏練習、舞步標註與團練紀錄的跨平台輔助工具。",
+    "targetAudience": "舞者、舞蹈教師、音樂創作者與表演團體。",
+    "status": "dev",
+    "statusLabel": "開發中",
+    "category": "藝術娛樂",
+    "icon": "music"
+  },
+  {
+    "id": "github",
+    "name": "GitHub 開源專案",
+    "domain": "github.com/sunpochin",
+    "url": "https://github.com/sunpochin",
+    "summary": "探索 SunPoChin 的開放原始碼專案、技術實驗與開發歷程。",
+    "targetAudience": "開發者、開源社群愛好者與技術交流夥伴。",
+    "status": "active",
+    "statusLabel": "公開使用",
+    "category": "程式開發",
+    "icon": "code"
+  }
+]
