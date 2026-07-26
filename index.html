@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO 與社群分享 Meta 設定 -->
-  <title>SunPoChin | 數位服務門牌總覽</title>
-  <meta name="description" content="SunPoChin 的個人與家庭數位工具服務門牌，提供血壓記錄、台印翻譯、家庭照護與音樂舞蹈工具。">
-  <meta name="keywords" content="SunPoChin, 門牌, 血壓紀錄, 印尼翻譯, 家庭照護, 音樂工具, GitHub">
+  <title>SunPoChin | 數位服務門牌</title>
+  <meta name="description" content="SunPoChin 的個人與家庭數位健康工具門牌，提供血壓與用藥紀錄服務。">
+  <meta name="keywords" content="SunPoChin, 門牌, 血壓紀錄, bp-722">
   <meta name="author" content="SunPoChin">
   
   <!-- Open Graph / Facebook / LINE 分享卡片資訊 -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sunpochin.xyz/">
-  <meta property="og:title" content="SunPoChin | 數位服務門牌總覽">
-  <meta property="og:description" content="首頁是門牌，簡單極速。探索血壓紀錄、台印翻譯、家庭照護與音樂工具。">
+  <meta property="og:url" content="https://sunpochin.github.io/">
+  <meta property="og:title" content="SunPoChin | 數位服務門牌">
+  <meta property="og:description" content="首頁是門牌，簡單極速。提供血壓與用藥紀錄。">
   
   <!-- 向量 SVG 門牌圖示 -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -32,7 +32,7 @@
         <span class="brand-domain">sunpochin.xyz</span>
       </div>
       <h1 class="site-title">SunPoChin 服務入口</h1>
-      <p class="site-subtitle">輕量極速的數位服務門牌。點擊開啟各項專屬應用工具。</p>
+      <p class="site-subtitle">精簡極速的服務門牌。按鈕明確標示服務名稱，讓網址回到最單純的底層門牌。</p>
     </div>
   </header>
 
@@ -41,11 +41,12 @@
     <div class="container">
       <!-- 
         服務網格容器 (Services Grid): 
-        靜態 HTML 內建備援內容（Progressive Enhancement），即使 JavaScript 未載入也能正常瀏覽與點擊。
+        門牌首頁僅保留單一核心服務「血壓與用藥紀錄」(bp-722.vercel.app)。
+        其他工程作品與履歷獨立置於 /work/ 頁面。
       -->
       <section id="services-grid" class="services-grid" aria-label="服務項目列表">
         
-        <!-- 1. 血壓與用藥紀錄 -->
+        <!-- 單一服務卡片: 血壓與用藥紀錄 -->
         <article class="service-card" data-id="bp">
           <div class="card-header">
             <div class="card-icon-wrapper" aria-hidden="true">
@@ -58,7 +59,7 @@
           </div>
           <div class="card-title-group">
             <h2 class="card-title">血壓與用藥紀錄</h2>
-            <span class="card-domain">bp.sunpochin.xyz</span>
+            <span class="card-domain">bp-722.vercel.app</span>
           </div>
           <p class="card-summary">輕鬆紀錄每日血壓趨勢與用藥提醒，隨時追蹤健康數據。</p>
           <div class="card-target-box">
@@ -66,128 +67,8 @@
             <p class="card-target-text">需要定期紀錄血壓與用藥時程的高血壓患者、長輩或照護者。</p>
           </div>
           <div class="card-action">
-            <a href="https://bp.sunpochin.xyz" target="_blank" rel="noopener noreferrer" class="btn-open">
-              <span>開啟服務</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- 2. 台灣・印尼翻譯服務 -->
-        <article class="service-card" data-id="translate">
-          <div class="card-header">
-            <div class="card-icon-wrapper" aria-hidden="true">
-              <!-- SVG 語言圖示 -->
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
-              </svg>
-            </div>
-            <span class="status-badge status-beta">測試中</span>
-          </div>
-          <div class="card-title-group">
-            <h2 class="card-title">台灣・印尼翻譯服務</h2>
-            <span class="card-domain">translate.sunpochin.xyz</span>
-          </div>
-          <p class="card-summary">專為台灣家庭與印尼看護設計的台印雙向即時溝通與翻譯助手。</p>
-          <div class="card-target-box">
-            <span class="card-target-label">適合誰使用</span>
-            <p class="card-target-text">聘有印尼移工/看護的家庭、新住民家庭與溝通輔助人員。</p>
-          </div>
-          <div class="card-action">
-            <a href="https://translate.sunpochin.xyz" target="_blank" rel="noopener noreferrer" class="btn-open">
-              <span>開啟服務</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- 3. 家庭照護工具 -->
-        <article class="service-card" data-id="care">
-          <div class="card-header">
-            <div class="card-icon-wrapper" aria-hidden="true">
-              <!-- SVG 房屋與愛心圖示 -->
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-            </div>
-            <span class="status-badge status-beta">測試中</span>
-          </div>
-          <div class="card-title-group">
-            <h2 class="card-title">家庭照護工具</h2>
-            <span class="card-domain">care.sunpochin.xyz</span>
-          </div>
-          <p class="card-summary">整合照護排班、日常護理日誌與照護物資追蹤的家庭協作平台。</p>
-          <div class="card-target-box">
-            <span class="card-target-label">適合誰使用</span>
-            <p class="card-target-text">多人共同分擔長者照護責任的家庭成員與專業照護夥伴。</p>
-          </div>
-          <div class="card-action">
-            <a href="https://care.sunpochin.xyz" target="_blank" rel="noopener noreferrer" class="btn-open">
-              <span>開啟服務</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- 4. 音樂與舞蹈工具 -->
-        <article class="service-card" data-id="music">
-          <div class="card-header">
-            <div class="card-icon-wrapper" aria-hidden="true">
-              <!-- SVG 音符圖示 -->
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-2v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12 0c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-2" />
-              </svg>
-            </div>
-            <span class="status-badge status-dev">開發中</span>
-          </div>
-          <div class="card-title-group">
-            <h2 class="card-title">音樂與舞蹈工具</h2>
-            <span class="card-domain">music.sunpochin.xyz</span>
-          </div>
-          <p class="card-summary">音樂節奏練習、舞步標註與團練紀錄的跨平台輔助工具。</p>
-          <div class="card-target-box">
-            <span class="card-target-label">適合誰使用</span>
-            <p class="card-target-text">舞者、舞蹈教師、音樂創作者與表演團體。</p>
-          </div>
-          <div class="card-action">
-            <a href="https://music.sunpochin.xyz" target="_blank" rel="noopener noreferrer" class="btn-open">
-              <span>開啟服務</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- 5. GitHub 專案庫 -->
-        <article class="service-card" data-id="github">
-          <div class="card-header">
-            <div class="card-icon-wrapper" aria-hidden="true">
-              <!-- SVG Code/GitHub 圖示 -->
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
-            </div>
-            <span class="status-badge status-active">公開使用</span>
-          </div>
-          <div class="card-title-group">
-            <h2 class="card-title">GitHub 開源專案</h2>
-            <span class="card-domain">github.com/sunpochin</span>
-          </div>
-          <p class="card-summary">探索 SunPoChin 的開放原始碼專案、技術實驗與開發歷程。</p>
-          <div class="card-target-box">
-            <span class="card-target-label">適合誰使用</span>
-            <p class="card-target-text">開發者、開源社群愛好者與技術交流夥伴。</p>
-          </div>
-          <div class="card-action">
-            <a href="https://github.com/sunpochin" target="_blank" rel="noopener noreferrer" class="btn-open">
-              <span>開啟服務</span>
+            <a href="https://bp-722.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-open">
+              <span class="btn-text">血壓與用藥紀錄</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -203,28 +84,15 @@
   <footer class="site-footer">
     <div class="container">
       <p>&copy; <span id="year">2026</span> SunPoChin. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="https://github.com/sunpochin" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Profile</a>
-        <span>&bull;</span>
-        <a href="services.json" target="_blank" class="footer-link">services.json</a>
-      </div>
     </div>
   </footer>
 
-  <!-- 
-    輕量原生 Vanilla JS 腳本：
-    1. 自動更新頁尾年份。
-    2. 動態讀取 services.json 嘗試渲染最新資料，若讀取失敗則自動維持內建 SSR/靜態骨架，確保零風險運作。
-  -->
+  <!-- 原生 Vanilla JS 腳本水合處理 -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 自動更正動態年份
       const yearEl = document.getElementById('year');
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-      }
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // 嘗試動態獲取 services.json 進行資料同步
       fetch('services.json')
         .then(response => {
           if (!response.ok) throw new Error('HTTP error ' + response.status);
@@ -232,34 +100,26 @@
         })
         .then(services => {
           if (!Array.isArray(services) || services.length === 0) return;
-          
-          // 若 JSON 載入成功，對已有卡片更新文字細節
-          services.forEach(item => {
-            const card = document.querySelector(`.service-card[data-id="${item.id}"]`);
-            if (card) {
-              const titleEl = card.querySelector('.card-title');
-              const domainEl = card.querySelector('.card-domain');
-              const summaryEl = card.querySelector('.card-summary');
-              const targetEl = card.querySelector('.card-target-text');
-              const badgeEl = card.querySelector('.status-badge');
-              const linkEl = card.querySelector('.btn-open');
+          const item = services[0];
+          const card = document.querySelector(`.service-card[data-id="${item.id}"]`);
+          if (card) {
+            const titleEl = card.querySelector('.card-title');
+            const domainEl = card.querySelector('.card-domain');
+            const summaryEl = card.querySelector('.card-summary');
+            const targetEl = card.querySelector('.card-target-text');
+            const linkEl = card.querySelector('.btn-open');
+            const btnTextEl = card.querySelector('.btn-text');
 
-              if (titleEl) titleEl.textContent = item.name;
-              if (domainEl) domainEl.textContent = item.domain;
-              if (summaryEl) summaryEl.textContent = item.summary;
-              if (targetEl) targetEl.textContent = item.targetAudience;
-              if (linkEl) linkEl.href = item.url;
-              
-              if (badgeEl && item.status) {
-                badgeEl.className = `status-badge status-${item.status}`;
-                badgeEl.textContent = item.statusLabel || (item.status === 'active' ? '公開使用' : item.status === 'beta' ? '測試中' : '開發中');
-              }
-            }
-          });
+            if (titleEl) titleEl.textContent = item.name;
+            if (domainEl) domainEl.textContent = item.domain;
+            if (summaryEl) summaryEl.textContent = item.summary;
+            if (targetEl) targetEl.textContent = item.targetAudience;
+            if (linkEl) linkEl.href = item.url;
+            if (btnTextEl && item.buttonText) btnTextEl.textContent = item.buttonText;
+          }
         })
         .catch(err => {
-          // 在靜態備援模式下安靜處理 error，頁面已經有預先渲染的純 HTML，不受任何影響
-          console.log('Using pre-rendered static cards fallback:', err.message);
+          console.log('Using static card fallback:', err.message);
         });
     });
   </script>
