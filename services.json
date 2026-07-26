@@ -1,15 +1,68 @@
-[
-  {
-    "id": "careTrail",
-    "name": "照護紀錄 CareTrail",
-    "domain": "caretrail.vercel.app/",
-    "url": "https://caretrail.vercel.app/",
-    "buttonText": "血壓與用藥紀錄",
-    "summary": "輕鬆紀錄每日血壓趨勢與用藥提醒，隨時追蹤健康數據。",
-    "targetAudience": "需要定期紀錄血壓與用藥時程的高血壓患者、長輩或照護者。",
-    "status": "active",
-    "statusLabel": "公開使用",
-    "category": "醫療健康",
-    "icon": "heart-pulse"
-  }
-]
+{
+  "core": [
+    {
+      "id": "careTrail",
+      "name": "照護紀錄 CareTrail",
+      "domain": "caretrail.vercel.app",
+      "url": "https://caretrail.vercel.app/",
+      "buttonText": "血壓與用藥紀錄",
+      "summary": "輕鬆紀錄每日血壓趨勢與用藥提醒，隨時追蹤健康數據。",
+      "targetAudience": "需要定期紀錄血壓與用藥時程的高血壓患者、長輩或照護者。",
+      "status": "active",
+      "statusLabel": "公開使用",
+      "category": "醫療健康"
+    }
+  ],
+  "leisure": [
+    {
+      "id": "leo-latiifah-salsa",
+      "name": "Leo & Latiifah Salsa 莎莎舞新手班",
+      "domain": "instagram.com/latiitoo",
+      "url": "https://www.instagram.com/latiitoo/",
+      "buttonText": "前往 IG 專頁",
+      "summary": "Leo & Latiifah 的 Salsa 莎莎舞新手班課程資訊與 IG 專頁。",
+      "category": "Instagram",
+      "badge": "Salsa 舞蹈"
+    },
+    {
+      "id": "dan-sherry-salsa",
+      "name": "Dan & Sherry Salsa 莎莎舞新手班",
+      "domain": "instagram.com/sherry_is_dancing",
+      "url": "https://www.instagram.com/sherry_is_dancing/",
+      "buttonText": "前往 IG 專頁",
+      "summary": "Dan & Sherry 的 Salsa 莎莎舞新手班 IG 專頁與課程資訊。",
+      "category": "Instagram",
+      "badge": "Salsa 舞蹈"
+    },
+    {
+      "id": "social-dancing-notes",
+      "name": "一些雙人舞 podcast 全文翻譯",
+      "domain": "sunpochin.gitbook.io",
+      "url": "https://sunpochin.gitbook.io/social-dancing-notes",
+      "buttonText": "閱讀 Podcast 翻譯",
+      "summary": "社交雙人舞 Podcast 精選集數全文翻譯與心得筆記整理。",
+      "category": "GitBook",
+      "badge": "筆記翻譯"
+    },
+    {
+      "id": "pachinko-spotify-playlist",
+      "name": "pachinko 的 Spotify 歌單",
+      "domain": "forms.gle/BX6eccCHhBU4E4f98",
+      "url": "https://forms.gle/BX6eccCHhBU4E4f98",
+      "buttonText": "開啟點歌/歌單表單",
+      "summary": "pachinko 的 Spotify 雙人舞精選歌單推薦與點歌表單。",
+      "category": "Google Form",
+      "badge": "音樂歌單"
+    },
+    {
+      "id": "lyrics-translation-blog",
+      "name": "Salsa, BrZouk, Bachata 歌詞翻譯",
+      "domain": "salsa-br-zouk-bachata-lyrics.hashnode.dev",
+      "url": "https://salsa-br-zouk-bachata-lyrics.hashnode.dev/",
+      "buttonText": "閱讀歌詞翻譯部落格",
+      "summary": "Salsa、Brazilian Zouk 與 Bachata 經典舞曲的中文字幕與歌詞翻譯部落格。",
+      "category": "Hashnode",
+      "badge": "歌詞翻譯"
+    }
+  ]
+}
