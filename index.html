@@ -1,7 +1,7 @@
 <!--
 檔案用途：個人服務門牌首頁 (Core Services & Digital Portal)
 所在層：sunpochin.github.io/index.html；全站頂層入口
-主要關聯：連結至核心照護工具 (家健錄)、Life 生活專區 (/life/) 與 Work 履歷頁 (/work/)
+主要關聯：連結至核心照護工具 (家健錄) 與 Work 履歷頁 (/work/)
 -->
 <!DOCTYPE html>
 <html lang="zh-TW">
@@ -11,16 +11,15 @@
   
   <!-- SEO 與社群分享 Meta 設定 -->
   <title>SunPoChin | 數位服務門牌</title>
-  <!-- 更新品牌名稱為家健錄 JiaJian Log，確保搜尋引擎索引與社群分享預覽精確 -->
-  <meta name="description" content="SunPoChin 的個人服務門牌，提供家健錄 JiaJian Log 家人的健康與照護紀錄，以及雙人舞、音樂與歌詞翻譯連結。">
-  <meta name="keywords" content="SunPoChin, 門牌, 家健錄, JiaJian Log, Family Health Log, 照護紀錄, Salsa, BrZouk, Bachata, 雙人舞">
+  <meta name="description" content="SunPoChin 的個人服務門牌，提供家健錄 JiaJian Log 家人的健康與照護紀錄。">
+  <meta name="keywords" content="SunPoChin, 門牌, 家健錄, JiaJian Log, Family Health Log, 照護紀錄">
   <meta name="author" content="SunPoChin">
   
   <!-- Open Graph / Facebook / LINE 分享卡片資訊 -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sunpochin.github.io/">
   <meta property="og:title" content="SunPoChin | 數位服務門牌">
-  <meta property="og:description" content="個人服務門牌。包含家健錄 JiaJian Log 家人的健康與照護紀錄，以及雙人舞、音樂生活筆記。">
+  <meta property="og:description" content="個人服務門牌。包含家健錄 JiaJian Log 家人的健康與照護紀錄。">
   
   <!-- 向量 SVG 門牌圖示 -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -31,26 +30,12 @@
 <body>
 
   <!-- 門牌標頭區塊 Header -->
-<<<<<<< Updated upstream
   <header class="site-header">
     <div class="container">
       
-      <!-- 門牌全站膠囊導覽列 Nav Bar -->
-      <!-- 說明「為什麼這樣做」：提供 Core 核心工具、Life 生活筆記與 Work 履歷作品三入口直接跳轉 -->
+      <!-- 門牌全站膠囊導覽列 Nav Bar (隱藏 Life 連結，專注提供 Work 履歷入口) -->
+      <!-- 說明「為什麼這樣做」：依使用者指示將 Life 頁面暫時隱藏，導覽僅保留 Work 履歷入口 -->
       <nav class="portal-nav" aria-label="門牌頁面導覽">
-        <a href="./" class="nav-item active">
-          <span class="nav-icon">🩺</span>
-          <span>Core 核心</span>
-        </a>
-=======
-      <!-- 門牌全站膠囊導覽列 Nav Bar (移除 Core 核心 Tab，提供 Life 與 Work 雙頁面膠囊切換) -->
-      <!-- 說明「為什麼這樣做」：依使用者需求移除 Core Tab，在頁首提供統一的 Life 生活與 Work 履歷動態導覽 -->
-      <nav class="portal-nav" aria-label="門牌頁面導覽">
->>>>>>> Stashed changes
-        <a href="./life/" class="nav-item">
-          <span class="nav-icon">💃</span>
-          <span>Life 生活</span>
-        </a>
         <a href="./work/" class="nav-item">
           <span class="nav-icon">💻</span>
           <span>Work 履歷</span>
@@ -62,16 +47,16 @@
         <span class="brand-domain">sunpochin.xyz</span>
       </div>
       <h1 class="site-title">SunPoChin 服務入口</h1>
-      <p class="site-subtitle">精簡極速的數位門牌。整合核心照護工具、生活筆記與求職作品集。</p>
+      <p class="site-subtitle">精簡極速的數位門牌。整合核心照護工具與工程作品集。</p>
     </div>
   </header>
 
-  <!-- 主要服務與生活卡片區塊 Main Content -->
+  <!-- 主要服務卡片區塊 Main Content -->
   <main class="main-content">
     <div class="container">
 
       <!-- 
-        區塊一：核心照護與數位工具 (Core Care Services)
+        核心照護與數位工具 (Core Care Services)
         維持高顯眼度單張大卡片，突顯家健錄 JiaJian Log 作為正經事的優先層級。
       -->
       <section class="section-block" aria-label="核心照護服務">
@@ -113,35 +98,6 @@
         </article>
       </section>
 
-      <!-- 
-        區塊二：前往生活與娛樂獨立專頁
-        說明「為什麼這樣做」：依使用者指示將雙人舞與生活筆記完整搬移至 /life/ 獨立子頁面，並在首頁提供明確的引導卡片與門牌按鈕。
-      -->
-      <section class="section-block" aria-label="生活與娛樂專區導引">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span aria-hidden="true">💃</span> 雙人舞、音樂與生活筆記
-          </h2>
-          <span class="section-badge">Life 獨立專區</span>
-        </div>
-
-        <article class="service-card" style="border-left: 4px solid #a855f7;">
-          <div class="card-title-group">
-            <h3 class="card-title">雙人舞與生活筆記門牌 <span class="card-subtitle">Life &amp; Leisure</span></h3>
-            <span class="card-domain">sunpochin.xyz/life</span>
-          </div>
-          <p class="card-summary">收納 Salsa / BrZouk / Bachata 舞班課程資訊、Podcast 全文翻譯、Spotify 精選歌單與經典舞曲歌詞翻譯部落格。</p>
-          <div class="card-action">
-            <a href="./life/" class="btn-open" style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);">
-              <span class="btn-text">前往 Life 生活專區</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </div>
-        </article>
-      </section>
-
     </div>
   </main>
 
@@ -152,21 +108,16 @@
     </div>
   </footer>
 
-  <!-- 原生 Vanilla JS 腳本水合處理 (相容新版與舊版 services.json 結構) -->
+  <!-- 原生 Vanilla JS 腳本水合處理 -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 判斷當前年份動態顯示 Footer 年份
       const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // 嘗試讀取 services.json 進行動態水合，維持靜態 HTML 預先渲染 (SSR/Static HTML First) 避免首屏閃爍
       fetch('services.json')
-        .then(response => {
-          if (!response.ok) throw new Error('HTTP error ' + response.status);
-          return response.json();
-        })
+        .then(response => response.ok ? response.json() : null)
         .then(data => {
-          // 處理 core 陣列資料
+          if (!data) return;
           const coreItems = Array.isArray(data) ? data : (data.core || []);
           coreItems.forEach(item => {
             const card = document.querySelector(`.service-card[data-id="${item.id}"]`);
@@ -178,7 +129,6 @@
               const linkEl = card.querySelector('.btn-open');
               const btnTextEl = card.querySelector('.btn-text');
 
-              // 支援動態注入英文副標 (Family Health Log)，維持靜態與水合 HTML 的視覺一致性
               if (titleEl) {
                 if (item.subtitle) {
                   titleEl.innerHTML = `${item.name} <span class="card-subtitle">${item.subtitle}</span>`;
@@ -193,28 +143,8 @@
               if (btnTextEl && item.buttonText) btnTextEl.textContent = item.buttonText;
             }
           });
-
-          // 處理 leisure 陣列資料
-          const leisureItems = data.leisure || [];
-          leisureItems.forEach(item => {
-            const card = document.querySelector(`.leisure-card[data-id="${item.id}"]`);
-            if (card) {
-              const titleEl = card.querySelector('.leisure-card-title');
-              const summaryEl = card.querySelector('.leisure-card-summary');
-              const linkEl = card.querySelector('.btn-leisure');
-              const btnTextSpan = linkEl ? linkEl.querySelector('span') : null;
-
-              if (titleEl) titleEl.textContent = item.name;
-              if (summaryEl) summaryEl.textContent = item.summary;
-              if (linkEl) linkEl.href = item.url;
-              if (btnTextSpan && item.buttonText) btnTextSpan.textContent = item.buttonText;
-            }
-          });
         })
-        .catch(err => {
-          // 若 fetch 失敗則安全回退使用原 HTML 靜態卡片，不影響網頁顯示
-          console.log('Using static card fallback:', err.message);
-        });
+        .catch(err => console.log('Using static card fallback:', err.message));
     });
   </script>
 </body>

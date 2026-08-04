@@ -24,8 +24,7 @@ sunpochin.github.io/
     └── styles.css   # 作品集專屬高階暗色主題 CSS
 ```
 
-* **Core 核心首頁 (`/`)**：專注於核心家庭照護工具（家健錄 `jia-jian-log.vercel.app`）。
-* **Life 生活專區 (`/life/`)**：收納 Salsa / BrZouk / Bachata 舞班 IG、GitBook Podcast 翻譯、Spotify 點歌單與 Hashnode 歌詞翻譯部落格。
+* **Core 核心首頁 (`/`)**：專注於核心家庭照護工具（家健錄 `jia-jian-log.vercel.app`），頂部提供 Work 履歷快速入口（Life 入口暫時隱藏）。
 * **Work 履歷專頁 (`/work/`)**：精選全棧 CareOps 兩大旗艦作品：**家健錄 (JiaJian Log)** 與 **好溝通翻譯 Care Translate (LINE ID: @652ouobw)**，展現 React 18 / Supabase RLS / Vitest CI/CD 技術細節。內建 `<meta name="robots" content="noindex, nofollow">`。
 
 ---
