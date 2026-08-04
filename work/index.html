@@ -115,7 +115,7 @@
 
               <h4 class="tech-stack-title" style="margin-top: 1rem; color: #818cf8;">工程設計決策與取捨 (Engineering Decisions &amp; Trade-offs)</h4>
               <ul class="tech-stack-list">
-                <li><strong>遠端照護通知 (Remote Care Notifications via Cloudflare Worker Proxy):</strong> 看護完成血壓紀錄後，前端非同步呼叫 Cloudflare Worker 後端代理，透過 Telegram Bot 發送數值、測量時間與依預設門檻產生的狀態標示至家屬手機，使遠大家屬免於手動刷頁。通知失敗不會影響原始血壓資料寫入；Telegram Bot Token 與接收者 Chat ID 均保留於 Worker 伺服器端環境秘密 (Secrets)，避免敏感憑證暴露在瀏覽器端。</li>
+                <li><strong>無伺服器通知整合 (Serverless Notification Integration via Cloudflare Worker):</strong> 使用 Cloudflare Workers 建立 server-side Telegram 通知端點，將 Bot Token 儲存在加密 Secrets 中，避免敏感憑證暴露於前端。考量目前為低流量家庭照護場景，採用無常駐伺服器的 serverless 架構，在維持安全邊界的同時控制營運成本。通知失敗採非阻塞處理，不影響主要血壓資料保存。</li>
                 <li><strong>雙端 Staging 環境與資料安全隔離 (Vercel &amp; Supabase Staging Isolation):</strong> 考量家人真實健康個資敏感性，於 Vercel (專屬 <code style="color:#38bdf8;">staging-jia-jian-log</code> 專案) 與 Supabase 端皆建立獨立的 Staging 驗收環境；搭配 GitHub Actions PR 自動啟動拋棄式 Local Supabase 執行 migration 重播驗證。雖增加跨平台維護成本，但確保測試流量與版次迭代絕不影響 Production 照護與家人正式數據。</li>
                 <li><strong>伺服器端權限存取控制 (Server-Side Authorization):</strong> 不僅在前端 UI 隱藏未授權介面，更於 Supabase PostgreSQL 設定 Row Level Security (RLS) 與 Profiles 白名單政策，確保未授權 API 請求在資料庫層即被拒絕。</li>
                 <li><strong>明確狀態建模與量測流轉防呆 (Explicit State Modeling):</strong> 依台灣高血壓學會 722 原則，將量測分為 Rest 休息倒數與雙次輸入狀態，控管 1 分鐘休息間隔並防範非同步與重複連點問題。</li>
