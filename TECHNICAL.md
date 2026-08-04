@@ -25,7 +25,7 @@ sunpochin.github.io/
 ```
 
 * **Core 核心首頁 (`/`)**：專注於核心家庭照護工具（家健錄 `jia-jian-log.vercel.app`），頂部提供 Work 履歷快速入口（Life 入口暫時隱藏）。
-* **Work 履歷專頁 (`/work/`)**：精選全棧 CareOps 兩大旗艦作品：**家健錄 (JiaJian Log)** 與 **好溝通翻譯 Care Translate (LINE ID: @652ouobw)**。於家健錄作品中深度展示 **Defense in Depth (資安深層防禦)**、**Single Source of Truth (SSOT 單一真理)**、**Finite State Machine (有限狀態機)** 與 **Strategy Pattern (策略模式)** 等資深軟體工程設計決策。內建 `<meta name="robots" content="noindex, nofollow">`。
+* **Work 履歷專頁 (`/work/`)**：精選全棧 CareOps 兩大旗艦作品：**家健錄 (JiaJian Log)** 與 **好溝通翻譯 Care Translate (LINE ID: @652ouobw)**。於家健錄作品中真實展示 **資料與環境安全隔離 (Environment & Data Isolation)**、**伺服器端存取控制 (Server-Side RLS Authorization)**、**明確狀態建模與防呆 (Explicit State Modeling)** 與 **純函式抽離與測試 (Pure Functional Domain Logic)** 等工程設計決策與取捨。內建 `<meta name="robots" content="noindex, nofollow">`。
 
 ---
 

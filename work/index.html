@@ -114,13 +114,12 @@
                 <li><strong>雙語無障礙 (Bilingual i18n):</strong> 印尼文（看護主用）與繁體中文（家屬主用）對稱切換，徹底消除跨國照護溝通障礙與紀錄錯誤。</li>
               </ul>
 
-              <h4 class="tech-stack-title" style="margin-top: 1rem; color: #c084fc;">軟體工程原則 &amp; 設計模式 (Engineering Principles &amp; Patterns)</h4>
+              <h4 class="tech-stack-title" style="margin-top: 1rem; color: #818cf8;">工程設計決策與取捨 (Engineering Decisions &amp; Trade-offs)</h4>
               <ul class="tech-stack-list">
-                <li><strong>Defense in Depth (資安深層防禦):</strong> Google OAuth + DB 層級 Supabase RLS 雙重認證。未授權請求由 PostgreSQL 核心直接封鎖，落實零信任 (Zero Trust) 資安。</li>
-                <li><strong>Single Source of Truth (SSOT 單一真實來源):</strong> 規範全專案 AI 協同憲法 (AGENTS.md)，搭配靜態型別與資料庫權限單一源頭，杜絕規則分歧。</li>
-                <li><strong>Finite State Machine Pattern (有限狀態機):</strong> 封裝 722 量測流轉狀態 (<code style="color:#38bdf8;">IDLE &rarr; RESTING &rarr; SECOND_READY &rarr; COMPLETED</code>)，精確控管 1 分鐘休息倒數與狀態變遷，防止非法連點。</li>
-                <li><strong>Strategy Pattern &amp; Value Object (策略模式):</strong> 抽象家庭血壓 722 警示演算法 (Normal / Warning / Danger) 與時段自動判定 (Pagi/Siang/Malam)，結合雙重視覺標示落實無障礙規範 (a11y)。</li>
-                <li><strong>DevOps &amp; Disposable Test Pipeline (拋棄式 CI/CD):</strong> 92.9%+ Vitest 單元測試涵蓋率、GitHub Actions PR 自動於拋棄式 Local Supabase 跑 DB Reset 重播 migration，搭配隔離的 Staging 驗收環境。</li>
+                <li><strong>資料與環境安全隔離 (Environment &amp; Data Isolation):</strong> 考量家人真實健康資料敏感性，將 Production、Staging 與本機 Supabase 完全隔離；CI 在 GitHub Actions 中由 migrations 建立一次性測試資料庫。雖增加環境維護成本，但徹底消除測試誤寫正式資料的風險。</li>
+                <li><strong>伺服器端權限存取控制 (Server-Side Authorization):</strong> 不僅在前端 UI 隱藏未授權介面，更於 Supabase PostgreSQL 設定 Row Level Security (RLS) 與 Profiles 白名單政策，確保未授權 API 請求在資料庫層即被拒絕。</li>
+                <li><strong>明確狀態建模與量測流轉防呆 (Explicit State Modeling):</strong> 依台灣高血壓學會 722 原則，將量測分為 Rest 休息倒數與雙次輸入狀態，控管 1 分鐘休息間隔並防範非同步與重複連點問題。</li>
+                <li><strong>純函式邏輯抽離與自動化測試 (Pure Functional Domain Logic &amp; Unit Tests):</strong> 將血壓警示分級判斷與時段判定抽離為無副作用的純函式 (Pure Functions)，搭配 92.9%+ Vitest 單元測試，確保核心照護數據計算精確度。</li>
               </ul>
             </div>
 
