@@ -1,0 +1,25 @@
+/*
+檔案用途：生活筆記專用樣式表 (Life Portal Stylesheet)
+所在層：sunpochin.github.io/life/styles.css
+主要關聯：由 sunpochin.github.io/life/index.html 載入，繼承主門牌暗色 Glassmorphism 樣式
+*/
+
+/* 引入主門牌共享 Token 與基本卡片網格樣式 */
+@import "../styles.css";
+
+/* Life 專區微調與動態漸層特色 */
+.life-header {
+  padding: 3rem 0 1.5rem;
+}
+
+.life-badge {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.3);
+  color: #c084fc;
+}
+
+.life-title {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f43f5e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
