@@ -115,7 +115,7 @@
 
               <h4 class="tech-stack-title" style="margin-top: 1rem; color: #818cf8;">工程設計決策與取捨 (Engineering Decisions &amp; Trade-offs)</h4>
               <ul class="tech-stack-list">
-                <li><strong>資料與環境安全隔離 (Environment &amp; Data Isolation):</strong> 考量家人真實健康資料敏感性，將 Production、Staging 與本機 Supabase 完全隔離；CI 在 GitHub Actions 中由 migrations 建立一次性測試資料庫。雖增加環境維護成本，但徹底消除測試誤寫正式資料的風險。</li>
+                <li><strong>雙端 Staging 環境與資料安全隔離 (Vercel &amp; Supabase Staging Isolation):</strong> 考量家人真實健康個資敏感性，於 Vercel (專屬 <code style="color:#38bdf8;">staging-jia-jian-log</code> 專案) 與 Supabase 端皆建立獨立的 Staging 驗收環境；搭配 GitHub Actions PR 自動啟動拋棄式 Local Supabase 執行 migration 重播驗證。雖增加跨平台維護成本，但確保測試流量與版次迭代絕不影響 Production 照護與家人正式數據。</li>
                 <li><strong>伺服器端權限存取控制 (Server-Side Authorization):</strong> 不僅在前端 UI 隱藏未授權介面，更於 Supabase PostgreSQL 設定 Row Level Security (RLS) 與 Profiles 白名單政策，確保未授權 API 請求在資料庫層即被拒絕。</li>
                 <li><strong>明確狀態建模與量測流轉防呆 (Explicit State Modeling):</strong> 依台灣高血壓學會 722 原則，將量測分為 Rest 休息倒數與雙次輸入狀態，控管 1 分鐘休息間隔並防範非同步與重複連點問題。</li>
                 <li><strong>純函式邏輯抽離與自動化測試 (Pure Functional Domain Logic &amp; Unit Tests):</strong> 將血壓警示分級判斷與時段判定抽離為無副作用的純函式 (Pure Functions)，搭配 92.9%+ Vitest 單元測試，確保核心照護數據計算精確度。</li>
