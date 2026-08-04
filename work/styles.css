@@ -4,6 +4,12 @@
   展現資深前端工程師與系統架構師的專業形象與作品展示。
 */
 
+/*
+檔案用途：求職作品集頁面專用樣式表 (Work Portfolio Stylesheet)
+所在層：sunpochin.github.io/work/styles.css
+主要關聯：由 sunpochin.github.io/work/index.html 載入，定義暗色科技質感與卡片佈局
+*/
+
 :root {
   --bg-primary: #090d16;
   --bg-card: rgba(18, 24, 38, 0.75);
@@ -369,6 +375,40 @@ body {
 .project-link svg {
   width: 16px;
   height: 16px;
+}
+
+/* 專案技術細節與架構亮點區塊 */
+/* 避免直接使用 ad-hoc 內聯樣式，確保細節展示維持整體暗色科技視覺與動態響應 */
+.tech-stack-details {
+  margin: 1rem 0 1.25rem 0;
+  padding: 1rem 1.15rem;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+}
+
+.tech-stack-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.02em;
+}
+
+.tech-stack-list {
+  padding-left: 1.1rem;
+  margin: 0;
+}
+
+.tech-stack-list li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.45rem;
+}
+
+.tech-stack-list li strong {
+  color: var(--text-primary);
 }
 
 /* 工程架構哲學 (Architecture Principles) */
