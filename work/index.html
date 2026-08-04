@@ -1,3 +1,8 @@
+<!--
+檔案用途：求職作品集與工程履歷頁面 (Work & Engineering Portfolio)
+所在層：sunpochin.github.io/work/index.html；為資深前端工程師與架構作品展示頁
+主要關聯：連結至家健錄 (JiaJian Log) 線上展示網址、展示全棧技術棧與架構設計細節
+-->
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -57,8 +62,8 @@
             </svg>
             <span>GitHub Profile</span>
           </a>
-          <a href="https://bp-722.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hero btn-secondary">
-            <span>線上作品：血壓紀錄 (bp-722)</span>
+          <a href="https://jia-jian-log.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hero btn-secondary">
+            <span>線上作品：家健錄 (JiaJian Log)</span>
           </a>
         </div>
       </div>
@@ -114,28 +119,41 @@
         </h2>
         <div class="projects-grid">
 
-          <!-- 作品 1: 血壓與用藥紀錄 -->
+          <!-- 
+            作品 1: 家健錄 JiaJian Log (家庭健康與照護紀錄系統)
+            說明「為什麼這樣做」：提供求職面試官極度詳細的全棧技術細節、資料庫安全、i18n 雙語與 CI/CD 機制展示。
+          -->
           <article class="project-card">
             <div class="project-header">
-              <h3 class="project-title">血壓與用藥紀錄系統</h3>
-              <span class="project-type-badge">Production Tool</span>
+              <h3 class="project-title">家健錄 JiaJian Log ｜ 家庭健康與照護營運系統</h3>
+              <span class="project-type-badge">Production CareOps</span>
             </div>
             <p class="project-desc">
-              專為高血壓患者與家庭照護者設計的行動優先 (Mobile-First) 健康紀錄工具。支援每日血壓收縮壓/舒張壓趨勢追蹤、量測時段標註與藥物服藥提醒。
+              專為高血壓患者、印尼籍照護看護（Pengasuh）與家庭成員打造的行動優先 (Mobile-First) 照護營運系統。整合無縫雙語介面、即時血壓趨勢、結構化用藥進度與資料庫層級存取安全。
             </p>
-            <ul class="project-highlights">
-              <li>行動觸控最佳化 UI/UX 介面設計，方便長輩與照護者迅速輸入。</li>
-              <li>極速載入與響應式視覺圖表呈現。</li>
-              <li>部署於 Vercel 生態系，確保高可用性與連線穩定。</li>
-            </ul>
+            
+            <div class="tech-stack-details">
+              <h4 class="tech-stack-title">核心技術棧 &amp; 系統架構 (Full-Stack Tech Stack)</h4>
+              <ul class="tech-stack-list">
+                <li><strong>前端與建置 Ecosystem:</strong> React 18, TypeScript 5.6 (全型別覆蓋), Vite 6, Tailwind CSS v4 (CSS-first 現代樣式), Bun 1.3 執行環境。</li>
+                <li><strong>後端與資料庫 (Backend &amp; Database):</strong> Supabase (PostgreSQL), Row Level Security (RLS) 資料庫層級安全限制, Google OAuth 2.0 雙重白名單驗證（未授權帳號存取一律由 DB 直接封鎖）。</li>
+                <li><strong>照護 UI/UX 創新 (CareOps UX):</strong> iOS 原創 WheelPicker 雙向滾輪選擇器、台灣高血壓學會 722 原則雙次量測自動流轉與 1 分鐘休息計時器。</li>
+                <li><strong>雙語無障礙 (Bilingual i18n):</strong> 印尼文（看護主用）與繁體中文（家屬主用）對稱切換，徹底消除跨國照護溝通障礙與紀錄錯誤。</li>
+                <li><strong>工程品質與 CI/CD (DevOps &amp; Quality):</strong> 92.9%+ Vitest 單元測試涵蓋率、GitHub Actions 自動觸發拋棄式 Local Supabase 執行 DB Reset 測試，並設有隔離的 Staging 驗收環境。</li>
+              </ul>
+            </div>
+
             <div class="project-footer">
               <div class="tag-cloud">
-                <span class="tag">Mobile-First</span>
-                <span class="tag">Vercel</span>
-                <span class="tag">HealthTech</span>
+                <span class="tag">React 18</span>
+                <span class="tag">TypeScript 5.6</span>
+                <span class="tag">Supabase RLS</span>
+                <span class="tag">Bun 1.3</span>
+                <span class="tag">Bilingual i18n</span>
+                <span class="tag">Vitest (92.9% Coverage)</span>
               </div>
-              <a href="https://bp-722.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link">
-                <span>前往線上系統</span>
+              <a href="https://jia-jian-log.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link">
+                <span>線上系統展示 (JiaJian Log)</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
