@@ -33,12 +33,8 @@
     <div class="container">
       
       <!-- 門牌全站膠囊導覽列 Nav Bar -->
-      <!-- 說明「為什麼這樣做」：讓訪客與面試官在求職履歷 Work、核心工具 Core 與生活筆記 Life 頁面間無縫切換 -->
+      <!-- 說明「為什麼這樣做」：依使用者需求全站移除 Core Tab，僅保留 Life 生活與 Work 履歷雙膠囊切換 -->
       <nav class="portal-nav" aria-label="門牌頁面導覽" style="margin-bottom: 1.25rem;">
-        <a href="../" class="nav-item">
-          <span class="nav-icon">🩺</span>
-          <span>Core 核心</span>
-        </a>
         <a href="../life/" class="nav-item">
           <span class="nav-icon">💃</span>
           <span>Life 生活</span>
@@ -181,78 +177,31 @@
             </div>
           </article>
 
-          <!-- 作品 2: 無依賴輕量門牌入口系統 -->
+          <!-- 
+            作品 2: 好溝通翻譯 Care Translate (台印雙向即時翻譯助手)
+            說明「為什麼這樣做」：依使用者指示展示 Care Ops 旗艦翻譯助手 LINE Bot，標明 LINE ID: @652ouobw。
+          -->
           <article class="project-card">
             <div class="project-header">
-              <h3 class="project-title">純原生輕量門牌入口架構</h3>
-              <span class="project-type-badge">Architecture</span>
+              <h3 class="project-title">好溝通翻譯 ｜ Care Translate</h3>
+              <span class="project-type-badge">LINE Bot · CareOps</span>
             </div>
             <p class="project-desc">
-              貫徹「首頁是門牌，不裝渦輪增壓」理念的個人門牌門戶。完全零依賴 (Zero NPM / Zero Framework)，杜絕套件版本漏洞騷擾，達成完美 CWV 滿分效能。
+              針對雇有印尼看護與移工的台灣家庭設計的即時雙向翻譯助手。降低照護溝通摩擦，支援常用照護語音、文字翻譯與日常問診對話輔助。
             </p>
             <ul class="project-highlights">
-              <li>原生 HTML5 / CSS3 (CSS Variables) / Vanilla JS 漸進增強備援。</li>
-              <li>使用 JSON 結構點獨立管理服務數據 (`services.json`)。</li>
-              <li>支援 PM2 本地開發預覽與 GitHub Pages 自動部署流程。</li>
+              <li><strong>LINE 機器人入口：</strong>LINE ID: <code style="background: rgba(255,255,255,0.08); padding: 0.15rem 0.5rem; border-radius: 4px; color: #34d399; font-family: var(--font-mono); font-size: 0.9rem;">@652ouobw</code></li>
+              <li>雙語對稱觸控介面，強化日常照護用語、就醫問診與語音播放。</li>
+              <li>考慮高齡照護與移工使用場景之大字體與無障礙視覺設計。</li>
             </ul>
             <div class="project-footer">
               <div class="tag-cloud">
-                <span class="tag">Vanilla JS</span>
-                <span class="tag">Zero NPM</span>
-                <span class="tag">GitHub Pages</span>
-              </div>
-              <a href="../" class="project-link">
-                <span>檢視門牌首頁</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- 作品 3: 台灣・印尼翻譯助手 -->
-          <article class="project-card">
-            <div class="project-header">
-              <h3 class="project-title">台印雙向即時翻譯助手</h3>
-              <span class="project-type-badge">Beta System</span>
-            </div>
-            <p class="project-desc">
-              針對雇有印尼看護與移工的台灣家庭，提供語音與文字雙向即時翻譯介面，降低照護溝通摩擦。
-            </p>
-            <ul class="project-highlights">
-              <li>雙語對稱觸控介面，強化日常用語快速點擊與語音播放。</li>
-              <li>考慮高齡照護場景之大字體與高對比視覺設計。</li>
-            </ul>
-            <div class="project-footer">
-              <div class="tag-cloud">
-                <span class="tag">i18n</span>
-                <span class="tag">Accessibility</span>
+                <span class="tag">LINE Bot (@652ouobw)</span>
+                <span class="tag">i18n (TW / ID)</span>
                 <span class="tag">CareOps</span>
               </div>
-              <span class="project-type-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(251, 191, 36, 0.3);">Internal Beta</span>
-            </div>
-          </article>
-
-          <!-- 作品 4: 開源專案與技術實驗 -->
-          <article class="project-card">
-            <div class="project-header">
-              <h3 class="project-title">GitHub 開源與實驗專案</h3>
-              <span class="project-type-badge">Open Source</span>
-            </div>
-            <p class="project-desc">
-              收錄個人在自動化工作流、前端元件封裝與系統協同工具上的開源嘗試與實作歷程。
-            </p>
-            <ul class="project-highlights">
-              <li>嚴謹的 Git Commit 規範與單一職責分支控管。</li>
-              <li>自動化測試與代碼品質規範實踐。</li>
-            </ul>
-            <div class="project-footer">
-              <div class="tag-cloud">
-                <span class="tag">Git Workflow</span>
-                <span class="tag">Open Source</span>
-              </div>
-              <a href="https://github.com/sunpochin" target="_blank" rel="noopener noreferrer" class="project-link">
-                <span>造訪 GitHub</span>
+              <a href="https://line.me/R/ti/p/@652ouobw" target="_blank" rel="noopener noreferrer" class="project-link">
+                <span>加入 LINE 好友 (@652ouobw)</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
