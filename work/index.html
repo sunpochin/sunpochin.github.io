@@ -28,18 +28,38 @@
 </head>
 <body>
 
-  <!-- Header 導覽區：提供回首頁連結與工作狀態 -->
+  <!-- Header 導覽區：提供全站頁面導覽與工作狀態 -->
   <header class="work-header">
-    <div class="container nav-bar">
-      <a href="../" class="home-link">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
-        <span>返回服務門牌 (sunpochin.xyz)</span>
-      </a>
-      <div class="status-indicator">
-        <span class="status-dot"></span>
-        <span>Open for Senior Engineering Opportunities</span>
+    <div class="container">
+      
+      <!-- 門牌全站膠囊導覽列 Nav Bar -->
+      <!-- 說明「為什麼這樣做」：讓訪客與面試官在求職履歷 Work、核心工具 Core 與生活筆記 Life 頁面間無縫切換 -->
+      <nav class="portal-nav" aria-label="門牌頁面導覽" style="margin-bottom: 1.25rem;">
+        <a href="../" class="nav-item">
+          <span class="nav-icon">🩺</span>
+          <span>Core 核心</span>
+        </a>
+        <a href="../life/" class="nav-item">
+          <span class="nav-icon">💃</span>
+          <span>Life 生活</span>
+        </a>
+        <a href="./" class="nav-item active">
+          <span class="nav-icon">💻</span>
+          <span>Work 履歷</span>
+        </a>
+      </nav>
+
+      <div class="nav-bar" style="border: none; padding: 0;">
+        <a href="../" class="home-link">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          <span>返回服務門牌首頁</span>
+        </a>
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span>Open for Senior Engineering Opportunities</span>
+        </div>
       </div>
     </div>
   </header>

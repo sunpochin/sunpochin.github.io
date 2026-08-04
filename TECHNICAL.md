@@ -4,28 +4,29 @@
 
 ---
 
-## 1. 多區塊分區與雙入口架構設計 (Multi-Section & Dual Portal Architecture)
+## 1. 三分頁專區與三入口架構設計 (Core, Life & Work Architecture)
 
-為避免將求職履歷/作品集直接混入一般終端使用者的首頁，且同時兼顧個人生活連結（社交舞、音樂、筆記翻譯）與核心服務（家健錄 JiaJian Log）的清晰區隔，將網站劃分為：
+為了確保核心數位照護工具 (Core)、吃喝玩樂社交舞連結 (Life) 與工程求職履歷 (Work) 目標明確且彼此干擾降至最低，網站採用三分頁膠囊導覽結構 (Portal Navigation Bar)：
 
 ```text
 sunpochin.github.io/
-├── index.html       # [一般使用者入口] 多區塊服務與生活門牌 (無履歷求職干擾，極速門牌)
-│   ├── [Section 1] 🩺 核心照護與數位工具 (家健錄 JiaJian Log / Family Health Log)
-│   └── [Section 2] 💃 雙人舞、音樂與生活筆記 (Salsa IG / GitBook / Spotify / Hashnode)
-├── styles.css       # 門牌專屬行動優先 & 玻璃質感 (Glassmorphism) CSS
+├── index.html       # [Core 核心入口] 數位門牌首頁與家健錄 (JiaJian Log) 照護營運工具
+├── styles.css       # 全站膠囊導覽列與門牌暗色玻璃質感 (Glassmorphism) CSS
 ├── favicon.svg      # 門牌徽章標誌
 ├── services.json    # 服務與連結數據 (分 core 與 leisure)
 │
+├── life/
+│   ├── index.html   # [Life 生活專頁] 💃 雙人舞舞班、Podcast 翻譯、Spotify 歌單與歌詞部落格
+│   └── styles.css   # 生活專區專屬 CSS
+│
 └── work/
-    ├── index.html   # [面試官/獵頭入口] 工程師履歷、作品與技術能力展示
+    ├── index.html   # [Work 履歷專頁] 💻 資深前端/架構師履歷、全棧作品與技術棧展演
     └── styles.css   # 作品集專屬高階暗色主題 CSS
 ```
 
-* **一般使用者首頁 (`/`)**：
-  - **核心照護與數位工具**：單獨顯眼放置正式產品（家健錄 `jia-jian-log.vercel.app`），標註「正經事 Core」。中文品牌為「家健錄」、英文識別為「JiaJian Log」、英文副標為「Family Health Log」。
-  - **雙人舞、音樂與生活筆記**：採用雙欄響應式 Glassmorphism 卡片網格收納 Salsa 舞班 IG、GitBook 筆記翻譯、Spotify 點歌表單與 Hashnode 歌詞部落格，標註「吃喝玩樂 Life」。
-* **面試官專屬頁面 (`/work/`)**：展示前端工程作品、技術棧與架構理念。內建 `<meta name="robots" content="noindex, nofollow">` 避免搜尋引擎隨意索引。
+* **Core 核心首頁 (`/`)**：專注於核心家庭照護工具（家健錄 `jia-jian-log.vercel.app`），並提供全站膠囊導覽列。
+* **Life 生活專區 (`/life/`)**：收納 Salsa / BrZouk / Bachata 舞班 IG、GitBook Podcast 翻譯、Spotify 點歌單與 Hashnode 歌詞翻譯部落格。
+* **Work 履歷專頁 (`/work/`)**：展現前端工程作品、全棧技術細節 (React 18 / Supabase RLS / CI/CD) 與架構理念。內建 `<meta name="robots" content="noindex, nofollow">`。
 
 ---
 
