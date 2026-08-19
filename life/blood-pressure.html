@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>血壓測量計時器 | SunPoChin</title>
+  <meta name="description" content="簡單易用的血壓測量計時器，幫助你正確進行兩次血壓量測。">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    .status-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .status-title {
+      font-size: 28px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 16px;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .status-message {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .status-message.resting {
+      background-color: #ffe0e0;
+      color: #c41e3a;
+    }
+
+    .status-message.ready {
+      background-color: #e0f7e0;
+      color: #2d7a3a;
+    }
+
+    .timer-section {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .timer-display {
+      font-size: 120px;
+      font-weight: 700;
+      font-family: 'Courier New', monospace;
+      margin: 20px 0;
+      transition: all 0.3s ease;
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .timer-display.counting {
+      color: #c41e3a;
+      background-color: #ffe0e0;
+      border: 3px solid #c41e3a;
+    }
+
+    .timer-display.complete {
+      color: #2d7a3a;
+      background-color: #e0f7e0;
+      border: 3px solid #2d7a3a;
+    }
+
+    .timer-label {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background-color: #667eea;
+      color: white;
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background-color: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-primary:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-primary:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .btn-secondary {
+      background-color: #e0e0e0;
+      color: #333;
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background-color: #d0d0d0;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .info-box {
+      background-color: #f5f5f5;
+      border-left: 4px solid #667eea;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 32px;
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .measurement-info {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+      min-height: 30px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 24px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .status-message {
+        font-size: 20px;
+      }
+
+      .timer-display {
+        font-size: 80px;
+        min-height: 100px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>❤️ 血壓測量</h1>
+      <p>簡單易用的量測計時器</p>
+    </div>
+
+    <div class="measurement-info" id="measurementInfo">
+      第 1 次量測
+    </div>
+
+    <div class="status-section">
+      <div class="status-title" id="statusTitle">準備好了嗎？</div>
+      <div class="status-message" id="statusMessage" style="display: none;">
+        第二次量測前請休息
+      </div>
+    </div>
+
+    <div class="timer-section" id="timerSection" style="display: none;">
+      <div class="timer-label" id="timerLabel">請稍候</div>
+      <div class="timer-display counting" id="timerDisplay">00:00</div>
+    </div>
+
+    <div class="button-group">
+      <button class="btn-primary" id="startBtn" onclick="startMeasurement()">開始第 1 次量測</button>
+      <button class="btn-secondary" id="resetBtn" style="display: none;" onclick="resetApp()">重新開始</button>
+    </div>
+
+    <div class="info-box">
+      <strong>💡 量測提示：</strong><br>
+      • 量測前先靜坐休息 5 分鐘<br>
+      • 兩次量測間隔 60 秒以上<br>
+      • 保持手臂平放在心臟高度<br>
+      • 每次取得 2-3 個讀數，求其平均值
+    </div>
+  </div>
+
+  <script>
+    let currentMeasurement = 1;
+    let isCountingDown = false;
+
+    function startMeasurement() {
+      const btn = document.getElementById('startBtn');
+      const statusTitle = document.getElementById('statusTitle');
+      const statusMessage = document.getElementById('statusMessage');
+      const timerSection = document.getElementById('timerSection');
+      const measurementInfo = document.getElementById('measurementInfo');
+
+      btn.disabled = true;
+
+      if (currentMeasurement === 1) {
+        statusTitle.textContent = '請開始第 1 次量測';
+        statusMessage.style.display = 'none';
+        currentMeasurement = 2;
+
+        setTimeout(() => {
+          btn.textContent = '開始第 2 次量測';
+          btn.disabled = false;
+          statusTitle.textContent = '第 1 次量測完成！';
+          statusMessage.style.display = 'flex';
+          statusMessage.classList.remove('ready');
+          statusMessage.classList.add('resting');
+          statusMessage.textContent = '第二次量測前請休息';
+          timerSection.style.display = 'block';
+          startCountdown();
+        }, 1000);
+      } else {
+        statusTitle.textContent = '請開始第 2 次量測';
+        statusMessage.style.display = 'none';
+        timerSection.style.display = 'none';
+        measurementInfo.textContent = '第 2 次量測';
+
+        setTimeout(() => {
+          showCompletion();
+        }, 1000);
+      }
+    }
+
+    function startCountdown() {
+      if (isCountingDown) return;
+      isCountingDown = true;
+
+      let seconds = 60;
+      const timerDisplay = document.getElementById('timerDisplay');
+      const statusMessage = document.getElementById('statusMessage');
+
+      const interval = setInterval(() => {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        timerDisplay.textContent =
+          String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+
+        if (seconds === 0) {
+          clearInterval(interval);
+          isCountingDown = false;
+
+          // 計時完成，變綠色
+          timerDisplay.classList.remove('counting');
+          timerDisplay.classList.add('complete');
+
+          statusMessage.classList.remove('resting');
+          statusMessage.classList.add('ready');
+          statusMessage.textContent = '現在可以再量一次';
+
+          document.getElementById('startBtn').disabled = false;
+        }
+
+        seconds--;
+      }, 1000);
+    }
+
+    function showCompletion() {
+      const container = document.querySelector('.container');
+      const statusTitle = document.getElementById('statusTitle');
+      const statusMessage = document.getElementById('statusMessage');
+      const timerSection = document.getElementById('timerSection');
+      const startBtn = document.getElementById('startBtn');
+      const resetBtn = document.getElementById('resetBtn');
+
+      statusTitle.textContent = '✅ 量測完成！';
+      statusMessage.style.display = 'none';
+      timerSection.style.display = 'none';
+      startBtn.style.display = 'none';
+      resetBtn.style.display = 'block';
+
+      container.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+    }
+
+    function resetApp() {
+      currentMeasurement = 1;
+      isCountingDown = false;
+
+      const statusTitle = document.getElementById('statusTitle');
+      const statusMessage = document.getElementById('statusMessage');
+      const timerSection = document.getElementById('timerSection');
+      const timerDisplay = document.getElementById('timerDisplay');
+      const startBtn = document.getElementById('startBtn');
+      const resetBtn = document.getElementById('resetBtn');
+      const measurementInfo = document.getElementById('measurementInfo');
+      const container = document.querySelector('.container');
+
+      statusTitle.textContent = '準備好了嗎？';
+      statusMessage.style.display = 'none';
+      timerSection.style.display = 'none';
+      timerDisplay.textContent = '00:00';
+      timerDisplay.classList.remove('complete');
+      timerDisplay.classList.add('counting');
+      startBtn.textContent = '開始第 1 次量測';
+      startBtn.disabled = false;
+      startBtn.style.display = 'block';
+      resetBtn.style.display = 'none';
+      measurementInfo.textContent = '第 1 次量測';
+
+      container.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+    }
+  </script>
+</body>
+</html>
