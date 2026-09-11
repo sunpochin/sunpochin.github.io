@@ -1,0 +1,402 @@
+/*
+  檔案用途：知識分享專區與教學長文專用樣式表 (Knowledge & Tutorial Stylesheet)
+  所在層：sunpochin.github.io/life/knowledge/styles.css
+  設計考量：長篇教學需要舒適的閱讀行寬 (max-width: 780px)、清晰的階層排版、切分音計數視覺化標籤、響應式 16:9 影音容器與結構化文獻引註區塊。
+*/
+
+/* 繼承全站主樣式 Token 與基礎 Glassmorphism 暗色基調 */
+@import "../../styles.css";
+
+/* 擴大知識文章閱讀容器寬度，確保表格與影音容器在桌面端不致於過度擠壓 */
+.article-container {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* 頂部導覽列返回與麵包屑膠囊，降低訪客迷路機率 */
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: var(--text-main);
+}
+
+.breadcrumb-separator {
+  color: var(--text-subtle);
+  font-size: 0.75rem;
+}
+
+.breadcrumb-current {
+  color: var(--accent-purple);
+  font-weight: 600;
+}
+
+/* 文章 Header 區塊 */
+.article-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.article-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #c084fc;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.article-title {
+  font-size: 2rem;
+  line-height: 1.35;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.article-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.article-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* 長篇內文排版 (Prose Styling) */
+.article-body {
+  color: #cbd5e1;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.article-body h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 2.75rem 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.article-body h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin: 1.75rem 0 0.85rem;
+}
+
+.article-body p {
+  margin-bottom: 1.25rem;
+}
+
+.article-body ul, .article-body ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+}
+
+.article-body li {
+  margin-bottom: 0.6rem;
+}
+
+.article-body strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* 重點摘要與音樂性引言提示框 */
+.callout-box {
+  background: rgba(30, 41, 59, 0.6);
+  border-left: 4px solid var(--accent-purple);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+  color: #e2e8f0;
+}
+
+.callout-box-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #c084fc;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 樂段結構對照表格 (響應式滾動外框) */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.75rem 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--card-border);
+}
+
+.music-structure-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  text-align: left;
+  background: var(--card-bg);
+}
+
+.music-structure-table th {
+  background: rgba(15, 23, 42, 0.8);
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--card-border);
+  white-space: nowrap;
+}
+
+.music-structure-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  vertical-align: top;
+}
+
+.music-structure-table tr:last-child td {
+  border-bottom: none;
+}
+
+.music-structure-table tr.highlight-mambo {
+  background: rgba(168, 85, 247, 0.08);
+}
+
+.badge-derecho {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.badge-majau {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.badge-mambo {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(236, 72, 153, 0.2);
+  color: #f472b6;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+/* 步法拍點卡片 (Footwork Count Visualizer) */
+.count-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.35rem;
+  margin: 1.25rem 0 1.75rem;
+}
+
+@media (max-width: 600px) {
+  .count-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.count-cell {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.35rem;
+  text-align: center;
+}
+
+.count-cell.accent {
+  background: rgba(168, 85, 247, 0.18);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.count-number {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: block;
+}
+
+.count-cell.accent .count-number {
+  color: #e879f9;
+}
+
+.count-action {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  display: block;
+}
+
+/* 響應式 16:9 影音播放器嵌入容器，防止各裝置長寬比跑版 */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 高度比 */
+  margin: 1.5rem 0 2rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-card);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-caption {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: -1.25rem;
+  margin-bottom: 1.75rem;
+  text-align: center;
+  font-style: italic;
+}
+
+/* 參考文獻與權威來源卡片群組 */
+.sources-card {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.sources-card h3 {
+  font-size: 1.125rem;
+  color: var(--accent-blue);
+  margin: 0 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sources-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.source-item {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.9375rem;
+}
+
+.source-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.source-title {
+  color: var(--text-main);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.source-desc {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.source-link {
+  color: var(--accent-blue);
+  text-decoration: none;
+  word-break: break-all;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.35rem;
+}
+
+.source-link:hover {
+  text-decoration: underline;
+}
+
+/* 底部作者與社交資訊區塊 */
+.author-box {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .author-box {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.author-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-purple);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.author-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.author-bio {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
