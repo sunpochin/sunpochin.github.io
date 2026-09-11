@@ -1,7 +1,9 @@
 <!--
   檔案用途：雙人舞、音樂與生活筆記門牌頁面 (Life & Leisure Portal)
-  所在層：sunpochin.github.io/life/index.html；收納社交雙人舞、Spotify 歌單、podcast 翻譯與歌詞部落格等生活連結
-  設計說明：依使用者指示將首頁的「LIFE & MUSIC / 程式碼之外」區塊與 DJ 照片完整整合移至此專屬頁面 (/life/)，供有需要的訪客閱讀。
+  所在層：sunpochin.github.io/life/index.html；收納社交雙人舞、知識分享、Spotify 歌單、podcast 翻譯與歌詞部落格等生活連結
+  設計說明：
+  1. 整合 Hallmark 出版物風格 (Editorial Warm) 與 Salsa DJ 形象照片。
+  2. 整合 PR 衝突：完整保留 /life/knowledge/ 知識分享專區入口（首篇 Bachata Footwork Mambo 段教學）、722 血壓量測計時器，以及依序排列之 Dan & Sherry 與 Leo & Latiifah 舞班推薦。
 -->
 <!DOCTYPE html>
 <html lang="zh-TW">
@@ -10,8 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>SunPoChin | 雙人舞與生活筆記 (Life & Leisure)</title>
-  <meta name="description" content="SunPoChin 的生活與娛樂筆記入口。包含 Salsa DJ (Pachinko)、Salsa, BrZouk, Bachata 雙人舞新手班、Podcast 全文翻譯、Spotify 歌單與歌詞翻譯部落格。">
-  <meta name="keywords" content="SunPoChin, Pachinko, Life, 雙人舞, Salsa DJ, BrZouk, Bachata, Spotify 歌單, 歌詞翻譯, Podcast 翻譯">
+  <meta name="description" content="SunPoChin 的生活與娛樂筆記入口。包含 Salsa DJ (Pachinko)、雙人舞知識分享、Salsa, BrZouk, Bachata 舞班課程、Podcast 全文翻譯、Spotify 歌單與歌詞翻譯部落格。">
+  <meta name="keywords" content="SunPoChin, Pachinko, Life, 雙人舞, Salsa DJ, Bachata Footwork, Mambo, BrZouk, Spotify 歌單, 歌詞翻譯, Podcast 翻譯">
   <meta name="author" content="SunPoChin">
   
   <!-- 向量 SVG 門牌圖示 (使用上一層圖示) -->
@@ -35,6 +37,7 @@
         <div class="nav-links">
           <a href="../" class="nav-link">首頁 作品集</a>
           <a href="./" class="nav-link active" style="color: var(--accent-warm); font-weight: 700;">Life 生活專區</a>
+          <a href="./knowledge/" class="nav-link">💡 知識分享</a>
           <a href="../work/" class="nav-btn">完整工程履歷 (/work/)</a>
         </div>
       </nav>
@@ -44,7 +47,7 @@
         <span class="meta-badge-warm">程式碼之外</span>
       </div>
       <h1 class="site-title life-title" style="font-size: 2.25rem; font-weight: 800; margin-top: 0.5rem; color: var(--text-main);">雙人舞與音樂生活筆記</h1>
-      <p class="site-subtitle" style="font-size: 1.0625rem; color: var(--text-muted); margin-top: 0.35rem;">吃喝玩樂與社交舞蹈專區。收納 Salsa DJ 筆記、舞班課程、Podcast 翻譯、Spotify 歌單與歌詞部落格。</p>
+      <p class="site-subtitle" style="font-size: 1.0625rem; color: var(--text-muted); margin-top: 0.35rem;">吃喝玩樂與社交舞蹈專區。收納 Salsa DJ 筆記、雙人舞知識分享、舞班課程、Podcast 翻譯、Spotify 歌單與歌詞部落格。</p>
     </div>
   </header>
 
@@ -89,11 +92,36 @@
       <section class="section-block" aria-label="雙人舞與生活連結" style="margin-top: 3rem;">
         <div class="section-header">
           <h2 class="section-heading">精選生活與音樂連結</h2>
-          <p class="section-subheading">個人精選雙人舞課程、翻譯筆記與點歌歌單</p>
+          <p class="section-subheading">個人精選原創教學、雙人舞課程、翻譯筆記與點歌歌單</p>
         </div>
 
         <div class="life-links-list">
           
+          <!-- 精選文章: 雙人舞知識分享專區 - 第一篇 Bachata Footwork (Mambo 段) 教學 -->
+          <!-- 說明「為什麼這樣做」：以醒目背景突顯原創深度教學，引導訪客進入 /life/knowledge/ 知識專區 -->
+          <a href="./knowledge/" class="life-link-item" style="border-color: rgba(168, 85, 247, 0.4); background: rgba(168, 85, 247, 0.05);">
+            <div class="life-link-icon">💡</div>
+            <div class="life-link-content">
+              <div class="life-link-title" style="color: var(--text-main); font-weight: 800;">Bachata 步法教學：Mambo 段音樂結構與 Footwork 拆解</div>
+              <div class="life-link-desc">解析 Derecho、Majao 到 Mambo 三大節奏段落！掌握吉他即興切分音與腳步 Shines 即興對位，附 iASO Records 權威文獻與 YouTube 示範影音</div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
+          <!-- 工具: 血壓測量計時器 -->
+          <a href="./blood-pressure.html" class="life-link-item">
+            <div class="life-link-icon">⏱️</div>
+            <div class="life-link-content">
+              <div class="life-link-title">血壓測量計時器 (722 雙次量測休息倒數)</div>
+              <div class="life-link-desc">專為高血壓患者與長輩設計的 60 秒兩次量測休息倒數計時輔助工具</div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
           <!-- 連結 1: 歌詞翻譯部落格 -->
           <a href="https://salsa-br-zouk-bachata-lyrics.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="life-link-item">
             <div class="life-link-icon">✍️</div>
@@ -130,12 +158,12 @@
             </svg>
           </a>
 
-          <!-- 連結 4: Salsa 舞班專頁 -->
+          <!-- 連結 4: Salsa 舞班專頁 (維持 Dan & Sherry 在前、Leo & Latiifah 在後) -->
           <div class="dance-classes-box">
             <span class="dance-box-label">💃 推薦 Salsa 莎莎舞班：</span>
-            <a href="https://www.instagram.com/taipeisalsa_fafa/" target="_blank" rel="noopener noreferrer" class="inline-dance-link">Leo &amp; Latiifah Salsa</a>
-            <span class="dot-divider">•</span>
             <a href="https://www.instagram.com/sherry_is_dancing/" target="_blank" rel="noopener noreferrer" class="inline-dance-link">Dan &amp; Sherry Salsa</a>
+            <span class="dot-divider">•</span>
+            <a href="https://www.instagram.com/taipeisalsa_fafa/" target="_blank" rel="noopener noreferrer" class="inline-dance-link">Leo &amp; Latiifah Salsa</a>
           </div>
         </div>
       </section>
