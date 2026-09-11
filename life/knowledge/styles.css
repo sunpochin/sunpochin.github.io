@@ -1,21 +1,24 @@
 /*
-  檔案用途：知識分享專區與教學長文專用樣式表 (Knowledge & Tutorial Stylesheet)
+  檔案用途：知識分享專區總覽與長文共用樣式表 (Knowledge Hub & Article Stylesheet)
   所在層：sunpochin.github.io/life/knowledge/styles.css
-  設計考量：長篇教學需要舒適的閱讀行寬 (max-width: 780px)、清晰的階層排版、切分音計數視覺化標籤、響應式 16:9 影音容器與結構化文獻引註區塊。
+  重構說明：
+  1. 模組化整合：將原本只針對單一文章的樣式擴充為「文章卡片網格 (Hub Grid)」與「深度閱讀內頁 (Article Layout)」雙核心架構。
+  2. 縮減冗餘：精簡重疊選擇器與重複屬性，統一 Glassmorphism 暗色調與卡片陰影。
+  3. 保留舞者專用視覺組件（拍點計數器、實戰卡片、雙欄聽覺/動作對照、響應式 16:9 影音）。
 */
 
 /* 繼承全站主樣式 Token 與基礎 Glassmorphism 暗色基調 */
 @import "../../styles.css";
 
-/* 擴大知識文章閱讀容器寬度，確保表格與影音容器在桌面端不致於過度擠壓 */
+/* 閱讀容器：桌面端最大寬度 820px，提供兼具易讀性與影音排版空間 */
 .article-container {
   width: 100%;
-  max-width: 780px;
+  max-width: 820px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
 
-/* 頂部導覽列返回與麵包屑膠囊，降低訪客迷路機率 */
+/* 麵包屑導覽：提供多層級階層返回路徑，避免使用者於子專區迷航 */
 .breadcrumb-nav {
   display: flex;
   align-items: center;
@@ -44,11 +47,192 @@
 }
 
 .breadcrumb-current {
-  color: var(--accent-purple);
+  color: var(--accent-purple, #c084fc);
   font-weight: 600;
 }
 
-/* 文章 Header 區塊 */
+/* ==========================================================================
+   知識專區首頁 (Knowledge Hub Index) 元件樣式
+   ========================================================================== */
+
+/* 專區門牌 Hero 區塊 */
+.hub-header {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 2.5rem;
+}
+
+.hub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #c084fc;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hub-title {
+  font-size: 2.25rem;
+  line-height: 1.25;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.hub-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+/* 知識專區文章卡片網格 (Articles Grid) */
+.articles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+/* 單篇文章卡片：Glassmorphism 微透光厚實邊框與懸停動態效果 */
+.article-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-card);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.article-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #a855f7, #ec4899);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 12px 36px -8px rgba(168, 85, 247, 0.25);
+}
+
+.article-card:hover::before {
+  opacity: 1;
+}
+
+.card-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.card-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.card-tag-pill.bachata {
+  background: rgba(236, 72, 153, 0.15);
+  color: #f472b6;
+  border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+.card-tag-pill.cuban {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.card-read-time {
+  font-size: 0.8125rem;
+  color: var(--text-subtle);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.4;
+  margin-bottom: 0.65rem;
+  transition: color 0.2s ease;
+}
+
+.article-card:hover .card-title {
+  color: #c084fc;
+}
+
+.card-desc {
+  color: #cbd5e1;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.card-footer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.card-author-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card-action-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--accent-purple, #c084fc);
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.article-card:hover .card-action-hint {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   單篇文章頁面 (Single Article Page) 元件樣式
+   ========================================================================== */
+
 .article-header {
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
@@ -91,7 +275,7 @@
   gap: 0.4rem;
 }
 
-/* 長篇內文排版 (Prose Styling) */
+/* 長篇內文排版 (Prose Typography) */
 .article-body {
   color: #cbd5e1;
   font-size: 1.0625rem;
@@ -99,7 +283,7 @@
 }
 
 .article-body h2 {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--text-main);
   margin: 2.75rem 0 1.25rem;
@@ -111,7 +295,7 @@
 }
 
 .article-body h3 {
-  font-size: 1.2rem;
+  font-size: 1.18rem;
   font-weight: 600;
   color: #e2e8f0;
   margin: 1.75rem 0 0.85rem;
@@ -134,10 +318,10 @@
   font-weight: 600;
 }
 
-/* 重點摘要與音樂性引言提示框 */
+/* 重點引言提示框 */
 .callout-box {
   background: rgba(30, 41, 59, 0.6);
-  border-left: 4px solid var(--accent-purple);
+  border-left: 4px solid var(--accent-purple, #a855f7);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   padding: 1.25rem 1.5rem;
   margin: 1.75rem 0;
@@ -154,7 +338,7 @@
   gap: 0.5rem;
 }
 
-/* 樂段結構對照表格 (響應式滾動外框) */
+/* 樂曲對比 / 樂段表格 (響應式滾動外框) */
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -172,7 +356,7 @@
 }
 
 .music-structure-table th {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 23, 42, 0.85);
   color: var(--text-main);
   font-weight: 600;
   padding: 0.875rem 1rem;
@@ -190,41 +374,11 @@
   border-bottom: none;
 }
 
-.music-structure-table tr.highlight-mambo {
+.music-structure-table tr.highlight-row {
   background: rgba(168, 85, 247, 0.08);
 }
 
-.badge-derecho {
-  display: inline-block;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  background: rgba(56, 189, 248, 0.15);
-  color: #38bdf8;
-  font-size: 0.8125rem;
-  font-weight: 600;
-}
-
-.badge-majau {
-  display: inline-block;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  background: rgba(245, 158, 11, 0.15);
-  color: #fbbf24;
-  font-size: 0.8125rem;
-  font-weight: 600;
-}
-
-.badge-mambo {
-  display: inline-block;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  background: rgba(236, 72, 153, 0.2);
-  color: #f472b6;
-  font-size: 0.8125rem;
-  font-weight: 700;
-}
-
-/* 步法拍點卡片 (Footwork Count Visualizer) */
+/* 步法拍點視覺化卡片 */
 .count-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -269,11 +423,11 @@
   display: block;
 }
 
-/* 響應式 16:9 影音播放器嵌入容器，防止各裝置長寬比跑版 */
+/* 響應式 16:9 影音播放器嵌入容器 */
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 高度比 */
+  padding-bottom: 56.25%;
   margin: 1.5rem 0 2rem;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -300,111 +454,88 @@
   font-style: italic;
 }
 
-/* 參考文獻與權威來源卡片群組 */
-.sources-card {
-  background: rgba(15, 23, 42, 0.75);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-md);
-  padding: 1.5rem;
-  margin: 2.5rem 0;
-}
-
-.sources-card h3 {
-  font-size: 1.125rem;
-  color: var(--accent-blue);
-  margin: 0 0 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.sources-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.source-item {
-  padding: 0.85rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  font-size: 0.9375rem;
-}
-
-.source-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.source-title {
-  color: var(--text-main);
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.source-desc {
-  color: var(--text-muted);
-  font-size: 0.875rem;
-}
-
-.source-link {
-  color: var(--accent-blue);
-  text-decoration: none;
-  word-break: break-all;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  margin-top: 0.35rem;
-}
-
-.source-link:hover {
-  text-decoration: underline;
-}
-
-/* 底部作者與社交資訊區塊 */
-.author-box {
+/* 雙版本並列對比卡片 (Dual Version Comparison Card) */
+.comparison-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   padding: 1.5rem;
-  margin-top: 3rem;
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-card);
 }
 
-@media (max-width: 600px) {
-  .author-box {
-    flex-direction: column;
-    text-align: center;
+.comparison-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.comparison-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* 聽覺與動作雙欄格 (Duo Grid) */
+.action-duo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+@media (max-width: 640px) {
+  .action-duo-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-.author-avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 2px solid var(--accent-purple);
-  object-fit: cover;
-  flex-shrink: 0;
+.action-column {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.25rem;
 }
 
-.author-name {
-  font-size: 1.1rem;
+.action-col-title {
+  font-size: 0.9375rem;
   font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-.author-bio {
+.action-col-title.listen {
+  color: #38bdf8;
+}
+
+.action-col-title.dance {
+  color: #c084fc;
+}
+
+.action-col-title.history {
+  color: #fbbf24;
+}
+
+.action-col-desc {
   font-size: 0.875rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  color: #cbd5e1;
+  line-height: 1.65;
+  margin: 0;
 }
 
-/* 
-  舞者實戰影音範例卡片 (Dancer-Oriented Practical Video Cards)
-  設計考量：將 5 個具體 YouTube 實例以結構化卡片呈現，強調時間戳 (Timestamp)、聽覺訊號與舞步動作，讓舞者能一目了然。
-*/
+.action-col-desc strong {
+  color: var(--text-main);
+}
+
+/* 舞者實戰影音範例卡片 */
 .dancer-case-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -449,50 +580,94 @@
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-.action-duo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin: 1.25rem 0;
+/* 參考文獻卡片 */
+.sources-card {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin: 2.5rem 0;
 }
 
-@media (max-width: 640px) {
-  .action-duo-grid {
-    grid-template-columns: 1fr;
+.sources-card h3 {
+  font-size: 1.125rem;
+  color: var(--accent-blue, #38bdf8);
+  margin: 0 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sources-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.source-item {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.9375rem;
+}
+
+.source-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.source-title {
+  color: var(--text-main);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.source-desc {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.source-link {
+  color: var(--accent-blue, #38bdf8);
+  text-decoration: none;
+  word-break: break-all;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.35rem;
+}
+
+.source-link:hover {
+  text-decoration: underline;
+}
+
+/* 底部作者簡介卡片 */
+.author-box {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .author-box {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
-.action-column {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-sm);
-  padding: 1rem 1.15rem;
-}
-
-.action-col-title {
-  font-size: 0.9375rem;
+.author-name {
+  font-size: 1.15rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.action-col-title.listen {
-  color: #38bdf8;
-}
-
-.action-col-title.dance {
-  color: #c084fc;
-}
-
-.action-col-desc {
-  font-size: 0.875rem;
-  color: #cbd5e1;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.action-col-desc strong {
   color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.author-bio {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
