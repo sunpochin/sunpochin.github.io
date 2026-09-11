@@ -74,40 +74,46 @@ pm2 serve . 4173 --name sunpochin-preview
 
 ---
 
-## 5. 雙人舞知識分享子頁面架構與教學設計 (Life Knowledge Sharing Subportal Architecture)
+## 5. 雙人舞與拉丁音樂知識專區架構 (Life Knowledge Sharing Subportal Architecture)
 
-為滿足社交舞池音樂性與傳統步法（Dominican Footwork）知識傳播需求，於 `/life/` 下建立靜態長文知識專區 `/life/knowledge/`：
+為滿足社交舞池音樂性、傳統步法（Footwork）與經典拉丁舞曲深度賞析之需求，於 `/life/knowledge/` 建立高擴充性之靜態文章專區：
 
-### 5.1 目錄結構與定位
+### 5.1 目錄結構與多文章體系 (Multi-Article Architecture)
 ```text
 life/
-├── index.html          # [Life 入口] 雙人舞與生活筆記 (頂部加入知識分享膠囊導覽與旗艦卡片推薦)
+├── index.html          # [Life 入口] 雙人舞與生活筆記 (提供知識專區總覽入口推薦卡片)
 ├── styles.css          # 生活專區微調樣式
 ├── blood-pressure.html # 722 雙次量測 1 分鐘休息計時輔助工具
 └── knowledge/
-    ├── index.html      # [知識分享主頁 & 首篇教學] Bachata 步法與 Mambo 段音樂結構解析
-    └── styles.css      # 長文專用排版樣式表 (支援拍點視覺化、樂段對照表、文獻卡片與 16:9 影音容器)
+    ├── index.html      # [知識專區總覽 Hub] 精選文章卡片網格 (提供標籤、閱讀時間、摘要與導覽)
+    ├── styles.css      # 專區共用模組化樣式表 (重構精簡，支援卡片網格、雙欄聽覺/動作對照、對照表與影音容器)
+    ├── bachata-mambo.html                 # [專文 1] Bachata Mambo 段聽覺判斷與 Footwork 步法拆解
+    └── cuban-sound-project-taka-taka.html # [專文 2] Demetrio Muñiz《Taka Taka》與 1972 年原版跨世代深度對比
 ```
 
-### 5.2 技術決策與舞者取向實戰影音整合 (Dancer-Oriented Practical Video Architecture)
-為了避免傳統樂理過度生硬抽象，文章全面重構為**「舞者取向 (Dancer-Centric)」**結構，精確標記實戰影片秒數、聽覺訊號與步法動作：
-1. **五大實戰影音時間戳與動作拆解**：
-   - **Michael de Miranda (`ugXrFsLbkgQ`)**：純打擊樂段落切換。標記 `06:30 - 09:30` Bongó 加速如小馬奔馳（Horse-running rhythm）之 Mambo 爆發點。
-   - **Juan Ruiz (`RKScNYg8Cy8`)**：32 拍大句子結構。標記 `00:45 - 01:30` 第 4 個 8 拍（5-6-7-8）之 Build-Up / The Call 換段預判。
-   - **Cuellar Bachatero (`kfjZyMT_kMQ`)**：實戰曲目段落。標記 `00:45` 判斷進入 Mambo 分開、`04:00` 踩出前後推步、切分交叉步與腳跟點地。
-   - **Marius & Elena (`KYkknLddKKY`)**：初學者 Mambo 步法。標記 `01:15` 前後 Mambo Step 與 `1, 3, 5, 7` 停頓（Stops）及雙人分合引導。
-   - **Ermes Dance (`1bE_j35oeGo`)**：下盤穩定。提煉膝蓋微彎沉地、小步踩踏、核心放鬆等 3 大步法心法。
-2. **雙欄結構化卡片與視覺化拍點**：
-   - 採用 `.dancer-case-card` 與 `.action-duo-grid` 建立「👂 聽覺關鍵秒數」與「🦶 舞者當下動作」雙欄對照。
-   - 提供快速速查表（Cheat Sheet）與直接帶秒數參數（`?start=...`）的 YouTube 嵌入播放器。
+### 5.2 樣式表重構與精簡策略 (Stylesheet Refactoring)
+針對原先僅針對單篇教學特化的 `life/knowledge/styles.css` 進行模組化重構：
+1. **雙核心模式支援**：明確切分「專區總覽卡片網格 (`.articles-grid`, `.article-card`)」與「深度長文閱讀排版 (`.article-container`, `.article-body`)」。
+2. **消弭冗餘宣告**：重疊的選擇器整合至共享 Glassmorphism 與 Shadow Token，移除未使用的特定樣式，同時保持對手機直向、平板與桌面寬螢幕的流暢響應。
+3. **組件複用性強化**：`.video-wrapper`、`.action-duo-grid`、`.music-structure-table` 與 `.sources-card` 成為跨文章通用組件。
 
-### 5.3 排除的替代方案 (Rejected Alternatives)
+### 5.3 專文二內容與音樂性設計 (Cuban Sound Project 《Taka Taka》)
+1. **跨世代雙版本對比**：
+   - **原版 (1972)**：Joe Dassin《Taka takata (La femme du toréro)》（改編自 Paco Paco 與 Al Verlane），聚焦於幽默法語香頌、西班牙鬥牛步 (Paso Doble) 與佛朗明哥響板。
+   - **古巴大樂團改編版 (2015)**：Buena Vista Social Club 音樂總監 Demetrio Muñiz & Cuban Sound Project，將歐洲流行歌改造成純血古巴 Big Band Salsa / Son Montuno。
+2. **舞者與 DJ 視角解析**：
+   - 拆解長號組重擊（Trombone Breaks）、鋼琴 Montuno 滾動與天巴鼓牛鈴（Campana）推進機制。
+   - 分析古巴傳統呼應結構（Coro-Pregón）如何將「Taka-taka」轉化為舞池全場的狂歡號角。
+   - 附上雙 YouTube 播放器嵌入與雙人舞實戰應對技巧（前奏、主歌、Solo Shines）。
+
+### 5.4 排除的替代方案 (Rejected Alternatives)
 
 | 替代方案 | 排除原因 (Why Rejected) |
 | :--- | :--- |
-| **僅提供純樂器樂理教學影片** | 對一般社交舞者過於抽象難懂。舞者需要知道的是「聽到這聲音我該跳什麼步、什麼時候放開手」。 |
-| **將長篇教學直接堆疊在 `/life/index.html`** | 會嚴重破壞生活首頁作為「精選連結導覽門牌」的輕巧性與掃讀體驗。拆分至 `/life/knowledge/` 子目錄能保持職責分離。 |
-| **僅以外部連結導向 Medium 或 Hashnode** | 使用者明確希望在 GitHub Pages 個人網域 (`/life/`) 內建立知識體系，保留個人網站網域權威與設計一致性。 |
-| **引入靜態網站產生器 (SSG / Astro / Hugo)** | 現有站點採用純原生 HTML5 + CSS，免除打包依賴。為單篇教學引入 SSG 打包工具會增加維護負擔與 CI/CD 複雜度。 |
+| **將所有文章直接串接在單一 `index.html` 內** | 隨著文章增多，單一長頁面會造成捲動負擔過大、SEO 與社群分享預覽卡片 (Open Graph) 標題混淆，亦違背使用者明確要求的不同頁面架構。 |
+| **使用 SPA / 前端路由 (React / Vue Hash Routing)** | 增加不必要的打包與客戶端渲染負擔。靜態多頁（Multi-Page Application）具備最佳的秒開速度、直接連結分享性與 GitHub Pages 最佳相容性。 |
+| **僅提供純樂器樂理教學** | 對社交舞者過於抽象難懂。舞者需要知道「聽到這個聲音該跳什麼步、什麼時候放開手、以及歌曲背後的脈絡」。 |
+| **引入龐大前端 CSS 框架 (Tailwind / Bootstrap)** | 會破壞既有全站高質感 Slate Dark Glassmorphism 設計系統，並增加建置工具鏈的複雜度。純原生 CSS 變數與重構後的模組化樣式維護性更高。 |
+
 
 
