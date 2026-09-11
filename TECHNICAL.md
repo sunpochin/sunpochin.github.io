@@ -91,10 +91,13 @@ life/
     └── cuban-sound-project-taka-taka.html # [專文 2] Demetrio Muñiz《Taka Taka》與 1972 年原版跨世代深度對比
 ```
 
-### 5.2 樣式表重構與精簡策略 (Stylesheet Refactoring)
-針對原先僅針對單篇教學特化的 `life/knowledge/styles.css` 進行模組化重構：
+### 5.2 樣式表重構與色彩系統校準 (Stylesheet & Palette Calibration)
+針對原先僅針對單篇教學特化且色彩過度雜亂的 `life/knowledge/styles.css` 進行系統性重構：
 1. **雙核心模式支援**：明確切分「專區總覽卡片網格 (`.articles-grid`, `.article-card`)」與「深度長文閱讀排版 (`.article-container`, `.article-body`)」。
-2. **消弭冗餘宣告**：重疊的選擇器整合至共享 Glassmorphism 與 Shadow Token，移除未使用的特定樣式，同時保持對手機直向、平板與桌面寬螢幕的流暢響應。
+2. **全面接軌全站 Slate Dark Editorial 色彩體系**：
+   - 淘汰高飽和度霓虹粉紫（`#ec4899`, `#a855f7`）與刺眼亮橘色塊，杜絕廉價 AI 範本感。
+   - 回歸石墨暗底（`#090d16` / `#111726`）、極致微透光細線（`rgba(255, 255, 255, 0.08)`）與純淨白標題（`#f8fafc`）。
+   - 以克制的天藍（`#38bdf8`，主視覺與聽覺）、薄荷綠（`#34d399`，身體動作）與溫潤琥珀（`#fbbf24`，古巴與歷史文化）建立專業、冷靜且高耐讀性的編輯部雜誌風格。
 3. **組件複用性強化**：`.video-wrapper`、`.action-duo-grid`、`.music-structure-table` 與 `.sources-card` 成為跨文章通用組件。
 
 ### 5.3 專文二內容與音樂性設計 (Cuban Sound Project 《Taka Taka》)
