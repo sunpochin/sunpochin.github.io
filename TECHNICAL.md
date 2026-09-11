@@ -68,3 +68,39 @@ pm2 serve . 4173 --name sunpochin-preview
 - **印台雙語 i18n**: 印尼文（看護主用）+ 繁體中文（家屬主用）對稱切換
 - **DevOps & CI/CD**: 92.9%+ Vitest 單元測試涵蓋率、GitHub Actions 自動觸發拋棄式 Local Supabase 執行 DB Reset 測試與隔離 Staging 驗收環境
 
+---
+
+## 5. 雙人舞知識分享子頁面架構與教學設計 (Life Knowledge Sharing Subportal Architecture)
+
+為滿足社交舞池音樂性與傳統步法（Dominican Footwork）知識傳播需求，於 `/life/` 下建立靜態長文知識專區 `/life/knowledge/`：
+
+### 5.1 目錄結構與定位
+```text
+life/
+├── index.html          # [Life 入口] 雙人舞與生活筆記 (頂部加入知識分享膠囊導覽與旗艦卡片推薦)
+├── styles.css          # 生活專區微調樣式
+├── blood-pressure.html # 722 雙次量測 1 分鐘休息計時輔助工具
+└── knowledge/
+    ├── index.html      # [知識分享主頁 & 首篇教學] Bachata 步法與 Mambo 段音樂結構解析
+    └── styles.css      # 長文專用排版樣式表 (支援拍點視覺化、樂段對照表、文獻卡片與 16:9 影音容器)
+```
+
+### 5.2 技術決策與權威文獻整合
+1. **音樂學與舞蹈教學嚴謹度**：
+   - 首篇教學深入拆解 Bachata 三大節奏段落（**Derecho** 主歌、**Majao** 副歌、**Mambo** 間奏爆發段）。
+   - 引用全球公認之多明尼加原生音樂文獻 **iASO Records**（*Bachata: The Musical Structure*、*Bachata Breakdown En Vivo*）、**Carlos Cinta** 音樂性導師架構、**Adam Taub** 原生步法研究，以及 **Areíto Arts**（Edwin Ferreras）多明尼加傳統文化體系。
+2. **影音嵌入與無障礙 / 效能防護**：
+   - 採用 `youtube-nocookie.com` 嵌入權威樂隊示範影音，保護訪客隱私。
+   - 使用 CSS `padding-bottom: 56.25%` 確保 16:9 自適應長寬比，防止 Cumulative Layout Shift (CLS)。
+   - 影音元素宣告 `loading="lazy"` 與明確 `title` 屬性，兼顧 Core Web Vitals (CWV) 與無障礙閱讀器規範。
+3. **拍點視覺化與計數卡**：
+   - 針對 Mambo 段常見切分（Syncopation），以 `.count-grid` 提供 `1 - 2 - 3 - & - 4` 與 `5 - 6 - 7 - & - 8` 視覺化拍點對位，降低文字閱讀認知負擔。
+
+### 5.3 排除的替代方案 (Rejected Alternatives)
+
+| 替代方案 | 排除原因 (Why Rejected) |
+| :--- | :--- |
+| **將長篇教學直接堆疊在 `/life/index.html`** | 會嚴重破壞生活首頁作為「精選連結導覽門牌」的輕巧性與掃讀體驗。拆分至 `/life/knowledge/` 子目錄能保持職責分離。 |
+| **僅以外部連結導向 Medium 或 Hashnode** | 使用者明確希望在 GitHub Pages 個人網域 (`/life/`) 內建立知識體系，保留個人網站網域權威與設計一致性。 |
+| **引入靜態網站產生器 (SSG / Astro / Hugo)** | 現有站點採用純原生 HTML5 + CSS，免除打包依賴。為單篇教學引入 SSG 打包工具會增加維護負擔與 CI/CD 複雜度。 |
+
