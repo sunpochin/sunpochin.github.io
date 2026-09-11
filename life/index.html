@@ -1,7 +1,9 @@
 <!--
-檔案用途：雙人舞、音樂與生活筆記門牌頁面 (Life & Leisure Portal)
-所在層：sunpochin.github.io/life/index.html；收納社交雙人舞、Spotify 歌單、podcast 翻譯與歌詞部落格等生活連結
-主要關聯：連結至主門牌 (/) 與求職作品頁 (/work/)，分享個人雙人舞與音樂休閒內容
+  檔案用途：雙人舞、音樂與生活筆記門牌頁面 (Life & Leisure Portal)
+  所在層：sunpochin.github.io/life/index.html；收納社交雙人舞、知識分享、Spotify 歌單、podcast 翻譯與歌詞部落格等生活連結
+  設計說明：
+  1. 整合 Hallmark 出版物風格 (Editorial Warm) 與 Salsa DJ 形象照片。
+  2. 整合 PR 衝突：完整保留 /life/knowledge/ 知識分享專區入口（首篇 Bachata Footwork Mambo 段教學）、722 血壓量測計時器，以及依序排列之 Dan & Sherry 與 Leo & Latiifah 舞班推薦。
 -->
 <!DOCTYPE html>
 <html lang="zh-TW">
@@ -10,8 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>SunPoChin | 雙人舞與生活筆記 (Life & Leisure)</title>
-  <meta name="description" content="SunPoChin 的生活與娛樂筆記入口。包含 Salsa, BrZouk, Bachata 雙人舞新手班、Podcast 全文翻譯、Spotify 歌單與歌詞翻譯部落格。">
-  <meta name="keywords" content="SunPoChin, Life, 雙人舞, Salsa, BrZouk, Bachata, Spotify 歌單, 歌詞翻譯, Podcast 翻譯">
+  <meta name="description" content="SunPoChin 的生活與娛樂筆記入口。包含 Salsa DJ (Pachinko)、雙人舞知識分享、Salsa, BrZouk, Bachata 舞班課程、Podcast 全文翻譯、Spotify 歌單與歌詞翻譯部落格。">
+  <meta name="keywords" content="SunPoChin, Pachinko, Life, 雙人舞, Salsa DJ, Bachata Footwork, Mambo, BrZouk, Spotify 歌單, 歌詞翻譯, Podcast 翻譯">
   <meta name="author" content="SunPoChin">
   
   <!-- 向量 SVG 門牌圖示 (使用上一層圖示) -->
@@ -26,29 +28,26 @@
   <header class="site-header life-header">
     <div class="container">
       
-      <!-- 門牌全站膠囊導覽列 Nav Bar -->
-      <!-- 說明「為什麼這樣做」：保留 Life 生活與 Work 履歷，並加入知識分享 (Knowledge) 快速入口，提升深度教學文章的觸達率 -->
-      <nav class="portal-nav" aria-label="門牌頁面導覽">
-        <a href="./" class="nav-item active">
-          <span class="nav-icon">💃</span>
-          <span>Life 生活</span>
+      <!-- 門牌全站導覽列 Nav Bar -->
+      <nav class="nav-bar" aria-label="門牌頁面導覽" style="margin-bottom: 1.5rem;">
+        <a href="../" class="brand-link">
+          <span class="brand-name">孫柏青</span>
+          <span class="brand-title">SunPoChin</span>
         </a>
-        <a href="./knowledge/" class="nav-item">
-          <span class="nav-icon">💡</span>
-          <span>知識分享</span>
-        </a>
-        <a href="../work/" class="nav-item">
-          <span class="nav-icon">💻</span>
-          <span>Work 履歷</span>
-        </a>
+        <div class="nav-links">
+          <a href="../" class="nav-link">首頁 作品集</a>
+          <a href="./" class="nav-link active" style="color: var(--accent-warm); font-weight: 700;">Life 生活專區</a>
+          <a href="./knowledge/" class="nav-link">💡 知識分享</a>
+          <a href="../work/" class="nav-btn">完整工程履歷 (/work/)</a>
+        </div>
       </nav>
 
-      <div class="brand-badge life-badge">
-        <span class="brand-dot"></span>
-        <span class="brand-domain">sunpochin.xyz/life</span>
+      <div class="section-meta">
+        <span class="meta-label">LIFE &amp; MUSIC</span>
+        <span class="meta-badge-warm">程式碼之外</span>
       </div>
-      <h1 class="site-title life-title">雙人舞與生活筆記</h1>
-      <p class="site-subtitle">吃喝玩樂與社交舞蹈專區。收納舞班課程、知識分享、Podcast 翻譯與歌詞部落格。</p>
+      <h1 class="site-title life-title" style="font-size: 2.25rem; font-weight: 800; margin-top: 0.5rem; color: var(--text-main);">雙人舞與音樂生活筆記</h1>
+      <p class="site-subtitle" style="font-size: 1.0625rem; color: var(--text-muted); margin-top: 0.35rem;">吃喝玩樂與社交舞蹈專區。收納 Salsa DJ 筆記、雙人舞知識分享、舞班課程、Podcast 翻譯、Spotify 歌單與歌詞部落格。</p>
     </div>
   </header>
 
@@ -56,157 +55,116 @@
   <main class="main-content">
     <div class="container">
 
-      <!-- 雙人舞、音樂與生活筆記區塊 -->
-      <section class="section-block" aria-label="雙人舞與生活連結">
+      <!-- 
+        1. Salsa DJ 與個人音樂熱情區塊 (包含 DJ 照片)
+        說明「為什麼這樣做」：依使用者指示，將 DJ 照片與雙人舞音樂介紹集中收納於 /life/ 頁面，供對個人興趣感興趣的人士閱讀。
+      -->
+      <section class="section-block life-section" style="margin-top: 0; padding-top: 0; border-top: none;" aria-label="Salsa DJ 與個人簡介">
+        <div class="life-grid">
+          
+          <!-- DJ 照片卡片 -->
+          <div class="life-photo-col">
+            <figure class="portrait-card life-card">
+              <img src="../assets/images/sunpochin-dj.jpg" alt="孫柏青 - 戴著耳機的 Salsa DJ 照片" class="portrait-img">
+              <figcaption class="portrait-caption">
+                <strong>Salsa DJ &amp; Social Dancer</strong>
+                <span>孫柏青 (Pachinko)</span>
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- 音樂與生活介紹敘事 -->
+          <div class="life-text-col">
+            <h2 class="life-title" style="font-size: 1.75rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.85rem;">在程式碼之外：Salsa DJ 與社交雙人舞愛好者</h2>
+            <p class="life-narrative">
+              我是前端工程師、家庭照護產品開發者，同時也是活躍於雙人舞社群的 <strong>Salsa DJ (Pachinko)</strong>。
+            </p>
+            <p class="life-narrative">
+              音樂與舞蹈訓練了我對節奏流暢度、微觀觀察與使用者情感脈動的敏銳度——這也深刻影響了我對 Web 介面互動與使用者體驗 (UX) 的追求。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        2. 雙人舞與生活筆記卡片區塊
+      -->
+      <section class="section-block" aria-label="雙人舞與生活連結" style="margin-top: 3rem;">
         <div class="section-header">
-          <h2 class="section-title">
-            <span aria-hidden="true">💃</span> 雙人舞、音樂與生活筆記
-          </h2>
-          <span class="section-badge">吃喝玩樂 Life</span>
+          <h2 class="section-heading">精選生活與音樂連結</h2>
+          <p class="section-subheading">個人精選原創教學、雙人舞課程、翻譯筆記與點歌歌單</p>
         </div>
 
-        <div class="leisure-grid">
-
-          <!-- 
-            精選文章: 雙人舞知識分享專區 - 第一篇 Bachata Footwork (Mambo 段) 教學
-            說明「為什麼這樣做」：採用全寬卡片突顯第一篇原創深度教學，讓訪客能快速理解 Bachata 音樂段落與步法對位。
-          -->
-          <article class="leisure-card" data-id="knowledge-sharing-bachata" style="grid-column: 1 / -1; border-color: rgba(168, 85, 247, 0.35); background: rgba(168, 85, 247, 0.08);">
-            <div class="leisure-card-header">
-              <div class="leisure-icon-wrapper" aria-hidden="true" style="color: #c084fc;">
-                <!-- 知識與音樂性圖示 -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 18h6"></path>
-                  <path d="M10 22h4"></path>
-                  <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
-                </svg>
-              </div>
-              <span class="tag-badge" style="background: rgba(168, 85, 247, 0.2); border-color: rgba(168, 85, 247, 0.4); color: #e879f9;">原創教學 · 知識分享</span>
+        <div class="life-links-list">
+          
+          <!-- 精選文章: 雙人舞知識分享專區 - 第一篇 Bachata Footwork (Mambo 段) 教學 -->
+          <!-- 說明「為什麼這樣做」：以醒目背景突顯原創深度教學，引導訪客進入 /life/knowledge/ 知識專區 -->
+          <a href="./knowledge/" class="life-link-item" style="border-color: rgba(168, 85, 247, 0.4); background: rgba(168, 85, 247, 0.05);">
+            <div class="life-link-icon">💡</div>
+            <div class="life-link-content">
+              <div class="life-link-title" style="color: var(--text-main); font-weight: 800;">Bachata 步法教學：Mambo 段音樂結構與 Footwork 拆解</div>
+              <div class="life-link-desc">解析 Derecho、Majao 到 Mambo 三大節奏段落！掌握吉他即興切分音與腳步 Shines 即興對位，附 iASO Records 權威文獻與 YouTube 示範影音</div>
             </div>
-            <h3 class="leisure-card-title" style="color: var(--text-main);">Bachata 步法核心指南：Mambo 段音樂結構與 Footwork 拆解</h3>
-            <p class="leisure-card-summary">解析 Derecho、Majao 到 Mambo 三大節奏段落！掌握吉他即興切分音（Syncopation）與腳步 Shines 即興對位，附 iASO Records 權威文獻與 YouTube 示範影音。</p>
-            <a href="./knowledge/" class="btn-leisure" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.35); color: #e879f9;">
-              <span>閱讀教學文章 (/life/knowledge/)</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
 
-          <!-- 連結 1: Dan & Sherry Salsa 莎莎舞新手班 -->
-          <article class="leisure-card" data-id="dan-sherry-salsa">
-            <div class="leisure-card-header">
-              <div class="leisure-icon-wrapper" aria-hidden="true">
-                <!-- Instagram 相機圖示 -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </div>
-              <span class="tag-badge tag-instagram">Instagram · Salsa</span>
+          <!-- 工具: 血壓測量計時器 -->
+          <a href="./blood-pressure.html" class="life-link-item">
+            <div class="life-link-icon">⏱️</div>
+            <div class="life-link-content">
+              <div class="life-link-title">血壓測量計時器 (722 雙次量測休息倒數)</div>
+              <div class="life-link-desc">專為高血壓患者與長輩設計的 60 秒兩次量測休息倒數計時輔助工具</div>
             </div>
-            <h3 class="leisure-card-title">Dan &amp; Sherry Salsa 莎莎舞新手班</h3>
-            <p class="leisure-card-summary">Dan &amp; Sherry 的 Salsa 莎莎舞新手班 IG 專頁與課程資訊。</p>
-            <a href="https://www.instagram.com/sherry_is_dancing/" target="_blank" rel="noopener noreferrer" class="btn-leisure">
-              <span>前往 IG 專頁</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
 
-          <!-- 連結 2: Leo & Latiifah Salsa 莎莎舞新手班 -->
-          <article class="leisure-card" data-id="leo-latiifah-salsa">
-            <div class="leisure-card-header">
-              <div class="leisure-icon-wrapper" aria-hidden="true">
-                <!-- Instagram 相機圖示 -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </div>
-              <span class="tag-badge tag-instagram">Instagram · Salsa</span>
+          <!-- 連結 1: 歌詞翻譯部落格 -->
+          <a href="https://salsa-br-zouk-bachata-lyrics.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="life-link-item">
+            <div class="life-link-icon">✍️</div>
+            <div class="life-link-content">
+              <div class="life-link-title">Salsa, BrZouk, Bachata 歌詞翻譯部落格</div>
+              <div class="life-link-desc">Salsa、Brazilian Zouk 與 Bachata 經典舞曲中文字幕與歌詞部落格</div>
             </div>
-            <h3 class="leisure-card-title">Leo &amp; Latiifah Salsa 莎莎舞新手班</h3>
-            <p class="leisure-card-summary">Leo &amp; Latiifah 的 Salsa 莎莎舞新手班課程資訊與 IG 專頁。</p>
-            <a href="https://www.instagram.com/latiitoo/" target="_blank" rel="noopener noreferrer" class="btn-leisure">
-              <span>前往 IG 專頁</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
 
-          <!-- 連結 3: 一些雙人舞 podcast 全文翻譯 -->
-          <article class="leisure-card" data-id="social-dancing-notes">
-            <div class="leisure-card-header">
-              <div class="leisure-icon-wrapper" aria-hidden="true">
-                <!-- GitBook / 筆記圖示 -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                </svg>
-              </div>
-              <span class="tag-badge tag-gitbook">GitBook · 翻譯筆記</span>
+          <!-- 連結 2: 雙人舞 podcast 翻譯 -->
+          <a href="https://sunpochin.gitbook.io/social-dancing-notes" target="_blank" rel="noopener noreferrer" class="life-link-item">
+            <div class="life-link-icon">🎙️</div>
+            <div class="life-link-content">
+              <div class="life-link-title">社交雙人舞 Podcast 全文翻譯與心得筆記</div>
+              <div class="life-link-desc">社交雙人舞國外 Podcast 精選集數全文翻譯與筆記整理 (GitBook)</div>
             </div>
-            <h3 class="leisure-card-title">一些雙人舞 podcast 全文翻譯</h3>
-            <p class="leisure-card-summary">社交雙人舞 Podcast 精選集數全文翻譯與心得筆記整理。</p>
-            <a href="https://sunpochin.gitbook.io/social-dancing-notes" target="_blank" rel="noopener noreferrer" class="btn-leisure">
-              <span>閱讀 Podcast 翻譯</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
 
-          <!-- 連結 4: pachinko 的 Spotify 歌單 -->
-          <article class="leisure-card" data-id="pachinko-spotify-playlist">
-            <div class="leisure-card-header">
-              <div class="leisure-icon-wrapper" aria-hidden="true">
-                <!-- 音樂與表單圖示 -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 18V5l12-2v13"></path>
-                  <circle cx="6" cy="18" r="3"></circle>
-                  <circle cx="18" cy="16" r="3"></circle>
-                </svg>
-              </div>
-              <span class="tag-badge tag-form">Google Form · 歌單</span>
+          <!-- 連結 3: pachinko Spotify 歌單表單 -->
+          <a href="https://forms.gle/BX6eccCHhBU4E4f98" target="_blank" rel="noopener noreferrer" class="life-link-item">
+            <div class="life-link-icon">🎵</div>
+            <div class="life-link-content">
+              <div class="life-link-title">pachinko 的 Spotify 歌單與點歌表單</div>
+              <div class="life-link-desc">Spotify 雙人舞精選歌單推薦與點歌表單 (Google Forms)</div>
             </div>
-            <h3 class="leisure-card-title">pachinko 的 Spotify 歌單</h3>
-            <p class="leisure-card-summary">pachinko 的 Spotify 雙人舞精選歌單推薦與點歌表單。</p>
-            <a href="https://forms.gle/BX6eccCHhBU4E4f98" target="_blank" rel="noopener noreferrer" class="btn-leisure">
-              <span>開啟點歌/歌單表單</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
 
-          <!-- 連結 5: 我的 Salsa, BrZouk, Bachata 歌詞翻譯 -->
-          <article class="leisure-card" data-id="lyrics-translation-blog">
-            <div class="leisure-card-header">
-              <div class="leisure-icon-wrapper" aria-hidden="true">
-                <!-- Hashnode 部落格圖示 -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                  <polyline points="2 17 12 22 22 17"></polyline>
-                  <polyline points="2 12 12 17 22 12"></polyline>
-                </svg>
-              </div>
-              <span class="tag-badge tag-hashnode">Hashnode · 歌詞翻譯</span>
-            </div>
-            <h3 class="leisure-card-title">Salsa, BrZouk, Bachata 歌詞翻譯</h3>
-            <p class="leisure-card-summary">Salsa、Brazilian Zouk 與 Bachata 經典舞曲的中文字幕與歌詞翻譯部落格。</p>
-            <a href="https://salsa-br-zouk-bachata-lyrics.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="btn-leisure">
-              <span>閱讀歌詞翻譯部落格</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </article>
-
+          <!-- 連結 4: Salsa 舞班專頁 (維持 Dan & Sherry 在前、Leo & Latiifah 在後) -->
+          <div class="dance-classes-box">
+            <span class="dance-box-label">💃 推薦 Salsa 莎莎舞班：</span>
+            <a href="https://www.instagram.com/sherry_is_dancing/" target="_blank" rel="noopener noreferrer" class="inline-dance-link">Dan &amp; Sherry Salsa</a>
+            <span class="dot-divider">•</span>
+            <a href="https://www.instagram.com/taipeisalsa_fafa/" target="_blank" rel="noopener noreferrer" class="inline-dance-link">Leo &amp; Latiifah Salsa</a>
+          </div>
         </div>
       </section>
 
@@ -216,7 +174,10 @@
   <!-- 頁尾 Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year">2026</span> SunPoChin. All rights reserved.</p>
+      <div class="footer-content">
+        <p>&copy; <span id="year">2026</span> 孫柏青 SunPoChin (Pachinko). All rights reserved.</p>
+        <p class="footer-subtext"><a href="../" style="color: var(--accent-primary); text-decoration: none;">返回首頁 作品集</a> &bull; <a href="../work/" style="color: var(--accent-primary); text-decoration: none;">完整工程履歷 (/work/)</a></p>
+      </div>
     </div>
   </footer>
 
@@ -224,28 +185,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      // 嘗試動態水合 services.json
-      fetch('../services.json')
-        .then(res => res.ok ? res.json() : null)
-        .then(data => {
-          if (!data || !data.leisure) return;
-          data.leisure.forEach(item => {
-            const card = document.querySelector(`.leisure-card[data-id="${item.id}"]`);
-            if (card) {
-              const titleEl = card.querySelector('.leisure-card-title');
-              const summaryEl = card.querySelector('.leisure-card-summary');
-              const linkEl = card.querySelector('.btn-leisure');
-              const btnTextSpan = linkEl ? linkEl.querySelector('span') : null;
-
-              if (titleEl) titleEl.textContent = item.name;
-              if (summaryEl) summaryEl.textContent = item.summary;
-              if (linkEl) linkEl.href = item.url;
-              if (btnTextSpan && item.buttonText) btnTextSpan.textContent = item.buttonText;
-            }
-          });
-        })
-        .catch(err => console.log('Using static fallback for life page:', err));
     });
   </script>
 </body>
