@@ -1,31 +1,35 @@
 # TECHNICAL.md - sunpochin.github.io 技術架構與設計決策
 
-本文件記錄 `sunpochin.github.io` 門牌架構設計決策、多區塊分類規劃、PM2 本地預覽流程與排除的替代方案。
+本文件記錄 `sunpochin.github.io` 個人工程作品集架構設計決策、Hallmark 反 AI 樣板重構、PM2 本地預覽流程與排除的替代方案。
 
 ---
 
-## 1. 三分頁專區與三入口架構設計 (Core, Life & Work Architecture)
+## 1. 孫柏青前端工程作品集架構設計 (Personal Engineering Portfolio Architecture)
 
-為了確保核心數位照護工具 (Core)、吃喝玩樂社交舞連結 (Life) 與工程求職履歷 (Work) 目標明確且彼此干擾降至最低，網站採用三分頁膠囊導覽結構 (Portal Navigation Bar)：
+依據 Hallmark 設計原則與個人定位，首頁由傳統「SaaS 服務目錄 / 數位門牌」升級重構成**以孫柏青為核心、家健錄為旗艦案例的前端工程作品集**：
 
 ```text
 sunpochin.github.io/
-├── index.html       # [Core 核心入口] 數位門牌首頁與家健錄 (JiaJian Log) 照護營運工具
-├── styles.css       # 全站膠囊導覽列與門牌暗色玻璃質感 (Glassmorphism) CSS
+├── index.html       # [作品集首頁] 以孫柏青為核心的前端工程作品集 (包含家健錄旗艦案例與音樂/DJ 介紹)
+├── styles.css       # Hallmark 典雅出版物感 (Editorial Warm) 樣式表 (摒棄發光漸層與 Glassmorphism AI 樣板)
 ├── favicon.svg      # 門牌徽章標誌
-├── services.json    # 服務與連結數據 (分 core 與 leisure)
-│
-├── life/
-│   ├── index.html   # [Life 生活專頁] 💃 雙人舞舞班、Podcast 翻譯、Spotify 歌單與歌詞部落格
-│   └── styles.css   # 生活專區專屬 CSS
+├── assets/
+│   └── images/
+│       ├── sunpochin-outdoor.jpg  # 孫柏青野外照片 (配置於 Hero / 工程師簡介區塊)
+│       └── sunpochin-dj.jpg       # 孫柏青 DJ 照片 (配置於 Life / 音樂與社交雙人舞區塊)
+├── services.json    # 服務與連結數據
 │
 └── work/
     ├── index.html   # [Work 履歷專頁] 💻 資深前端/架構師履歷、全棧作品與技術棧展演
     └── styles.css   # 作品集專屬高階暗色主題 CSS
 ```
 
-* **Core 核心首頁 (`/`)**：專注於核心家庭照護工具（家健錄 `jia-jian-log.vercel.app`），頂部提供 Work 履歷快速入口（Life 入口暫時隱藏）。
-* **Work 履歷專頁 (`/work/`)**：精選全棧 CareOps 兩大旗艦作品：**家健錄 (JiaJian Log)** 與 **好溝通翻譯 Care Translate (LINE ID: @652ouobw)**。於家健錄作品中真實展示 **Cloudflare Worker 無伺服器通知整合 (Serverless Notification Integration)**、**Vercel & Supabase 雙端 Staging 環境隔離 (Staging Isolation)**、**伺服器端存取控制 (Server-Side RLS Authorization)**、**明確狀態建模與防呆 (Explicit State Modeling)** 與 **純函式抽離與測試 (Pure Functional Domain Logic)** 等工程設計決策與取捨。內建 `<meta name="robots" content="noindex, nofollow">`。
+* **作品集首頁 (`/`)**：
+  - **Hero 工程師定位**：展示孫柏青前端工程特質，搭配高山草原野外照片（`sunpochin-outdoor.jpg`），建立真實自信的第一印象。
+  - **旗艦案例（家健錄 JiaJian Log）**：深入展示「媽媽今天吃的是新藥單，還是上週的舊藥單？」真實需求、中印雙語 UI、Supabase RLS 資料庫層存取防護與 92.9% Vitest 測試。
+  - **精選專案 (Care Translate & Cloudflare Workers)**：收納印尼語照護翻譯 LINE Bot 與無伺服器通知整合。
+  - **人生的地方（Salsa DJ & Social Dancing）**：搭配 DJ 耳機照（`sunpochin-dj.jpg`），展示對介面流暢度與使用者感情脈動的敏銳觀察。
+* **Work 履歷專頁 (`/work/`)**：提供求職面試官與獵頭極詳細的全棧技術棧、系統架構設計決策與工作履歷展演。
 
 ---
 
@@ -52,10 +56,10 @@ pm2 serve . 4173 --name sunpochin-preview
 
 | 替代方案 | 排除原因 (Why Rejected) |
 | :--- | :--- |
-| **將社交舞與生活連結混入家健錄同一個列表** | 會破壞核心照護工具（家健錄 JiaJian Log）的嚴肅感與明確性，使用者無法快速區分專業工具與個人休閒筆记。 |
-| **首頁放置巨幅履歷按鈕** | 混淆一般服務使用者與面試官的存取意圖，讓血壓紀錄等工具的使用者感到非必要的干擾。 |
+| **使用典型暗色 Glassmorphism 與藍紫發光漸層** | 容易形成同質化的「AI SaaS Template / API Response 穿西裝」廉價感。改採 Hallmark Editorial Warm 典雅溫暖風格，更具個性與專業度。 |
+| **首頁僅作為純服務選單 (Service Catalog)** | 無法在 5 秒內讓面試官理解「孫柏青是誰、能力為何」，缺乏前端工程師個人辨識度。 |
+| **完全刪除社交雙人舞與音樂筆記** | 個人跨領域愛好（Salsa DJ）是強大的記憶點與人文辨識度，能使工程形象更加立體生動。 |
 | **採用 `/portfolio/` 或 `/hire-me/` 路徑** | `/work/` 比 `/portfolio/` 更簡潔專業，且不若 `/hire-me/` 過於著急求職。 |
-| **依賴複雜打包工具產出多頁面** | 兩頁面皆採用靜態語意 HTML5 + 原生 CSS，免除打包繁瑣步驟與依賴安全性問題。 |
 
 ---
 

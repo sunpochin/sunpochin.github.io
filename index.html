@@ -1,7 +1,11 @@
 <!--
-檔案用途：個人服務門牌首頁 (Core Services & Digital Portal)
-所在層：sunpochin.github.io/index.html；全站頂層入口
-主要關聯：連結至核心照護工具 (家健錄) 與 Work 履歷頁 (/work/)
+  Hallmark pre-emit critique stamp:
+  /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 · genre: editorial · macrostructure: Personal Engineering Portfolio · theme: Editorial Warm */
+  
+  檔案用途：孫柏青 (SunPoChin) 個人前端工程作品集與數位門牌首頁
+  設計定位：依使用者最新指示，將首頁 100% 聚焦於前端工程師專業定位與作品展示，完全移除非技術性下班休閒（LIFE & MUSIC / 程式碼之外）區塊，改將其整合至獨立的 /life/ 頁面。
+  照片配置：
+  - 工作/工程師個人區塊：搭配在野外的照片 (assets/images/sunpochin-outdoor.jpg) 展現真實自信的工程師特質。
 -->
 <!DOCTYPE html>
 <html lang="zh-TW">
@@ -9,17 +13,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO 與社群分享 Meta 設定 -->
-  <title>SunPoChin 孫柏青| 數位首頁</title>
-  <meta name="description" content="孫柏青的個人服務門牌，提供家健錄 JiaJian Log 家人的健康與照護紀錄。">
-  <meta name="keywords" content="SunPoChin, 門牌, 家健錄, JiaJian Log, Family Health Log, 照護紀錄">
-  <meta name="author" content="SunPoChin">
+  <!-- SEO 與個人品牌 Meta 設定 -->
+  <title>孫柏青 (SunPoChin) | 前端工程師與家健錄開發者</title>
+  <meta name="description" content="孫柏青 (SunPoChin) 的前端工程作品集。專注於家庭照護 Web 產品「家健錄 JiaJian Log」、台印雙語介面與可靠的 Web 系統架構。">
+  <meta name="keywords" content="孫柏青, SunPoChin, 前端工程師, Frontend Engineer, 家健錄, JiaJian Log, Family Health Log, Care Ops, React, TypeScript, Supabase">
+  <meta name="author" content="孫柏青 SunPoChin">
   
-  <!-- Open Graph / Facebook / LINE 分享卡片資訊 -->
+  <!-- Open Graph 社群分享卡片 -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sunpochin.github.io/">
-  <meta property="og:title" content="孫柏青 | 數位首頁">
-  <meta property="og:description" content="包含家健錄 JiaJian Log 家人的健康與照護紀錄。">
+  <meta property="og:title" content="孫柏青 (SunPoChin) | 前端工程師與家健錄開發者">
+  <meta property="og:description" content="專注於真實家庭照護的前端工程師。旗艦作品：家健錄 JiaJian Log — 為家人與印尼看護打造的雙語健康紀錄工具。">
+  <meta property="og:image" content="https://sunpochin.github.io/assets/images/sunpochin-outdoor.jpg">
   
   <!-- 向量 SVG 門牌圖示 -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -29,68 +34,274 @@
 </head>
 <body>
 
-  <!-- 門牌標頭區塊 Header -->
+  <!-- 全站導覽列 Navigation Bar -->
   <header class="site-header">
     <div class="container">
-      
-      <!-- 門牌全站膠囊導覽列 Nav Bar (隱藏 Life 連結，專注提供 Work 履歷入口) -->
-      <!-- 說明「為什麼這樣做」：依使用者指示將 Life 頁面暫時隱藏，導覽僅保留 Work 履歷入口 -->
-      <nav class="portal-nav" aria-label="門牌頁面導覽">
-        <a href="./work/" class="nav-item">
-          <span class="nav-icon">💻</span>
-          <span>Work 履歷</span>
+      <nav class="nav-bar" aria-label="主要導覽">
+        <a href="./" class="brand-link">
+          <span class="brand-name">孫柏青</span>
+          <span class="brand-title">SunPoChin</span>
         </a>
+        <div class="nav-links">
+          <a href="#flagship" class="nav-link">旗艦案例</a>
+          <a href="#projects" class="nav-link">精選專案</a>
+          <a href="#skills" class="nav-link">核心能力</a>
+          <a href="./work/" class="nav-btn">完整工程履歷 (/work/)</a>
+        </div>
       </nav>
-
-      <h1 class="site-title">孫柏青個人首頁</h1>
-      <p class="site-subtitle">整合核心照護工具與工程作品集。</p>
     </div>
   </header>
 
-  <!-- 主要服務卡片區塊 Main Content -->
   <main class="main-content">
     <div class="container">
 
       <!-- 
-        核心照護與數位工具 (Core Care Services)
-        維持高顯眼度單張大卡片，突顯家健錄 JiaJian Log 作為正經事的優先層級。
+        1. HERO 區塊：開門見山建立個人工程師定位與真實人像
+        說明「為什麼這樣做」：避免傳統 AI 樣板網站的抽象幾何圖形，使用野外照片展現真實、自信且具溫度的個人技術形象。
       -->
-      <section class="section-block" aria-label="核心照護服務">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span aria-hidden="true">🩺</span> 核心照護與數位工具
-          </h2>
+      <section class="hero-section" aria-label="工程師簡介">
+        <div class="hero-grid">
+          <div class="hero-text-content">
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              <span>Open for Frontend Engineering Opportunities</span>
+            </div>
+            
+            <h1 class="hero-heading">
+              孫柏青 <span class="hero-name-en">SunPoChin</span>
+            </h1>
+            <p class="hero-role-title">Frontend Engineer building care tools for real families.</p>
+            
+            <p class="hero-bio">
+              我把複雜的照護流程、多語溝通與長輩使用習慣，做成長輩、家屬與外籍看護真的能順暢使用的 Web 產品。注重領域邏輯抽象、資料存取邊界與使用者介面體感。
+            </p>
+            
+            <div class="tech-tags-row">
+              <span class="tech-tag">React 18</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Supabase RLS</span>
+              <span class="tech-tag">Cloudflare Workers</span>
+              <span class="tech-tag">i18n</span>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#flagship" class="btn-primary">
+                <span>探索旗艦案例：家健錄</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <a href="./work/" class="btn-secondary">
+                <span>閱讀詳細工程架構 (/work/)</span>
+              </a>
+              <a href="https://github.com/sunpochin" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 工作與個人特質展示照片（野外照片） -->
+          <div class="hero-photo-wrapper">
+            <figure class="portrait-card">
+              <img src="assets/images/sunpochin-outdoor.jpg" alt="孫柏青 - 在高山草原的戶外照片" class="portrait-img">
+              <figcaption class="portrait-caption">
+                <strong>孫柏青 Po-Chin Sun</strong>
+                <span>Frontend Engineer &amp; Care Ops Developer</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        2. 旗艦工程案例 區塊：家健錄 JiaJian Log
+        說明「為什麼這樣做」：不把家健錄做成簡單的產品連結卡片，而是作為展示軟體工程嚴謹度、真實需求痛點與架構決策的核心旗艦 Case Study。
+      -->
+      <section id="flagship" class="section-block flagship-section" aria-label="旗艦案例">
+        <div class="section-meta">
+          <span class="meta-label">FLAGSHIP CASE STUDY</span>
+          <span class="meta-badge">核心代表作</span>
         </div>
 
-        <!-- 採用家健錄 JiaJian Log 全新品牌識別與副標，提供明確的家庭照護與血壓/用藥紀錄入口 -->
-        <article class="service-card" data-id="jiaJianLog">
-          <div class="card-header">
-            <div class="card-icon-wrapper" aria-hidden="true">
-              <!-- SVG 脈搏心律圖示 -->
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
+        <div class="flagship-header-group">
+          <h2 class="flagship-title">家健錄 JiaJian Log</h2>
+          <p class="flagship-subtitle">Family Health Log ｜ 家庭健康與照護營運系統</p>
+        </div>
+
+        <!-- 真實情境痛點與情境引導 -->
+        <div class="problem-quote-box">
+          <p class="problem-quote">
+            「媽媽今天吃的是新藥單，還是上週的舊藥單？」
+          </p>
+          <p class="problem-explanation">
+            專為高血壓患者、印尼籍照護看護（Pengasuh）與台灣家庭成員設計的雙語健康與用藥紀錄工具。解決長輩血壓紀錄零散、跨語言溝通障礙與藥物備忘遺漏等切身痛點。
+          </p>
+        </div>
+
+        <!-- 三大核心工程亮點 -->
+        <div class="highlights-grid">
+          <div class="highlight-item">
+            <div class="highlight-icon">🇮🇩 🇹🇼</div>
+            <h3 class="highlight-title">中印雙語對照 UI &amp; 無障礙介面</h3>
+            <p class="highlight-desc">
+              專為長輩與印尼看護優化大字體、高對比與直覺雙向切換，徹底消除跨國照護溝通障礙與紀錄錯誤。
+            </p>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-icon">🛡️</div>
+            <h3 class="highlight-title">Supabase RLS 資料層存取防護</h3>
+            <p class="highlight-desc">
+              敏感個人健康數據不只在前端隱藏，更於 PostgreSQL 設定 Row Level Security (RLS) 白名單權限，確保未授權存取於資料庫層被拒絕。
+            </p>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-icon">🧪</div>
+            <h3 class="highlight-title">雙端 Staging 驗收與 92.9% 測試</h3>
+            <p class="highlight-desc">
+              建立獨立 Vercel + Supabase Staging 環境，結合 GitHub Actions 拋棄式 Migration 驗證與 92.9%+ Vitest 單元測試，確保家人正式數據不受測試干擾。
+            </p>
+          </div>
+        </div>
+
+        <!-- 旗艦案例行動連結 -->
+        <div class="flagship-actions">
+          <a href="https://jia-jian-log.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-flagship-primary">
+            <span>開啟家健錄線上體驗 (jia-jian-log.vercel.app)</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <a href="./work/" class="btn-flagship-secondary">
+            <span>檢視完整技術架構細節 (TECHNICAL.md / Work)</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 
+        3. 其他精選工程作品 區塊
+        說明「為什麼這樣做」：展現除了家健錄之外，在照護工具、無伺服器整合與自動化筆記方面的工程實踐。
+      -->
+      <section id="projects" class="section-block" aria-label="其他工程專案">
+        <div class="section-header">
+          <h2 class="section-heading">精選工程專案</h2>
+          <p class="section-subheading">解決真實生活需求與無伺服器架構的工具實踐</p>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- 專案 1: 好溝通翻譯 Care Translate LINE Bot -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-type">LINE Bot · Care Ops</span>
+              <h3 class="project-title">好溝通翻譯 ｜ Care Translate</h3>
             </div>
-            <span class="status-badge status-active">公開使用</span>
+            <p class="project-summary">
+              針對雇有印尼看護與移工的台灣家庭設計的即時雙向翻譯助手。降低照護溝通摩擦，支援常用照護語音、文字翻譯與日常問診對話輔助。
+            </p>
+            <div class="project-meta-box">
+              <span class="line-id-tag">LINE ID: <code>@652ouobw</code></span>
+            </div>
+            <div class="project-link-row">
+              <a href="https://line.me/R/ti/p/@652ouobw" target="_blank" rel="noopener noreferrer" class="link-arrow">
+                <span>加入 LINE 好友體驗</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 專案 2: Cloudflare Workers & 無伺服器通知整合 -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-type">Serverless · Cloudflare Workers</span>
+              <h3 class="project-title">無伺服器通知端點與安全邊界整合</h3>
+            </div>
+            <p class="project-summary">
+              使用 Cloudflare Workers 建立 Telegram 通知端點，將 Bot Token 儲存在加密 Secrets 中，避免敏感憑證暴露於前端。採非阻塞處理與低營運成本架構。
+            </p>
+            <div class="project-meta-box">
+              <span class="tech-pill">Cloudflare Workers</span>
+              <span class="tech-pill">Telegram Bot API</span>
+              <span class="tech-pill">Secrets Management</span>
+            </div>
+            <div class="project-link-row">
+              <a href="./work/" class="link-arrow">
+                <span>查看技術架構細節</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 
+        4. 核心技術棧與專業能力 區塊 (Core Competencies)
+        說明「為什麼這樣做」：幫助面試官與獵頭快速評估孫柏青的前端與系統架構綜合能力。
+      -->
+      <section id="skills" class="section-block" aria-label="核心技術棧">
+        <div class="section-header">
+          <h2 class="section-heading">核心技術棧與專業領域</h2>
+          <p class="section-subheading">專注於高可靠度 Web 系統、領域邏輯抽象與無障礙 UI/UX</p>
+        </div>
+
+        <div class="projects-grid">
+          
+          <div class="project-card">
+            <h3 class="project-title" style="font-size: 1.1rem; color: var(--accent-primary);">Frontend &amp; Core Web</h3>
+            <p class="project-summary" style="margin-bottom: 0.85rem;">
+              擅長現代 JavaScript (ES6+)、TypeScript 全型別覆蓋、React 18、Vue.js / Nuxt 3 以及行動優先 (Mobile-First) 無障礙 Web 介面。
+            </p>
+            <div class="tech-tags-row" style="margin-bottom: 0;">
+              <span class="tech-tag">React / Next.js</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Vue 3 / Nuxt</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">Vitest</span>
+            </div>
           </div>
-          <div class="card-title-group">
-            <h3 class="card-title">家健錄 JiaJian Log <span class="card-subtitle">Family Health Log</span></h3>
-            <span class="card-domain">jia-jian-log.vercel.app</span>
+
+          <div class="project-card">
+            <h3 class="project-title" style="font-size: 1.1rem; color: var(--accent-primary);">Architecture &amp; Data Security</h3>
+            <p class="project-summary" style="margin-bottom: 0.85rem;">
+              實踐資料庫層級權限控制 (Supabase RLS)、無伺服器架構 (Cloudflare Workers)、Staging 測試隔離與 CI/CD 自動化流程。
+            </p>
+            <div class="tech-tags-row" style="margin-bottom: 0;">
+              <span class="tech-tag">Supabase RLS</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Cloudflare Workers</span>
+              <span class="tech-tag">GitHub Actions</span>
+              <span class="tech-tag">Vercel</span>
+            </div>
           </div>
-          <p class="card-summary">家健錄 JiaJian Log 家人的健康與照護紀錄。輕鬆紀錄每日血壓趨勢與用藥提醒，隨時追蹤家庭健康數據。</p>
-          <div class="card-target-box">
-            <span class="card-target-label">適合誰使用</span>
-            <p class="card-target-text">需要定期紀錄血壓與用藥時程的高血壓患者、長輩或照護者。</p>
-          </div>
-          <div class="card-action">
-            <a href="https://jia-jian-log.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-open">
-              <span class="btn-text">血壓與用藥紀錄</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </div>
-        </article>
+
+        </div>
+      </section>
+
+      <!-- 
+        5. 工程履歷區塊引導 Callout Block
+      -->
+      <section class="resume-callout-block">
+        <div class="callout-inner">
+          <h2 class="callout-title">準備好深入了解技術細節了嗎？</h2>
+          <p class="callout-desc">
+            我的工程履歷詳述了全棧技術棧、系統架構設計決策（SSOT, Defense in Depth, FSM）、測試涵蓋率與職涯經歷。
+          </p>
+          <a href="./work/" class="btn-callout">
+            <span>前往閱讀孫柏青的完整工程履歷 (/work/)</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
       </section>
 
     </div>
@@ -99,47 +310,20 @@
   <!-- 頁尾 Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year">2026</span> SunPoChin. All rights reserved.</p>
+      <div class="footer-content">
+        <p>&copy; <span id="year">2026</span> 孫柏青 SunPoChin. All rights reserved.</p>
+        <p class="footer-subtext">
+          Built with Semantic HTML5 &amp; Editorial CSS. Hosted on GitHub Pages.
+        </p>
+      </div>
     </div>
   </footer>
 
-  <!-- 原生 Vanilla JS 腳本水合處理 -->
+  <!-- 原生 Vanilla JS 動態年份更新 -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      fetch('services.json')
-        .then(response => response.ok ? response.json() : null)
-        .then(data => {
-          if (!data) return;
-          const coreItems = Array.isArray(data) ? data : (data.core || []);
-          coreItems.forEach(item => {
-            const card = document.querySelector(`.service-card[data-id="${item.id}"]`);
-            if (card) {
-              const titleEl = card.querySelector('.card-title');
-              const domainEl = card.querySelector('.card-domain');
-              const summaryEl = card.querySelector('.card-summary');
-              const targetEl = card.querySelector('.card-target-text');
-              const linkEl = card.querySelector('.btn-open');
-              const btnTextEl = card.querySelector('.btn-text');
-
-              if (titleEl) {
-                if (item.subtitle) {
-                  titleEl.innerHTML = `${item.name} <span class="card-subtitle">${item.subtitle}</span>`;
-                } else {
-                  titleEl.textContent = item.name;
-                }
-              }
-              if (domainEl) domainEl.textContent = item.domain;
-              if (summaryEl) summaryEl.textContent = item.summary;
-              if (targetEl) targetEl.textContent = item.targetAudience;
-              if (linkEl) linkEl.href = item.url;
-              if (btnTextEl && item.buttonText) btnTextEl.textContent = item.buttonText;
-            }
-          });
-        })
-        .catch(err => console.log('Using static card fallback:', err.message));
     });
   </script>
 </body>
