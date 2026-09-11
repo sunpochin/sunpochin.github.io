@@ -1,11 +1,10 @@
 <!--
-  檔案用途：雙人舞與音樂知識分享專區 - 第一篇：Bachata Footwork (Mambo 段) 教學與音樂結構解析
+  檔案用途：雙人舞與音樂知識分享專區 - 第一篇：Bachata Footwork (Mambo 段) 舞者實戰教學
   所在層：sunpochin.github.io/life/knowledge/index.html
   設計決策說明：
-  1. 依使用者需求建立 /life/ 旗下的知識分享頁面，收納深度雙人舞與音樂性教學。
-  2. 首篇專注於 Bachata 的 Mambo 段（Footwork/Shines 段落），從音樂結構（Derecho, Majao, Mambo）、五大樂器演進、步法切分點（Syncopation）到多明尼加傳統風格進行系統化拆解。
-  3. 附上嚴格來源引註（iASO Records、Carlos Cinta、Adam Taub、Areíto Arts）與 YouTube 權威影音示範。
-  4. 遵守無障礙 (a11y) 與語意化 HTML5 標準，提供麵包屑導覽以利快速往返。
+  1. 依使用者要求全面轉向「舞者取向 (Dancer-Oriented)」教學，摒棄晦澀純樂理，改以具體舞者視角切入。
+  2. 整合 5 部代表性教學影片作為核心實戰範例，明確標註「第幾分幾秒到第幾分幾秒是 Mambo 段」、「聽到什麼訊號」以及「當下舞者該做什麼腳步與動作」。
+  3. 附上精準時間戳 (Timestamps)、聽覺/身體雙欄指引、拍點視覺化與實戰速查表。
 -->
 <!DOCTYPE html>
 <html lang="zh-TW">
@@ -13,16 +12,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bachata 步法與音樂性教學：Mambo 段 (Footwork Section) 深度解析 | SunPoChin 知識分享</title>
-  <meta name="description" content="深入解析 Bachata 音樂中的三大節奏段落（Derecho, Majao, Mambo），帶你掌握 Mambo 段的吉他切分音與 Footwork（Shines）即興技巧，附權威學術與影音來源。">
-  <meta name="keywords" content="Bachata, Mambo, Footwork, Shines, Derecho, Majao, Carlos Cinta, iASO Records, 雙人舞, 社交舞, 音樂性, 切分音, 孫柏青, Pachinko">
+  <title>Bachata 舞者實戰教學：Mambo 段聽覺判斷與 Footwork 步法拆解 | SunPoChin 知識分享</title>
+  <meta name="description" content="專為舞者打造的 Bachata Mambo 段實戰教學！從 YouTube 影片實例精確標註「第幾分幾秒進入 Mambo、該做什麼步法」，拆解前後 Mambo Step、切分交叉步、Stops 與 3 大下盤心法。">
+  <meta name="keywords" content="Bachata, Mambo段, Footwork, Shines, 舞者教學, 社交舞, Marius and Elena, Juan Ruiz, Cuellar Bachatero, 孫柏青, Pachinko">
   <meta name="author" content="孫柏青 SunPoChin (Pachinko)">
   
   <!-- Open Graph 社群卡片設定 -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://sunpochin.github.io/life/knowledge/">
-  <meta property="og:title" content="Bachata 步法與音樂性教學：Mambo 段深度解析">
-  <meta property="og:description" content="解析 Bachata 音樂三大節奏段落，掌握 Mambo 段吉他即興與 Footwork 切分步法，附權威教學影音。">
+  <meta property="og:title" content="Bachata 舞者實戰教學：Mambo 段聽覺判斷與 Footwork 步法拆解">
+  <meta property="og:description" content="專為舞者設計！精確標註第幾分幾秒是 Mambo 段落、放開手該做什麼腳步，附 5 大實戰 YouTube 影片時間戳解析。">
   
   <!-- 向量 SVG 門牌圖示 -->
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
@@ -36,7 +35,7 @@
   <header class="site-header" style="padding: 2.5rem 0 1.25rem;">
     <div class="article-container">
       
-      <!-- 麵包屑導覽：方便使用者一鍵返回 Life 生活專區或首頁 -->
+      <!-- 麵包屑導覽 -->
       <nav class="breadcrumb-nav" aria-label="路徑導覽">
         <a href="../../" class="breadcrumb-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,9 +53,9 @@
 
       <!-- 文章頂部 Meta 標籤 -->
       <div class="article-category-badge">
-        <span>💡 雙人舞與音樂性筆記 · 第一篇</span>
+        <span>💡 舞者實戰筆記 · 第一篇</span>
       </div>
-      <h1 class="article-title">Bachata 步法核心指南：Mambo 段（Footwork Section）音樂結構與切分步法拆解</h1>
+      <h1 class="article-title">舞者看得懂的 Bachata Mambo 指南：精準秒數判斷段落，到這段可以跳什麼步法？</h1>
       
       <div class="article-meta-row">
         <div class="article-meta-item">
@@ -69,13 +68,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <span>閱讀時間約 8 分鐘</span>
-        </div>
-        <div class="article-meta-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-          <span>含權威文獻與 YouTube 示範影音</span>
+          <span>閱讀時間約 7 分鐘 · 附 5 部實戰影音精確秒數</span>
         </div>
       </div>
 
@@ -93,240 +86,356 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            核心問題：為什麼很多舞者在 Bachata 放開手跳 Footwork 時，總覺得「踩不合音樂」？
+            告別生硬樂理！這篇專門寫給社交舞池中的你：
           </div>
           <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
-            在社交舞池（Social Dance Floor）上，常常看到舞者不分歌曲段落，從頭到尾都在拼命狂踩複雜步法，或是雙人抱緊緊轉圈轉到頭暈。但真正的多明尼加原生 Bachata，跳舞是與樂手對話的過程。其中，<strong>Mambo 段落</strong>就是整首曲子中樂手與舞者彼此釋放能量、大顯身手的<strong>「步法即興黃金時間」</strong>。
+            很多舞者不是不會踩步法，而是<strong>「不知道音樂什麼時候進 Mambo」</strong>、<strong>「分開之後腦袋一片空白不知道踩什麼」</strong>。本篇直接從 <strong>5 個具體 YouTube 舞蹈範例</strong> 出發，精確點出<strong>第幾分幾秒是 Mambo 段落</strong>，並告訴你此時腳下可以做什麼動作！
           </p>
         </div>
 
-        <!-- 第一章：三大節奏段落 -->
-        <h2>一、認識 Bachata 的三大節奏段落：Derecho、Majao 與 Mambo</h2>
-        <p>
-          多明尼加傳統 Bachata 音樂並不是從頭到尾保持單一節奏型態。依據多明尼加音樂權威文獻 <em>iASO Records</em> 與音樂性大師 <em>Carlos Cinta</em> 的系統化歸納，一首典型的 Bachata 曲目通常由三個核心節奏段落組成：
-        </p>
-
-        <!-- 樂段結構對照表：採用響應式包裝避免行動裝置水平溢出 -->
+        <!-- 實戰速查表 -->
+        <h2>⚡ 舞者實戰秒懂速查表：Mambo 段落辨識與動作對照</h2>
         <div class="table-responsive">
           <table class="music-structure-table">
             <thead>
               <tr>
-                <th scope="col">段落名稱</th>
-                <th scope="col">音樂角色與能量</th>
-                <th scope="col">樂器特徵 (Bongó / Güira / 吉他)</th>
-                <th scope="col">舞者最佳詮釋方式</th>
+                <th scope="col">段落與狀態</th>
+                <th scope="col">👂 舞者聽到的音樂線索</th>
+                <th scope="col">🤝 舞伴距離狀態</th>
+                <th scope="col">🦶 舞者推薦動作與步法</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><span class="badge-derecho">Derecho</span><br><strong>基礎/主歌段</strong></td>
-                <td>能量最低、抒情優雅。通常是歌曲開頭與主歌（Verse）敘事段落。</td>
-                <td>
-                  <strong>Bongó</strong> 敲打 Martillo 穩定節奏；<strong>Güira</strong> 節奏平穩；<strong>Requinto (主音吉他)</strong> 鋪陳主旋律與和弦分解。
-                </td>
-                <td>
-                  <strong>Close Embrace 封閉擁抱</strong>或平穩的 Basic Step。重視雙人呼吸連結、身體重心自然擺動，不宜做誇張的大動作。
-                </td>
+                <td><strong>1. Derecho (主歌)</strong></td>
+                <td>人聲深情演唱，Bongó 沉穩慢速 Martillo 規律節奏。</td>
+                <td><strong>Close Embrace 封閉擁抱</strong></td>
+                <td>平穩基本步（Basic Step）、重心流暢轉移、小型箱型步。</td>
               </tr>
               <tr>
-                <td><span class="badge-majau">Majao</span><br><strong>副歌/推動段</strong></td>
-                <td>能量上升、推進感強烈。通常出現在歌曲副歌（Chorus）或情緒推高段。</td>
-                <td>
-                  <strong>Bongó</strong> 轉為每拍強烈的 Open Slap 重擊；<strong>Güira</strong> 加速刮擊（ch-ch-ch-ch）；低音貝斯加重脈動。
-                </td>
-                <td>
-                  <strong>Open Position 開放框架</strong>。適合進行帶有力量的轉圈組合（Turns）、手臂花招或 Sensual 身體波浪律動。
-                </td>
+                <td><strong>2. Majao (副歌)</strong></td>
+                <td>節奏變強！Bongó 轉為每拍清脆重擊（Slap），Güira 刮鐵加速。</td>
+                <td><strong>Open Position 開放框架</strong></td>
+                <td>帶推進感的雙人轉圈（Turns）、換位、Sensual 波浪律動。</td>
               </tr>
               <tr class="highlight-mambo">
-                <td><span class="badge-mambo">Mambo</span><br><strong>間奏/爆發段 🔥</strong></td>
-                <td><strong>全曲最高潮！</strong>歌手停止演唱，轉為純樂器演奏或合音呼喊。</td>
+                <td><strong>3. Mambo (間奏爆發) 🔥</strong></td>
                 <td>
-                  <strong>Requinto 吉他手開始狂飆即興 Solo 與切分音（Syncopation）</strong>；Bongó 與 Güira 進入最激烈的 Merengue 加速推進節奏。
+                  <strong>人聲停止！吉他手狂飆 Solo，鼓聲像小馬奔跑般密集高頻碎拍。</strong>
                 </td>
                 <td>
-                  <strong>放開雙手進行 Footwork（Shines 步法即興）！</strong>用腳踩出的切分點直接呼應吉他手琴弦上的音符。
+                  <strong>放開雙手！退後半步，眼神鎖定舞伴</strong>
+                </td>
+                <td>
+                  <strong>Mambo 前後推步、切分交叉步 (1-2-3-&amp;-4)、腳跟點地 (Heel Digs)、停頓 (Stops)！</strong>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <!-- 第二章：為什麼 Mambo 段是 Footwork 的時刻 -->
-        <h2>二、為什麼 Mambo 段是跳 Footwork 的最佳時機？</h2>
-        <p>
-          在拉丁舞術語中，"Mambo" 段落借鑑了古巴音樂與 Merengue 的間奏概念，指的是<strong>「樂器即興獨奏（Instrumental Solo / Instrumental Break）」</strong>。
-        </p>
-        <p>
-          當歌曲進入 Mambo 段時，會發生以下三件關鍵變化：
-        </p>
-        <ol>
-          <li>
-            <strong>歌手留白，吉他對話</strong>：主唱通常退居幕後，由 Requinto（高音主音木吉他）擔任主角。樂手會彈奏出極具多明尼加風情的切分音、滑音與重複動機（Riff）。
-          </li>
-          <li>
-            <strong>打擊樂全面釋放</strong>：Bongó 鼓手與 Güira 刮鐵手不再受限於規律的拍子，開始加入大量重音切分、滾奏與即興對位。
-          </li>
-          <li>
-            <strong>身體空間的解放</strong>：此時若兩人依然維持擁抱姿勢跳慢速基本步，在音樂能量上是極不協調的。舞者鬆開搭手、退後半步，透過眼神交流（Eye Contact）展開各自或互相鏡像的步法較勁，這是多明尼加文化的靈魂所在。
-          </li>
-        </ol>
+        <!-- 範例一：聽力實戰 -->
+        <h2>範例一：精準聽出 Mambo 段爆發秒數（鼓聲切換）</h2>
+        <div class="dancer-case-card">
+          <div class="case-card-header">
+            <h3 class="case-card-title">Michael de Miranda — Bachata Bongo Rhythms</h3>
+            <span class="timestamp-badge">⏱️ 06:30 - 09:30 是 Mambo 段</span>
+          </div>
+          <p style="font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 1rem;">
+            荷蘭知名打擊樂導師現場示範 Bongó 在三大段落的敲法變化，這是舞者訓練聽力最純粹的範例。
+          </p>
 
-        <!-- 影音示範區塊：採用 16:9 比例與延遲載入確保效能 -->
-        <h3>權威影音示範：iASO Records 現場樂隊拆解三大節奏</h3>
-        <p>
-          由 <em>iASO Records</em> 製作、多明尼加吉他大師 <em>Joan Soriano</em> 演奏並由 <em>Carlos Cinta</em> 講解的《Bachata Breakdown En Vivo》，是全球公認最具權威性的 Bachata 音樂性教材：
-        </p>
-        
-        <div class="video-wrapper">
-          <iframe 
-            src="https://www.youtube-nocookie.com/embed/kSQVKBmtZu4" 
-            title="Bachata Breakdown En Vivo - Musicality Breakdown by Joan Soriano & Carlos Cinta" 
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
-        <p class="video-caption">▲ 影片來源：iASO Records 官方發行《Bachata Breakdown En Vivo》示範（建議留意 5 種樂器如何由 Derecho 推進至 Mambo 段）</p>
+          <div class="action-duo-grid">
+            <div class="action-column">
+              <div class="action-col-title listen">
+                <span>👂 聽覺關鍵秒數</span>
+              </div>
+              <div class="action-col-desc">
+                <ul style="margin: 0; padding-left: 1.2rem;">
+                  <li><strong>00:00 - 03:00 (Derecho)</strong>：沉穩慢節奏。</li>
+                  <li><strong>03:00 - 06:30 (Majao)</strong>：每拍重音推進。</li>
+                  <li><strong>06:30 - 09:30 (Mambo)</strong>：<strong>鼓聲突然加速像小馬奔跑（Horse-running rhythm / Merengue feel）</strong>！這是 Mambo 的絕對號角。</li>
+                </ul>
+              </div>
+            </div>
 
-        <!-- 第三章：核心 Footwork 技巧拆解 -->
-        <h2>三、Mambo 段核心 Footwork 技巧拆解與練習步驟</h2>
-        <p>
-          許多剛接觸 Dominican Style 的舞者會以為 Footwork 就是「雙腳亂踩很快」，這完全是誤解。真正的 Footwork 是<strong>「在清晰的重心轉移（Weight Transfer）上加入切分拍（Syncopation）」</strong>。
-        </p>
+            <div class="action-column">
+              <div class="action-col-title dance">
+                <span>🦶 舞者當下該做什麼？</span>
+              </div>
+              <div class="action-col-desc">
+                聽到 <strong>06:30</strong> 鼓聲突然轉成高頻碎拍時，<strong>立即放開搭手</strong>！
+                此時吉他通常會跟著狂彈，請不要再維持擁抱慢晃，直接轉身面對舞伴，準備進入獨立步法。
+              </div>
+            </div>
+          </div>
 
-        <h3>1. 拍點切分：從 1-2-3-Tap 到 1-2-3-&amp;-4（Cha-cha Triple Step）</h3>
-        <p>
-          標準 Bachata 基本步是在 4 和 8 做 Tap（點腳不壓重心）。但在 Mambo 段，吉他常出現十六分音符或八分切分音，最常見的基礎變奏就是<strong>將第 4 拍拆成兩個半拍（&amp; 拍）</strong>：
-        </p>
-
-        <!-- 拍點可視化卡片 -->
-        <div class="count-grid" aria-label="切分步拍點拆解">
-          <div class="count-cell">
-            <span class="count-number">1</span>
-            <span class="count-action">左腳開踏 (重拍)</span>
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/ugXrFsLbkgQ?start=390" 
+              title="Michael de Miranda - Bachata bongo rhythms Mambo section" 
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
           </div>
-          <div class="count-cell">
-            <span class="count-number">2</span>
-            <span class="count-action">右腳跟進並步</span>
-          </div>
-          <div class="count-cell">
-            <span class="count-number">3</span>
-            <span class="count-action">左腳原踏 (備切分)</span>
-          </div>
-          <div class="count-cell accent">
-            <span class="count-number">&amp;</span>
-            <span class="count-action">右腳切分球踏</span>
-          </div>
-          <div class="count-cell accent">
-            <span class="count-number">4</span>
-            <span class="count-action">左腳重踏定住</span>
-          </div>
-          <div class="count-cell">
-            <span class="count-number">5, 6, 7</span>
-            <span class="count-action">換邊順暢移動</span>
-          </div>
-          <div class="count-cell accent">
-            <span class="count-number">&amp;</span>
-            <span class="count-action">左腳切分球踏</span>
-          </div>
-          <div class="count-cell accent">
-            <span class="count-number">8</span>
-            <span class="count-action">右腳收腳定住</span>
-          </div>
+          <p class="video-caption">▲ 影片定位於 06:30 Mambo 段開始處：注意聽 Bongó 如何從慢速轉為高頻小馬奔馳碎奏</p>
         </div>
 
-        <h3>2. 交叉步與方向變化（Cross Step / Pasada）</h3>
-        <p>
-          當熟悉了 `&amp;` 拍的加入後，腳步不再只能左右橫移：
-        </p>
-        <ul>
-          <li><strong>前交叉步（Front Cross / Cruzado）</strong>：在第 2 拍或第 3 拍將動力腳橫越支撐腳前方踏下，骨盆順勢微轉，展現多明尼加舞者的俐落感。</li>
-          <li><strong>後交叉步（Back Cross）</strong>：從後方交叉並下沉重心，搭配下半身的膝蓋微彎回彈。</li>
-        </ul>
+        <!-- 範例二：提前預判 -->
+        <h2>範例二：在進入 Mambo 前 4 拍提前預判（32 拍大句子）</h2>
+        <div class="dancer-case-card">
+          <div class="case-card-header">
+            <h3 class="case-card-title">Juan Ruiz — Bachata Musical Structure</h3>
+            <span class="timestamp-badge">⏱️ 00:45 - 01:30：The Build-Up 過門訊號</span>
+          </div>
+          <p style="font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 1rem;">
+            知名音樂性大師 Juan Ruiz 教舞者如何以「4 組 8 拍（32 拍）」為一個大句子，預判段落切換。
+          </p>
 
-        <h3>3. 腳跟與腳尖點地（Heels &amp; Toes / Double Heels）</h3>
-        <p>
-          依據 <em>Adam Taub</em> 的教學紀錄，多明尼加舞者在 Mambo 段常利用<strong>腳跟（Heel）觸地</strong>來製造聲音與視覺重音：
-        </p>
-        <ul>
-          <li>在第 4 拍或第 8 拍，不單純用腳尖點，而是用腳跟往前切入敲擊地面（Heel Dig），隨即在下一個重拍抽回重心。</li>
-          <li><strong>Double Heel 切分</strong>：在 `4 &amp;` 或 `8 &amp;` 連續切入兩次腳跟，精準咬合 Requinto 吉他快彈的兩個高音。</li>
-        </ul>
+          <div class="action-duo-grid">
+            <div class="action-column">
+              <div class="action-col-title listen">
+                <span>👂 聽覺關鍵秒數</span>
+              </div>
+              <div class="action-col-desc">
+                在 <strong>00:45 至 01:30</strong>，Juan Ruiz 拆解<strong>「The Build-Up」</strong>。
+                在一句 32 拍的<strong>第 4 個 8 拍（5, 6, 7, 8）</strong>，音樂能量會突然攀升，吉他會彈出爬音或重音過門（The Call）。
+              </div>
+            </div>
 
-        <h3>4. 最關鍵的心法：下盤彈性（Bongó Bounce &amp; Grounding）</h3>
+            <div class="action-column">
+              <div class="action-col-title dance">
+                <span>🦶 舞者當下該做什麼？</span>
+              </div>
+              <div class="action-col-desc">
+                當數到第 4 個 8 拍的 <code>5, 6, 7, 8</code> 聽到能量推升時：
+                <br>• <strong>Leader</strong>：鬆開引導手、給出微退訊號。
+                <br>• <strong>Follower</strong>：重心穩住、眼神鎖定舞伴。
+                <br>• <strong>下一拍第 1 拍</strong>：吉他 Solo 響起，直接踩下第一記 Footwork！
+              </div>
+            </div>
+          </div>
+
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/RKScNYg8Cy8?start=45" 
+              title="Juan Ruiz - Bachata Musical Structure and The Call" 
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="video-caption">▲ 影片定位於 00:45：學習聽出段落轉換前的 Build-Up 訊號，不再被音樂嚇到突兀放手</p>
+        </div>
+
+        <!-- 範例三：實戰分析與腳步示範 -->
+        <h2>範例三：放開手到底踩什麼？舞曲現場實戰步法拆解</h2>
+        <div class="dancer-case-card">
+          <div class="case-card-header">
+            <h3 class="case-card-title">Cuellar Bachatero — Aprende el Mambo de la Bachata</h3>
+            <span class="timestamp-badge">⏱️ 00:45 判斷分開 / 04:00 步法拆解</span>
+          </div>
+          <p style="font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 1rem;">
+            馬德里資深 Bachatero 以整首實戰舞曲現場示範：從雙人擁抱到 Mambo 分開，男女舞者如何踩步法與肩膀律動。
+          </p>
+
+          <div class="action-duo-grid">
+            <div class="action-column">
+              <div class="action-col-title listen">
+                <span>👂 實戰時間戳對照</span>
+              </div>
+              <div class="action-col-desc">
+                <ul style="margin: 0; padding-left: 1.2rem;">
+                  <li><strong>00:45 - 04:00 (Parte 1)</strong>：歌曲從主歌（閉合）到副歌（旋轉），精準點出<strong>「這裡進入 Mambo 了！」</strong>兩人分開。</li>
+                  <li><strong>04:00 - 07:30 (Parte 2)</strong>：深入示範分開後的 <strong>3 大實戰步法組合</strong>。</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="action-column">
+              <div class="action-col-title dance">
+                <span>🦶 到這段 Mambo 可以做什麼腳步？</span>
+              </div>
+              <div class="action-col-desc">
+                <ul style="margin: 0; padding-left: 1.2rem;">
+                  <li><strong>動作 1：前後 Mambo 步</strong>（踏出、原踏、回中）。</li>
+                  <li><strong>動作 2：切分交叉步（Cross Step / Pasada）</strong>：前交叉橫越支撐腳，骨盆微轉。</li>
+                  <li><strong>動作 3：腳尖/腳跟點地（Heel/Toe Taps）</strong>：配合吉他切分音。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/kfjZyMT_kMQ?start=240" 
+              title="Cuellar Bachatero - Aprende el Mambo Footwork Breakdown" 
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="video-caption">▲ 影片定位於 04:00：觀看 Cuellar 拆解 Mambo 段的分開步法、肩膀律動與眼神對位</p>
+        </div>
+
+        <!-- 範例四：初學者必學前後 Mambo Step 與 Stops -->
+        <h2>範例四：初學舞者最容易上手的 Mambo 步法與停頓 (Stops)</h2>
+        <div class="dancer-case-card">
+          <div class="case-card-header">
+            <h3 class="case-card-title">Marius &amp; Elena — Bachata Tutorial 07: Mambo for Beginners</h3>
+            <span class="timestamp-badge">⏱️ 01:15 步法教學 / 02:30 雙人引導</span>
+          </div>
+          <p style="font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 1rem;">
+            全球超百萬點閱的雙人舞導師 Marius &amp; Elena 示範：如何不用複雜碎步，只用乾淨的前後 Mambo 步與停拍（Stops）震撼舞池。
+          </p>
+
+          <div class="action-duo-grid">
+            <div class="action-column">
+              <div class="action-col-title listen">
+                <span>👂 影片時間軸</span>
+              </div>
+              <div class="action-col-desc">
+                <ul style="margin: 0; padding-left: 1.2rem;">
+                  <li><strong>01:15 - 02:30</strong>：個人 Mambo Step 步法教學。</li>
+                  <li><strong>02:30 - 03:45</strong>：雙人配合、引導與分開。</li>
+                  <li><strong>03:45 - 04:11</strong>：配合音樂完整 Demo。</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="action-column">
+              <div class="action-col-title dance">
+                <span>🦶 步法拆解：前後 Mambo Step</span>
+              </div>
+              <div class="action-col-desc">
+                <strong>Count 1-2-3-4 (前半組)</strong>：<br>
+                • <strong>1</strong>：左腳往前踩踏重心<br>
+                • <strong>2</strong>：右腳原地踏回<br>
+                • <strong>3-4</strong>：左腳收回中間並步/停頓 (Stop)<br>
+                <strong>Count 5-6-7-8 (後半組)</strong>：<br>
+                • <strong>5</strong>：右腳往後踩踏重心<br>
+                • <strong>6</strong>：左腳原地踏回<br>
+                • <strong>7-8</strong>：右腳收回中間並步/停頓 (Stop)
+              </div>
+            </div>
+          </div>
+
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/KYkknLddKKY?start=75" 
+              title="Marius & Elena - Bachata Tutorial 07 Mambo for Beginners" 
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="video-caption">▲ 影片定位於 01:15：跟隨 Marius & Elena 學習標準前後 Mambo Step，以及在 1, 3, 5, 7 拍的利落停頓 (Stops)</p>
+        </div>
+
+        <!-- 範例五：下盤與重心心法 -->
+        <h2>範例五：跳 Footwork 絕不掉拍的 3 個下盤黃金心法</h2>
+        <div class="dancer-case-card">
+          <div class="case-card-header">
+            <h3 class="case-card-title">Ermes Dance — 3 Easy Bachata Tips</h3>
+            <span class="timestamp-badge">⏱️ 0:00 - 0:59：舞者體態核心</span>
+          </div>
+          <p style="font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 1rem;">
+            為什麼有些舞者踩 Mambo 像跳跳糖一樣慌張？這支精簡教學指出了 3 個關鍵下盤心法：
+          </p>
+
+          <ol style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.8;">
+            <li>
+              <strong>膝蓋微彎沉入地板（Soft Knees &amp; Grounding）</strong>：<br>
+              永遠不要把雙膝打直！膝蓋微彎像彈簧，每一次踩踏都是將體重扎實送進地板，產生自然的骨盆擺動（Bongó Bounce）。
+            </li>
+            <li>
+              <strong>步幅小而乾淨（Keep Steps Small）</strong>：<br>
+              在速度極快的 Mambo 段，腳步跨太大是致命傷。兩腳間距保持在肩膀以內，步子越小，換重心越快，絕對不會跟丟節奏。
+            </li>
+            <li>
+              <strong>上半身保持沉靜，軀幹帶動</strong>：<br>
+              不要用手臂亂揮或刻意甩屁股。力量來自於核心與重心轉移，上半身放鬆自然展現自信。
+            </li>
+          </ol>
+
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/1bE_j35oeGo" 
+              title="Ermes Dance - 3 Easy Bachata Tips" 
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="video-caption">▲ 影片示範：小步貼地踩踏、膝蓋微彎彈性與上半身沉靜的三大要訣</p>
+        </div>
+
+        <!-- 社交舞池 4 步循環心法 -->
+        <h2>四、社交舞池實戰口訣：4 步完成一次華麗的 Mambo 詮釋</h2>
         <div class="callout-box">
           <div class="callout-box-title">
-            ⚠️ 避免致命陷阱：千萬不要「上半身亂跳，膝蓋打直」！
+            🎯 請記住這個 4 步循環流程：
           </div>
-          <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
-            多明尼加步法的力量來自於<strong>貼地感（Grounding）</strong>。雙膝必須隨時保持微彎具彈性，腳掌踩踏時不是「浮在半空」，而是將體重扎實送進地板，讓臀部與下盤自然因重心切換產生律動（Bongó Bounce）。上半身則保持相對穩定與放鬆，切忌聳肩或大幅搖晃。
+          <p style="margin: 0; font-size: 0.95rem; line-height: 1.7;">
+            <strong>1. 聽（Listen）</strong>：第 4 個 8 拍聽出 Build-Up 與過門，人聲停、吉他開始 Solo。<br>
+            <strong>2. 退（Create Space）</strong>：在 5-6-7-8 順勢鬆開搭手退後半步，眼神鎖定舞伴給個微笑。<br>
+            <strong>3. 踩（Footwork）</strong>：做 2~4 組前後 Mambo Step 或切分交叉步，踩小步、咬合吉他拍點。<br>
+            <strong>4. 接（Re-connect）</strong>：當歌手重新進來唱副歌或吉他 Solo 漸緩時，溫柔伸出雙手接回舞伴，無縫回歸擁抱！
           </p>
         </div>
 
-        <!-- 第四章：社交舞池實戰法則 -->
-        <h2>四、社交舞池（Social Dancing）的實戰禮儀與心法</h2>
-        <p>
-          身為兼具 Salsa/Bachata DJ 與 Social Dancer 雙重視角的觀察者，推薦你在 Party 實戰中運用以下原則：
-        </p>
-        <ol>
-          <li>
-            <strong>「先聽出 Mambo，再放開雙手」</strong>：不要在主歌（Derecho）深情演唱時突然把舞伴推開狂踩步法。等到聽見人聲退去、吉他開始狂飆 Solo 的那一刻，再給舞伴一個從容的微笑或後退手勢，這才是有品味的音樂性表現。
-          </li>
-          <li>
-            <strong>「眼神永遠不要離開舞伴」</strong>：Footwork 不是「自顧自的獨舞表演」，而是一場<strong>無聲的對話</strong>。你看著舞伴、回應對方的節奏，偶爾互相模仿彼此的步法，社交的趣味就在這裡產生。
-          </li>
-          <li>
-            <strong>「音樂回歸，擁抱收束」</strong>：Mambo 段通常只有 16 至 32 個小節（拍）。當吉他 Solo 結束、歌手重新進來唱副歌或收尾時，請順理成章地向舞伴伸出雙手，無縫回到 Close 或 Open Position，完成一次完美的起承轉合。
-          </li>
-        </ol>
-
-        <!-- 第五章：嚴格來源引註區塊 -->
-        <h2>五、權威文獻與影音學習資源（References &amp; Sources）</h2>
-        <p>
-          本篇教學內容彙整自多明尼加原生音樂史料、傳統音樂家現場示範與專業舞蹈教育者文獻：
-        </p>
-
+        <!-- 權威影音與教學來源清單 -->
+        <h2>五、本篇實戰影音範例總覽（Video References）</h2>
         <div class="sources-card">
           <h3>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
-            學術文獻與權威影音清單
+            舞者必看 5 部實戰影音連結
           </h3>
           <ul class="sources-list">
             <li class="source-item">
-              <div class="source-title">1. iASO Records &amp; Benjamin de Menil — <em>Bachata: The Musical Structure</em></div>
-              <div class="source-desc">系統化記錄多明尼加傳統 Bachata 音樂五大核心樂器（Requinto, Segunda, Bass, Bongó, Güira）與三大節奏結構（Derecho, Majao, Mambo）之經典權威文獻。</div>
-              <a href="https://www.iasorecords.com/" target="_blank" rel="noopener noreferrer" class="source-link">
-                <span>訪問 iASO Records 官方網站 (iasorecords.com)</span>
+              <div class="source-title">1. Marius &amp; Elena — <em>Bachata Tutorial 07: Mambo | Beginners</em></div>
+              <div class="source-desc">初學者前後 Mambo Step、Stops 停頓與雙人分合引導教學。</div>
+              <a href="https://www.youtube.com/watch?v=KYkknLddKKY" target="_blank" rel="noopener noreferrer" class="source-link">
+                <span>前往 YouTube 觀看 (KYkknLddKKY)</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </li>
 
             <li class="source-item">
-              <div class="source-title">2. Carlos Cinta ("el Bachatero") — <em>Bachata Breakdown &amp; Musicality Guide</em></div>
-              <div class="source-desc">全球最具影響力的 Bachata 音樂性與步法即興導師，開創以樂器對位進行 Footwork 之教育架構。</div>
-              <a href="http://gotbachata.com/" target="_blank" rel="noopener noreferrer" class="source-link">
-                <span>前往 Carlos Cinta 官方教學網站 (gotbachata.com)</span>
+              <div class="source-title">2. Juan Ruiz — <em>BACHATA MUSICAL STRUCTURE &amp; The Build-Up</em></div>
+              <div class="source-desc">32 拍大句子（4 組 8 拍）與 Build-Up 過門訊號預判教學。</div>
+              <a href="https://www.youtube.com/watch?v=RKScNYg8Cy8" target="_blank" rel="noopener noreferrer" class="source-link">
+                <span>前往 YouTube 觀看 (RKScNYg8Cy8)</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </li>
 
             <li class="source-item">
-              <div class="source-title">3. Adam Taub — <em>Traditional Dominican Bachata Dance &amp; Footwork Documentation</em></div>
-              <div class="source-desc">多明尼加文化紀錄片導演與資深舞蹈研究者，拍攝記錄多明尼加各地原生舞者的 Double Heel、Cross Step 與 Stepping Through 4 等切分即興步法。</div>
-              <a href="https://www.bachataclass.com/" target="_blank" rel="noopener noreferrer" class="source-link">
-                <span>前往 Adam Taub Bachata Class (bachataclass.com)</span>
+              <div class="source-title">3. Cuellar Bachatero — <em>APRENDE EL MAMBO de la BACHATA</em></div>
+              <div class="source-desc">舞曲現場實戰分析、前後推步、切分交叉步與男女舞者眼神互動。</div>
+              <a href="https://www.youtube.com/watch?v=kfjZyMT_kMQ" target="_blank" rel="noopener noreferrer" class="source-link">
+                <span>前往 YouTube 觀看 (kfjZyMT_kMQ)</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </li>
 
             <li class="source-item">
-              <div class="source-title">4. Areíto Arts (Edwin Ferreras &amp; Dakhóta Romero) — <em>Dominican Arts &amp; Musicality</em></div>
-              <div class="source-desc">專注於多明尼加 Bolero、Son、Merengue 與 Bachata 歷史根源、節奏本質及身體協調的文化藝術教育組織。</div>
-              <a href="https://www.areitoarts.com/" target="_blank" rel="noopener noreferrer" class="source-link">
-                <span>造訪 Areíto Arts 官網 (areitoarts.com)</span>
+              <div class="source-title">4. Michael de Miranda — <em>Bachata bongo rhythms (Derecho, Majao, Mambo)</em></div>
+              <div class="source-desc">Bongó 三大節奏段落純鼓聲對比，聽出 06:30 Mambo 小馬奔馳爆發點。</div>
+              <a href="https://www.youtube.com/watch?v=ugXrFsLbkgQ" target="_blank" rel="noopener noreferrer" class="source-link">
+                <span>前往 YouTube 觀看 (ugXrFsLbkgQ)</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+            </li>
+
+            <li class="source-item">
+              <div class="source-title">5. Ermes Dance — <em>3 Easy Bachata Tips!</em></div>
+              <div class="source-desc">膝蓋微彎沉地、小步踩踏、核心放鬆的下盤穩定 3 大心法。</div>
+              <a href="https://www.youtube.com/shorts/1bE_j35oeGo" target="_blank" rel="noopener noreferrer" class="source-link">
+                <span>前往 YouTube Shorts 觀看 (1bE_j35oeGo)</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </li>
@@ -337,7 +446,7 @@
         <div class="author-box">
           <div class="author-name" style="font-size: 1.25rem;">孫柏青 SunPoChin (Pachinko)</div>
           <div class="author-bio">
-            前端工程師、家庭照護產品開發者，同時也是活躍於雙人舞社群的 Salsa &amp; Bachata DJ 與社交舞者。熱衷於將音樂結構學理轉化為社交舞池直覺的身體律動。
+            前端工程師、家庭照護產品開發者，同時也是活躍於雙人舞社群的 Salsa &amp; Bachata DJ 與社交舞者。熱衷於將舞池實戰經驗轉化為最容易理解的身體動作指引。
           </div>
         </div>
 

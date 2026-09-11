@@ -400,3 +400,99 @@
   color: var(--text-muted);
   line-height: 1.5;
 }
+
+/* 
+  舞者實戰影音範例卡片 (Dancer-Oriented Practical Video Cards)
+  設計考量：將 5 個具體 YouTube 實例以結構化卡片呈現，強調時間戳 (Timestamp)、聽覺訊號與舞步動作，讓舞者能一目了然。
+*/
+.dancer-case-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s ease;
+}
+
+.dancer-case-card:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.case-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.case-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.timestamp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(236, 72, 153, 0.15);
+  border: 1px solid rgba(236, 72, 153, 0.35);
+  color: #f472b6;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.action-duo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+@media (max-width: 640px) {
+  .action-duo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.action-column {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.15rem;
+}
+
+.action-col-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.action-col-title.listen {
+  color: #38bdf8;
+}
+
+.action-col-title.dance {
+  color: #c084fc;
+}
+
+.action-col-desc {
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.action-col-desc strong {
+  color: var(--text-main);
+}

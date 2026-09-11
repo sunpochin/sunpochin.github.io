@@ -89,22 +89,25 @@ life/
     └── styles.css      # 長文專用排版樣式表 (支援拍點視覺化、樂段對照表、文獻卡片與 16:9 影音容器)
 ```
 
-### 5.2 技術決策與權威文獻整合
-1. **音樂學與舞蹈教學嚴謹度**：
-   - 首篇教學深入拆解 Bachata 三大節奏段落（**Derecho** 主歌、**Majao** 副歌、**Mambo** 間奏爆發段）。
-   - 引用全球公認之多明尼加原生音樂文獻 **iASO Records**（*Bachata: The Musical Structure*、*Bachata Breakdown En Vivo*）、**Carlos Cinta** 音樂性導師架構、**Adam Taub** 原生步法研究，以及 **Areíto Arts**（Edwin Ferreras）多明尼加傳統文化體系。
-2. **影音嵌入與無障礙 / 效能防護**：
-   - 採用 `youtube-nocookie.com` 嵌入權威樂隊示範影音，保護訪客隱私。
-   - 使用 CSS `padding-bottom: 56.25%` 確保 16:9 自適應長寬比，防止 Cumulative Layout Shift (CLS)。
-   - 影音元素宣告 `loading="lazy"` 與明確 `title` 屬性，兼顧 Core Web Vitals (CWV) 與無障礙閱讀器規範。
-3. **拍點視覺化與計數卡**：
-   - 針對 Mambo 段常見切分（Syncopation），以 `.count-grid` 提供 `1 - 2 - 3 - & - 4` 與 `5 - 6 - 7 - & - 8` 視覺化拍點對位，降低文字閱讀認知負擔。
+### 5.2 技術決策與舞者取向實戰影音整合 (Dancer-Oriented Practical Video Architecture)
+為了避免傳統樂理過度生硬抽象，文章全面重構為**「舞者取向 (Dancer-Centric)」**結構，精確標記實戰影片秒數、聽覺訊號與步法動作：
+1. **五大實戰影音時間戳與動作拆解**：
+   - **Michael de Miranda (`ugXrFsLbkgQ`)**：純打擊樂段落切換。標記 `06:30 - 09:30` Bongó 加速如小馬奔馳（Horse-running rhythm）之 Mambo 爆發點。
+   - **Juan Ruiz (`RKScNYg8Cy8`)**：32 拍大句子結構。標記 `00:45 - 01:30` 第 4 個 8 拍（5-6-7-8）之 Build-Up / The Call 換段預判。
+   - **Cuellar Bachatero (`kfjZyMT_kMQ`)**：實戰曲目段落。標記 `00:45` 判斷進入 Mambo 分開、`04:00` 踩出前後推步、切分交叉步與腳跟點地。
+   - **Marius & Elena (`KYkknLddKKY`)**：初學者 Mambo 步法。標記 `01:15` 前後 Mambo Step 與 `1, 3, 5, 7` 停頓（Stops）及雙人分合引導。
+   - **Ermes Dance (`1bE_j35oeGo`)**：下盤穩定。提煉膝蓋微彎沉地、小步踩踏、核心放鬆等 3 大步法心法。
+2. **雙欄結構化卡片與視覺化拍點**：
+   - 採用 `.dancer-case-card` 與 `.action-duo-grid` 建立「👂 聽覺關鍵秒數」與「🦶 舞者當下動作」雙欄對照。
+   - 提供快速速查表（Cheat Sheet）與直接帶秒數參數（`?start=...`）的 YouTube 嵌入播放器。
 
 ### 5.3 排除的替代方案 (Rejected Alternatives)
 
 | 替代方案 | 排除原因 (Why Rejected) |
 | :--- | :--- |
+| **僅提供純樂器樂理教學影片** | 對一般社交舞者過於抽象難懂。舞者需要知道的是「聽到這聲音我該跳什麼步、什麼時候放開手」。 |
 | **將長篇教學直接堆疊在 `/life/index.html`** | 會嚴重破壞生活首頁作為「精選連結導覽門牌」的輕巧性與掃讀體驗。拆分至 `/life/knowledge/` 子目錄能保持職責分離。 |
 | **僅以外部連結導向 Medium 或 Hashnode** | 使用者明確希望在 GitHub Pages 個人網域 (`/life/`) 內建立知識體系，保留個人網站網域權威與設計一致性。 |
 | **引入靜態網站產生器 (SSG / Astro / Hugo)** | 現有站點採用純原生 HTML5 + CSS，免除打包依賴。為單篇教學引入 SSG 打包工具會增加維護負擔與 CI/CD 複雜度。 |
+
 
