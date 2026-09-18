@@ -12,6 +12,19 @@
       "status": "active",
       "statusLabel": "公開使用",
       "category": "醫療健康"
+    },
+    {
+      "id": "careTranslate",
+      "name": "好溝通翻譯 Care Translate",
+      "subtitle": "Indonesian-Chinese Care Translation LINE Bot",
+      "domain": "sunpochin.github.io/care-translate/",
+      "url": "https://sunpochin.github.io/care-translate/",
+      "buttonText": "服務與收費說明",
+      "summary": "專為台灣長照家庭與印尼看護打造的即時雙向翻譯 LINE 助手，支援文字、長輩語音與藥單影像辨識。",
+      "targetAudience": "雇有印尼看護的台灣家庭、長輩與居服照顧者。",
+      "status": "active",
+      "statusLabel": "公開使用",
+      "category": "照護溝通"
     }
   ],
   "leisure": [

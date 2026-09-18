@@ -1,0 +1,545 @@
+<!--
+  檔案用途：好溝通翻譯 (Care Translate) 官方服務介紹、定價方案與特店審核專頁
+  設計定位：提供藍新金流 (NewebPay) 特店審核人員及終端使用者查閱完整的服務說明、PAYG 預付定價、服務條款、退款政策與客服聯繫資訊。
+  遵循規範：Prime Directive (繁體中文註解說明決策)、Hallmark 典雅無障礙介面 (Slate Dark Editorial)。
+-->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>好溝通翻譯 (Care Translate) | 台印雙向即時翻譯 LINE 助手與收費方案</title>
+  <meta name="description" content="好溝通翻譯 (Care Translate) 專為台灣照護家庭與印尼看護打造的 LINE 即時雙向翻譯助手。提供透明預付用量方案、服務條款、退款政策與藍新金流安全結帳說明。">
+  <meta name="keywords" content="好溝通翻譯, Care Translate, 印尼文翻譯, 看護翻譯, LINE Bot, 照護溝通, 藍新金流, 預付用量包">
+  <meta name="author" content="孫柏青 Sun Po-Chin">
+  
+  <!-- Open Graph 社群卡片 -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sunpochin.github.io/care-translate/">
+  <meta property="og:title" content="好溝通翻譯 (Care Translate) | 官方服務說明與收費定價">
+  <meta property="og:description" content="台印雙向即時翻譯 LINE 助手，支援長輩語音、文字翻譯與藥單辨識。透明預付方案，無自動扣款負擔。">
+  
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 頂部導覽列：提供清楚的路徑回溯與頁面核心章節錨點 -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-bar" aria-label="主要導覽">
+        <a href="../" class="brand-link">
+          <span class="brand-name">孫柏青</span>
+          <span class="brand-title">SunPoChin · 回首頁</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features" class="nav-link">服務特色</a>
+          <a href="#pricing" class="nav-link">收費方案</a>
+          <a href="#workflow" class="nav-link">使用流程</a>
+          <a href="#terms" class="nav-link">服務條款</a>
+          <a href="#refund" class="nav-link">退款政策</a>
+          <a href="#contact" class="nav-btn">聯絡客服</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+
+      <!-- 
+        Hero 區塊：開門見山向審核員與使用者揭示「這是一套 LINE 即時雙向翻譯服務」
+        說明：明確標示官方 LINE ID 與直接加好友連結，符合金流審查對「服務可驗證性」的檢驗要求。
+      -->
+      <section class="care-hero-section" aria-label="好溝通翻譯服務總覽">
+        <div class="care-hero-badge">
+          <span class="status-dot"></span>
+          <span>LINE 官方照護助手 · 服務運作中</span>
+        </div>
+
+        <h1 class="care-hero-title">
+          好溝通翻譯 <span class="care-title-en">Care Translate</span>
+        </h1>
+        <p class="care-hero-tagline">
+          專為雇有印尼看護的台灣家庭打造的台印雙向即時翻譯助手
+        </p>
+        <p class="care-hero-description">
+          免安裝額外 App，直接在 LINE 聊天室中提供雙向文字翻譯、即時語音轉譯與藥單圖片視覺輔助。
+          降低家屬與外籍看護溝通門檻，保障長輩居家照護安全。
+        </p>
+
+        <div class="care-hero-cta-box">
+          <a href="https://line.me/R/ti/p/@652ouobw" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <span>加入 LINE 好友體驗 (@652ouobw)</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <a href="#pricing" class="btn-secondary">
+            <span>查看預付方案與定價 (NT$ 0 ~ NT$ 50)</span>
+          </a>
+        </div>
+
+        <div class="care-trust-pills">
+          <span class="trust-pill">✓ 預付用量制（PAYG）</span>
+          <span class="trust-pill">✓ 無自動續訂或扣款風險</span>
+          <span class="trust-pill">✓ 藍新金流 TLS 256-bit 安全交易</span>
+          <span class="trust-pill">✓ LINE 官方帳號即時開通</span>
+        </div>
+      </section>
+
+      <!-- 服務特色介紹：使審核人員具體了解商品交付形式 -->
+      <section id="features" class="care-section" aria-label="服務核心功能">
+        <div class="section-heading-wrap">
+          <span class="section-eyebrow">FEATURES</span>
+          <h2 class="section-heading">為什麼照護家庭需要「好溝通翻譯」？</h2>
+          <p class="section-subtext">
+            一般通用翻譯軟體難以處理台灣長輩口語、居家照顧專業名詞與藥袋辨識。我們針對台印長照家庭實戰情境特化：
+          </p>
+        </div>
+
+        <div class="feature-cards-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#38bdf8">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+              </svg>
+            </div>
+            <h3 class="feature-card-title">雙向文字即時翻譯</h3>
+            <p class="feature-card-desc">
+              在 LINE 中傳送中文或印尼文，系統立即秒級自動辨識語言並轉換為目標語言，方便日常交辦備餐、清潔與作息安排。
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#10b981">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 003-3V5a3 3 0 10-6 0v6a3 3 0 003 3z" />
+              </svg>
+            </div>
+            <h3 class="feature-card-title">長輩與看護語音轉譯</h3>
+            <p class="feature-card-desc">
+              支援 LINE 錄音語音訊息辨識！長輩直接開口說話、看護發送印尼語錄音，系統自動轉錄為文字並翻譯對照，解決長輩不便打字困擾。
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#f59e0b">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="feature-card-title">藥單與商品圖片辨識</h3>
+            <p class="feature-card-desc">
+              拍攝處方藥袋、醫囑單或日用品標籤，視覺模型輔助提取用藥頻率、劑量說明與注意事項，降低外籍看護服藥誤解風險。
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#a78bfa">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="feature-card-title">常用照護短句免扣點</h3>
+            <p class="feature-card-desc">
+              內建測量血壓、服藥、翻身防跌等常用急迫照護短句速查，本地比對直接回覆，不消耗付費用量額度。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        收費標準與預付方案 (PAYG 定價)：
+        說明：依據 docs/product/payg-pricing-mvp.md 確切揭露商品定價與 units 扣除細則。
+      -->
+      <section id="pricing" class="care-section" aria-label="收費標準與用量包方案">
+        <div class="section-heading-wrap">
+          <span class="section-eyebrow">PRICING & PACKAGES</span>
+          <h2 class="section-heading">透明預付用量方案 (PAYG)</h2>
+          <p class="section-subtext">
+            像手機預付卡一樣簡單：需要多少買多少，不綁信用卡定期定額，月底絕無意外帳單。
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Free 試用方案 -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <span class="plan-tag">免費體驗</span>
+              <h3 class="plan-name">Free 方案</h3>
+              <div class="plan-price">
+                <span class="currency">NT$</span>
+                <span class="amount">0</span>
+                <span class="period">/ 月</span>
+              </div>
+            </div>
+            <div class="plan-quota">
+              <span class="quota-units">每月 30 units</span>
+              <span class="quota-note">適合加入初期功能體驗，每月 1 號重置，不跨月累積</span>
+            </div>
+            <ul class="plan-features">
+              <li>雙向中印文字翻譯</li>
+              <li>支援照護語音與圖片辨識</li>
+              <li>常用照護短句免費查閱</li>
+              <li>無須綁定任何付款方式</li>
+            </ul>
+            <a href="https://line.me/R/ti/p/@652ouobw" target="_blank" rel="noopener noreferrer" class="btn-card-outline">
+              立即免費體驗
+            </a>
+          </div>
+
+          <!-- 小包方案 -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <span class="plan-tag">入門輕量</span>
+              <h3 class="plan-name">小包 (100 units)</h3>
+              <div class="plan-price">
+                <span class="currency">NT$</span>
+                <span class="amount">10</span>
+                <span class="period">/ 單次預付</span>
+              </div>
+            </div>
+            <div class="plan-quota">
+              <span class="quota-units">100 units</span>
+              <span class="quota-note">單筆加值，無使用到期日，用完即止</span>
+            </div>
+            <ul class="plan-features">
+              <li>約可支援 30~100 次文字翻譯</li>
+              <li>或約 10~20 次就醫語音/藥袋辨識</li>
+              <li>適合短期外出就診或偶發溝通需求</li>
+              <li>單次購買，無自動扣款負擔</li>
+            </ul>
+            <div class="card-action-note">加好友後於聊天室輸入 <code>/加值</code> 選購</div>
+          </div>
+
+          <!-- 標準包 (熱門推薦) -->
+          <div class="pricing-card highlighted">
+            <div class="highlight-badge">最受歡迎 · 照護家庭首選</div>
+            <div class="pricing-header">
+              <span class="plan-tag tag-primary">居家常備</span>
+              <h3 class="plan-name">標準包 (500 units)</h3>
+              <div class="plan-price">
+                <span class="currency">NT$</span>
+                <span class="amount">30</span>
+                <span class="period">/ 單次預付</span>
+              </div>
+            </div>
+            <div class="plan-quota">
+              <span class="quota-units">500 units</span>
+              <span class="quota-note">充裕額度，長期有效，支援語音密集使用</span>
+            </div>
+            <ul class="plan-features">
+              <li>約可支援 150~500 次文字溝通</li>
+              <li>支援 50~100 次長輩語音錄音與藥袋分析</li>
+              <li>每 unit 成本更低，滿足整月照護頻率</li>
+              <li>餘額透明隨時於 LINE 輸入 <code>/用量</code> 查詢</li>
+            </ul>
+            <div class="card-action-note">加好友後於聊天室輸入 <code>/加值</code> 選購</div>
+          </div>
+
+          <!-- 大包方案 -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <span class="plan-tag">長期守護</span>
+              <h3 class="plan-name">大包 (1,000 units)</h3>
+              <div class="plan-price">
+                <span class="currency">NT$</span>
+                <span class="amount">50</span>
+                <span class="period">/ 單次預付</span>
+              </div>
+            </div>
+            <div class="plan-quota">
+              <span class="quota-units">1,000 units</span>
+              <span class="quota-note">超大容量，單月預設消費安全上限（NT$50）</span>
+            </div>
+            <ul class="plan-features">
+              <li>重度照護溝通與多成員家庭首選</li>
+              <li>支援高頻率長者語音轉錄及連續對話</li>
+              <li>享有最高優先級高階 AI 模型品質</li>
+              <li>額度終生有效，無過期作廢問題</li>
+            </ul>
+            <div class="card-action-note">加好友後於聊天室輸入 <code>/加值</code> 選購</div>
+          </div>
+        </div>
+
+        <!-- Units 消耗規則細則表：讓收費邏輯百分之百公開透明 -->
+        <div class="units-detail-card">
+          <h3 class="units-table-title">用量單位 (units) 計算標準</h3>
+          <p class="units-table-desc">
+            「units」是考量不同 AI 模型運算成本的加權度量單位。系統以最高透明度扣除，查詢指令與本地常用照護短句絕不扣點：
+          </p>
+          <div class="table-responsive">
+            <table class="care-table">
+              <thead>
+                <tr>
+                  <th>處理情境 / 服務項目</th>
+                  <th>每次扣除 Units</th>
+                  <th>說明與扣額安全防護</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>本地常用照護短句</strong></td>
+                  <td><span class="badge-free">0 units (免費)</span></td>
+                  <td>血壓量測、用藥叮嚀、翻身防跌等常用固定句</td>
+                </tr>
+                <tr>
+                  <td><strong>系統查詢指令</strong></td>
+                  <td><span class="badge-free">0 units (免費)</span></td>
+                  <td><code>/用量</code> 查詢剩餘額度、<code>/說明</code> 等系統功能指令</td>
+                </tr>
+                <tr>
+                  <td><strong>一般繁中／印尼文文字翻譯</strong></td>
+                  <td>1 ~ 3 units</td>
+                  <td>標準文字雙向對譯，依模型智慧調度成本計量</td>
+                </tr>
+                <tr>
+                  <td><strong>長輩／看護語音轉錄翻譯</strong></td>
+                  <td>5 units / 每 30 秒</td>
+                  <td>每則語音上限 60 秒（最多扣 10 units），包含轉文字與翻譯兩段式處理</td>
+                </tr>
+                <tr>
+                  <td><strong>藥單／日用品圖片辨識</strong></td>
+                  <td>5 units</td>
+                  <td>多模態視覺模型提取藥品名稱、用量時間及注意事項</td>
+                </tr>
+                <tr>
+                  <td><strong>處理失敗／LINE 重送／網路逾時</strong></td>
+                  <td><span class="badge-free">0 units (不扣量)</span></td>
+                  <td>服務端失敗、格式不符或通訊異常一律不予扣點，守護消費者權益</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 購買與開通流程：審核人員確認特店交易路徑 -->
+      <section id="workflow" class="care-section" aria-label="購買與開通流程">
+        <div class="section-heading-wrap">
+          <span class="section-eyebrow">HOW IT WORKS</span>
+          <h2 class="section-heading">購買與開通流程說明</h2>
+          <p class="section-subtext">
+            流程簡單直覺，免填繁複註冊資料，以您的 LINE 帳號完成一站式加值：
+          </p>
+        </div>
+
+        <div class="workflow-steps-grid">
+          <div class="workflow-step">
+            <div class="step-number">01</div>
+            <h4 class="step-title">加入 LINE 官方帳號</h4>
+            <p class="step-desc">搜尋 LINE ID <code>@652ouobw</code> 或點擊加好友連結，免下載額外 App 即刻啟動對話。</p>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">02</div>
+            <h4 class="step-title">觸發加值指令</h4>
+            <p class="step-desc">點擊聊天室選單中的「加值用量」或直接輸入指令 <code>/加值</code>，系統將回傳專屬結帳連結。</p>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">03</div>
+            <h4 class="step-title">藍新金流安全付款</h4>
+            <p class="step-desc">跳轉至藍新金流 (NewebPay) 收銀台，支援信用卡、ATM 虛擬帳號或超商代碼完成付款。</p>
+          </div>
+          <div class="workflow-step">
+            <div class="step-number">04</div>
+            <h4 class="step-title">即時入帳與推播通知</h4>
+            <p class="step-desc">付款成功後，後端透過安全簽章確認，LINE Bot 即刻推播加值成功通知，額度立即生效！</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        服務條款 (Terms of Service)：
+        說明：金流審核必備法律條款，清楚載明數位服務範圍與免責邊界。
+      -->
+      <section id="terms" class="care-section legal-section" aria-label="服務條款">
+        <div class="section-heading-wrap">
+          <span class="section-eyebrow">TERMS OF SERVICE</span>
+          <h2 class="section-heading">服務條款 (Terms of Service)</h2>
+        </div>
+
+        <div class="legal-content-card">
+          <p class="legal-meta">最後更新日期：2026 年 9 月 18 日</p>
+
+          <article class="legal-clause">
+            <h4>第一條：服務同意與認知</h4>
+            <p>
+              歡迎使用「好溝通翻譯（Care Translate）」（以下簡稱「本服務」）。當您加入本服務之 LINE 官方帳號、或購買本服務所提供之預付用量包時，即表示您已閱讀、瞭解並同意接受本服務條款之所有內容。
+            </p>
+          </article>
+
+          <article class="legal-clause">
+            <h4>第二條：服務內容與溝通輔助性質聲明 (重要醫療與急症免責)</h4>
+            <p>
+              1. 本服務透過 AI 模型提供印尼文與中文間的雙向文字翻譯、語音轉錄及圖片內容辨識輔助。<br>
+              2. <strong>重要免責聲明：</strong>本服務之所有翻譯與視覺辨識內容僅供日常日常生活溝通與居家照護輔助參考，<strong>非屬專業醫療、護理診斷或法律文件之正式認證</strong>。若被照護長輩出現急性病徵、用藥疑慮或緊急醫療狀況，請務必立即尋求專業醫師、藥師之診斷或撥打 119 急救電話，切勿僅依賴本服務之翻譯作唯一決策依據。
+            </p>
+          </article>
+
+          <article class="legal-clause">
+            <h4>第三條：付費用量與帳號使用權利</h4>
+            <p>
+              1. 本服務採「預付用量包（Pay-as-you-go）」模式，使用者購買之 units 僅綁定於付款時所對應之 LINE 使用者識別碼 (User ID)。<br>
+              2. 使用者應妥善保管其個人 LINE 帳號，因個人帳號遭盜用或非授權存取所致之用量損失，本服務不負補償責任。<br>
+              3. 本服務不會向使用者進行未經授權的自動續期信用卡扣款。
+            </p>
+          </article>
+
+          <article class="legal-clause">
+            <h4>第四條：服務可用性與中斷免責</h4>
+            <p>
+              本服務盡力維持系統 24 小時正常運作，惟因 LINE 平台服務中斷、通訊網路骨幹故障、雲端基礎設施維護或天災等不可抗力因素導致服務暫時中斷或延遲時，本服務將於系統恢復後繼續提供服務，不構成違約責任。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 
+        退款與取消政策 (Refund & Cancellation Policy)：
+        說明：消保法數位內容除外聲明與金流特店審核最常檢查的退款規範。
+      -->
+      <section id="refund" class="care-section legal-section" aria-label="退款政策">
+        <div class="section-heading-wrap">
+          <span class="section-eyebrow">REFUND POLICY</span>
+          <h2 class="section-heading">退款與取消政策 (Refund Policy)</h2>
+        </div>
+
+        <div class="legal-content-card">
+          <article class="legal-clause">
+            <h4>一、數位商品解除權除外法定告知 (7 日猶豫期例外)</h4>
+            <p>
+              依據中華民國《消費者保護法》第十九條第二項規定，以及行政院公布之《通訊交易解除權合理例外情事適用準則》第二條第五款規定：<strong>「非以有形媒介提供之數位內容或一經提供即為完成之線上服務，經消費者事先同意始提供者」</strong>，得排除消費者保護法第十九條第一項七日內無條件解除契約之適用。
+            </p>
+            <p>
+              本服務所提供之預付用量包（units）於付款確認完成後，即透過系統即時開通並注入使用者帳戶，<strong>一旦購買開通完成，原則上不適用 7 日鑑賞期無條件退費</strong>。
+            </p>
+          </article>
+
+          <article class="legal-clause">
+            <h4>二、例外退款申請機制與處理流程</h4>
+            <p>
+              若發生以下特殊情形，使用者得於付款日起 30 日內向本服務提出人工退款審核：
+            </p>
+            <ul class="legal-list">
+              <li><strong>重大系統故障：</strong>因本服務端伺服器發生不可歸責於使用者且持續超過 7 日無法修復之嚴重故障，致使用者完全無法使用已購買之額度。</li>
+              <li><strong>重複扣款：</strong>因金流系統傳輸異常導致同一筆訂單重複扣款或產生多餘扣款者，經查證屬實後，重複之金額將全額無息退還。</li>
+            </ul>
+            <p>
+              <strong>退款手續與作業：</strong>經核准之退款，若屬使用者個人因素申請終止（非系統故障），退還金額將扣除藍新金流已產生之手續費與銀行跨行轉帳費用後，退還剩餘未消耗 units 所對應之剩餘價值至消費者原付款方式或指定之金融帳戶（作業工作天約為 7 至 14 個工作日）。
+            </p>
+          </article>
+
+          <article class="legal-clause">
+            <h4>三、用量額度有效期限</h4>
+            <p>
+              付費購買之用量包（小包 100 units、標準包 500 units、大包 1,000 units）額度<strong>永久有效，無使用到期日限制</strong>，使用者可依家庭實際溝通步調隨時使用。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 
+        特店營運者與客服聯絡資訊 (Customer Service & Merchant Contact)：
+        說明：金流特店審核必備之真實特店聯絡資訊（負責人、信箱、LINE 管道與服務時間）。
+      -->
+      <section id="contact" class="care-section" aria-label="聯絡我們與特店資訊">
+        <div class="section-heading-wrap">
+          <span class="section-eyebrow">CONTACT & MERCHANT INFO</span>
+          <h2 class="section-heading">特店資訊與顧客服務</h2>
+          <p class="section-subtext">
+            若您對方案加值、帳號額度、交易疑義或服務內容有任何問題，歡迎透過以下管道與我們聯繫：
+          </p>
+        </div>
+
+        <div class="merchant-info-grid">
+          <div class="merchant-card">
+            <div class="merchant-card-header">
+              <span class="merchant-role">服務營運特店資訊</span>
+              <h3 class="merchant-name">好溝通翻譯 (Care Translate)</h3>
+            </div>
+            <ul class="merchant-detail-list">
+              <li>
+                <span class="label">服務名稱：</span>
+                <span class="value">好溝通翻譯 (Care Translate)</span>
+              </li>
+              <li>
+                <span class="label">營運負責人：</span>
+                <span class="value">孫柏青 (Sun Po-Chin)</span>
+              </li>
+              <li>
+                <span class="label">電子信箱：</span>
+                <span class="value"><a href="mailto:sunpochin@gmail.com" class="contact-link">sunpochin@gmail.com</a></span>
+              </li>
+              <li>
+                <span class="label">服務時間：</span>
+                <span class="value">週一至週五 09:00 - 18:00 (台灣時間，國定假日除外)</span>
+              </li>
+              <li>
+                <span class="label">回覆時效：</span>
+                <span class="value">一般電子郵件將於 1 至 2 個工作天內回覆</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="merchant-card highlight-card">
+            <div class="merchant-card-header">
+              <span class="merchant-role">線上即時客服管道</span>
+              <h3 class="merchant-name">LINE 官方客服帳號</h3>
+            </div>
+            <div class="line-contact-box">
+              <p class="line-id-highlight">LINE 官方 ID：<code>@652ouobw</code></p>
+              <p class="line-instructions">
+                直接加入好友後即可傳訊諮詢，亦可於聊天室發送 <code>/客服</code> 由人工專員為您處理交易與額度問題。
+              </p>
+              <a href="https://line.me/R/ti/p/@652ouobw" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 1.5rem; width: 100%; justify-content: center;">
+                <span>開啟 LINE 聯繫線上客服</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 金流與資訊安全宣告 -->
+        <div class="security-declaration">
+          <div class="security-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#38bdf8">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <div class="security-text">
+            <h4>金流與隱私安全保障 (NewebPay Payment Security)</h4>
+            <p>
+              本服務之線上交易全面委由第三方金流服務商「<strong>藍新金流 (NewebPay)</strong>」提供安全加密結帳環境。
+              全站傳輸均符合國際最高規格 <strong>TLS 256-bit SSL</strong> 安全通訊協定與 PCI-DSS 資安規範。
+              好溝通翻譯伺服器<strong>絕不會且無法儲存或經手您的信用卡完整卡號或授權驗證碼</strong>，請安心付款。
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- 頁腳 Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="brand-name">好溝通翻譯 Care Translate</span>
+          <span class="footer-desc">© 2026 孫柏青 Sun Po-Chin. All rights reserved.</span>
+        </div>
+        <div class="footer-links">
+          <a href="../">孫柏青作品集</a>
+          <a href="#pricing">定價方案</a>
+          <a href="#terms">服務條款</a>
+          <a href="#refund">退款政策</a>
+          <a href="#contact">特店資訊</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
