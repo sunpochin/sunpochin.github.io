@@ -182,15 +182,26 @@ life/
 | **使用 AI SaaS 常見的高彩度霓虹漸層與大型玻璃擬態 (Glassmorphism)** | 造成浮誇不實的「AI 套版 Startup」廉價感，減損照護家庭對醫療溝通與金流交易的真實信賴度。 |
 ---
 
-## 7. DJ 現場播歌歌單與匿名回饋列表架構 (DJ Playlists & Feedback Section Architecture)
+## 7. DJ 現場播歌歌單與匿名回饋專頁架構 (DJ Playlists & Feedback Subpage Architecture)
 
-為滿足 Salsa DJ (Pachinko) 於各社交舞會（Social）放歌後的現場歌單公開與舞客匿名回饋蒐集需求，將 `/life/` 頁面原單一表單超連結升級為支援按活動日期歸檔的列表卡片（`.dj-playlist-card`）：
+為滿足 Salsa DJ (Pachinko) 於各社交舞會（Social）放歌後的現場歌單公開與舞客匿名回饋蒐集需求，建立專屬頁面 `/life/playlist.html`，並於 `/life/` 門牌提供一致的導覽入口：
 
-### 7.1 資料結構與 UI 設計 (Data Structure & UI Design)
-1. **常駐常規點歌與推薦保留 (`.dj-permanent-link`)**：
-   - 頂部保留常駐 Google Forms 點歌連結（`https://forms.gle/BX6eccCHhBU4E4f98`），供舞者平日隨時分享好歌。
-2. **每次活動獨立記錄模組 (`.dj-event-item`)**：
-   - **日期與場次標籤 (`.dj-event-date`, `.dj-event-badge`)**：採用石墨暗色等寬字體與天藍色標籤（如 `10.02`、`Copa Friday social 上半場`），支援直覺按時間排序。
+### 7.1 目錄結構與架構設計 (Architecture & Navigation)
+```text
+life/
+├── index.html       # [Life 入口] 雙人舞與生活筆記 (提供 /life/playlist.html 入口卡片)
+├── styles.css       # 生活專區與播放清單專頁共用樣式表
+├── playlist.html    # [DJ 歌單專頁] 🎧 現場播歌 Spotify 歌單與匿名回饋專屬歷史紀錄
+└── knowledge/       # 雙人舞與拉丁音樂知識專區
+```
+
+1. **門牌目錄與專頁職責分離 (`/life/` vs `/life/playlist.html`)**：
+   - `/life/index.html` 維持高概括性門牌目錄，避免單一項目包含過多詳細活動紀錄而破壞全頁視覺平衡。
+   - `/life/playlist.html` 作為專用紀錄專頁，具備麵包屑導覽（Breadcrumb Nav），供舞者在各頁面間順暢切換。
+2. **常駐點歌推薦專區 (`.playlist-banner-box`)**：
+   - 頁面頂部以柔和漸層與天藍邊框設立獨立橫幅，保留 Google Forms 常駐點歌與舞曲推薦連結（`https://forms.gle/BX6eccCHhBU4E4f98`），供舞客平日隨時推薦新歌。
+3. **活動時間軸與卡片設計 (`.dj-events-timeline`, `.dj-event-card`)**：
+   - **日期與場次標籤 (`.dj-event-date`, `.dj-event-badge`)**：採用石墨暗色等寬字體與天藍色標籤（如 `10.02 (五)`、`Copa Friday social 上半場`），支援直覺按時間排序。
    - **DJ 心得備忘欄 (`.dj-event-note`)**：以暖琥珀邊條提示 DJ 的即時心得或重要備註（例如：音檔失誤致歉或感謝舞客）。
    - **雙操作按鈕 (`.dj-event-actions`)**：
      - **Spotify 歌單按鈕 (`.dj-btn-spotify`)**：採用 Spotify 官方綠色調，一鍵直達當晚播放清單。
@@ -200,7 +211,9 @@ life/
 
 | 替代方案 | 排除原因 (Why Rejected) |
 | :--- | :--- |
+| **直接將多次活動紀錄內嵌在 `/life/` 門牌頁面** | 隨著活動場次增加，大量卡片會使 `/life/` 頁面極端膨脹，干擾知識專區與舞班推薦等其他重要資訊的瀏覽。獨立成專頁（`/life/playlist.html`）能提供最好的擴展性與閱讀沉浸感。 |
 | **直接嵌入 Spotify 播放器 iframe** | iframe 載入資源繁重，顯著拉長頁面 LCP (Largest Contentful Paint) 與增加第三方 Cookie，在手機版面亦會佔據過大版面空間。改採輕量按鈕引導外開原生 App 或 Web 播放。 |
 | **直接覆蓋刪除原 Google Forms 常駐表單** | 常駐表單用於平時長期蒐集舞曲推薦，與特定單場活動的放歌回饋性質不同。保留兩者入口能滿足不同場景。 |
-| **使用不可維護的純文字條列** | 缺乏視覺階層、按鈕點擊熱區過小且易在手機上造成誤觸。元件化封裝便於日後複製 `.dj-event-item` 新增場次。 |
+| **使用不可維護的純文字條列** | 缺乏視覺階層、按鈕點擊熱區過小且易在手機上造成誤觸。元件化封裝便於日後複製 `.dj-event-card` 新增場次。 |
+
 
