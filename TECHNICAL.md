@@ -180,7 +180,27 @@ life/
 | **將頁面改為深色石墨主題 (Slate Dark)** | 照護服務面對的是台灣高齡長輩家屬，深色暗黑風格偏向開發者/終端機質感，缺乏居家照護的溫暖與醫療信任感。 |
 | **直接刪除或大幅簡化服務條款與退款條文** | 藍新金流特店審核嚴格要求消費者權益保護與消保法第 19 條法定告知。條文過度簡化將導致特店審核退件。改採手風琴折疊在合規與 UX 間取得最佳平衡。 |
 | **使用 AI SaaS 常見的高彩度霓虹漸層與大型玻璃擬態 (Glassmorphism)** | 造成浮誇不實的「AI 套版 Startup」廉價感，減損照護家庭對醫療溝通與金流交易的真實信賴度。 |
+---
 
+## 7. DJ 現場播歌歌單與匿名回饋列表架構 (DJ Playlists & Feedback Section Architecture)
 
+為滿足 Salsa DJ (Pachinko) 於各社交舞會（Social）放歌後的現場歌單公開與舞客匿名回饋蒐集需求，將 `/life/` 頁面原單一表單超連結升級為支援按活動日期歸檔的列表卡片（`.dj-playlist-card`）：
 
+### 7.1 資料結構與 UI 設計 (Data Structure & UI Design)
+1. **常駐常規點歌與推薦保留 (`.dj-permanent-link`)**：
+   - 頂部保留常駐 Google Forms 點歌連結（`https://forms.gle/BX6eccCHhBU4E4f98`），供舞者平日隨時分享好歌。
+2. **每次活動獨立記錄模組 (`.dj-event-item`)**：
+   - **日期與場次標籤 (`.dj-event-date`, `.dj-event-badge`)**：採用石墨暗色等寬字體與天藍色標籤（如 `10.02`、`Copa Friday social 上半場`），支援直覺按時間排序。
+   - **DJ 心得備忘欄 (`.dj-event-note`)**：以暖琥珀邊條提示 DJ 的即時心得或重要備註（例如：音檔失誤致歉或感謝舞客）。
+   - **雙操作按鈕 (`.dj-event-actions`)**：
+     - **Spotify 歌單按鈕 (`.dj-btn-spotify`)**：採用 Spotify 官方綠色調，一鍵直達當晚播放清單。
+     - **Tally 匿名回饋按鈕 (`.dj-btn-tally`)**：採用天藍對比色調，引導舞客填寫匿名點評與曲風喜好。
+
+### 7.2 排除的替代方案 (Rejected Alternatives)
+
+| 替代方案 | 排除原因 (Why Rejected) |
+| :--- | :--- |
+| **直接嵌入 Spotify 播放器 iframe** | iframe 載入資源繁重，顯著拉長頁面 LCP (Largest Contentful Paint) 與增加第三方 Cookie，在手機版面亦會佔據過大版面空間。改採輕量按鈕引導外開原生 App 或 Web 播放。 |
+| **直接覆蓋刪除原 Google Forms 常駐表單** | 常駐表單用於平時長期蒐集舞曲推薦，與特定單場活動的放歌回饋性質不同。保留兩者入口能滿足不同場景。 |
+| **使用不可維護的純文字條列** | 缺乏視覺階層、按鈕點擊熱區過小且易在手機上造成誤觸。元件化封裝便於日後複製 `.dj-event-item` 新增場次。 |
 

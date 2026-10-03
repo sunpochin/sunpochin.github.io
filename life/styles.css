@@ -23,3 +23,186 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/*
+  DJ 播歌紀錄與活動回饋列表元件樣式
+  設計原因：
+  1. 避免在超連結 <a> 標籤內巢狀置入多個獨立按鈕（Spotify 與 Tally）違反 HTML 規範，因此改用獨立的容器卡片。
+  2. 採用 Slate Dark Editorial 色彩體系，將活動日期採用等寬字體與微光天藍色標示，提升辨識度。
+  3. DJ 心得採用左側暖琥珀邊條提示，呈現親切且具個人溫度的手記感。
+*/
+.dj-playlist-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dj-playlist-card:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.dj-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dj-card-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.dj-card-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.dj-card-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.dj-card-desc {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  line-height: 1.5;
+}
+
+.dj-permanent-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  font-size: 0.8125rem;
+  color: var(--accent-primary);
+  text-decoration: none;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.dj-permanent-link:hover {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: var(--accent-primary);
+}
+
+/* 活動紀錄列表 */
+.dj-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.dj-event-item {
+  background: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.95rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: border-color 0.15s ease;
+}
+
+.dj-event-item:hover {
+  border-color: var(--border-strong);
+}
+
+.dj-event-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.dj-event-date {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+.dj-event-badge {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.dj-event-note {
+  font-size: 0.84375rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 2px solid var(--accent-warm);
+  padding: 0.4rem 0.75rem;
+  border-radius: 0 4px 4px 0;
+  margin: 0;
+}
+
+.dj-event-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.2rem;
+}
+
+.dj-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.dj-btn-svg {
+  flex-shrink: 0;
+}
+
+.dj-btn-spotify {
+  background: rgba(29, 185, 84, 0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.dj-btn-spotify:hover {
+  background: rgba(29, 185, 84, 0.22);
+  border-color: #22c55e;
+  color: #4ade80;
+  transform: translateY(-1px);
+}
+
+.dj-btn-tally {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.dj-btn-tally:hover {
+  background: rgba(56, 189, 248, 0.22);
+  border-color: #38bdf8;
+  color: #7dd3fc;
+  transform: translateY(-1px);
+}
+

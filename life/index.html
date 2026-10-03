@@ -146,17 +146,56 @@
             </svg>
           </a>
 
-          <!-- 連結 3: pachinko Spotify 歌單表單 -->
-          <a href="https://forms.gle/BX6eccCHhBU4E4f98" target="_blank" rel="noopener noreferrer" class="life-link-item">
-            <div class="life-link-icon">🎵</div>
-            <div class="life-link-content">
-              <div class="life-link-title">pachinko 的 Spotify 歌單與點歌表單</div>
-              <div class="life-link-desc">Spotify 雙人舞精選歌單推薦與點歌表單 (Google Forms)</div>
+          <!-- 
+            連結 3: pachinko DJ 現場歌單與活動回饋列表
+            設計原因：
+            1. 將原單一表單連結升級為活動列表結構，讓每次 DJ 放歌皆能獨立記錄日期、播放清單與匿名回饋。
+            2. 保留常駐點歌與推薦 Google Forms 入口，兼顧即時派對與日常收歌需求。
+            3. 日後若有新活動，直接在 .dj-events-list 頂端複製新增 .dj-event-item 即可。
+          -->
+          <div class="dj-playlist-card">
+            <div class="dj-card-header">
+              <div class="dj-card-title-row">
+                <span class="dj-card-icon">🎵</span>
+                <div>
+                  <h3 class="dj-card-title">pachinko 的 Spotify 歌單與活動回饋</h3>
+                  <p class="dj-card-desc">收錄每次 DJ 派對 (Social) 現場播歌 Spotify 歌單與匿名真心話回饋表單。</p>
+                </div>
+              </div>
+              <a href="https://forms.gle/BX6eccCHhBU4E4f98" target="_blank" rel="noopener noreferrer" class="dj-permanent-link">
+                <span>📝 平時隨喜點歌 / 推薦雙人舞歌單 (Google Forms)</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
+
+            <!-- 活動紀錄列表 (由新至舊排列) -->
+            <div class="dj-events-list">
+              <!-- 10.02 Copa Friday social 上半場 -->
+              <article class="dj-event-item">
+                <div class="dj-event-meta">
+                  <time class="dj-event-date" datetime="2026-10-02">10.02</time>
+                  <span class="dj-event-badge">Copa Friday social 上半場</span>
+                </div>
+                <p class="dj-event-note">抱歉 Anacaona 放到爛尾檔案，謝謝大家來跳舞。</p>
+                <div class="dj-event-actions">
+                  <a href="https://open.spotify.com/playlist/3eCGTUTBSMI1w531DVTl2P?si=a372d93fb2194ee9" target="_blank" rel="noopener noreferrer" class="dj-btn dj-btn-spotify">
+                    <svg class="dj-btn-svg" viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+                      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                    </svg>
+                    <span>10.02 上半場 90% Salsa 歌單 (Spotify)</span>
+                  </a>
+                  <a href="https://tally.so/r/Meox4A" target="_blank" rel="noopener noreferrer" class="dj-btn dj-btn-tally">
+                    <svg class="dj-btn-svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                    <span>匿名回饋與點評 (Tally)</span>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
 
           <!-- 連結 4: Salsa 舞班專頁 (維持 Dan & Sherry 在前、Leo & Latiifah 在後) -->
           <div class="dance-classes-box">
