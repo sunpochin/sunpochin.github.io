@@ -25,152 +25,269 @@
 }
 
 /*
-  DJ 播歌紀錄與活動回饋列表元件樣式
-  設計原因：
-  1. 避免在超連結 <a> 標籤內巢狀置入多個獨立按鈕（Spotify 與 Tally）違反 HTML 規範，因此改用獨立的容器卡片。
-  2. 採用 Slate Dark Editorial 色彩體系，將活動日期採用等寬字體與微光天藍色標示，提升辨識度。
-  3. DJ 心得採用左側暖琥珀邊條提示，呈現親切且具個人溫度的手記感。
+  生活專區共用麵包屑導覽
+  設計原因：提供由子專頁（如 /life/playlist.html）快速返回 Life 首頁與站點首頁之路徑指示
 */
-.dj-playlist-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 1.25rem 1.35rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.dj-playlist-card:hover {
-  border-color: rgba(56, 189, 248, 0.3);
-}
-
-.dj-card-header {
+.breadcrumb-nav {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border-subtle);
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
 }
 
-.dj-card-title-row {
+.breadcrumb-link {
+  color: var(--text-muted, #94a3b8);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.15s ease;
+}
+
+.breadcrumb-link:hover {
+  color: var(--accent-primary, #38bdf8);
+}
+
+.breadcrumb-separator {
+  color: var(--text-subtle, #64748b);
+  font-size: 0.75rem;
+}
+
+.breadcrumb-current {
+  color: var(--text-main, #f8fafc);
+  font-weight: 600;
+}
+
+/*
+  DJ 歌單專頁 (Playlist Page) 專用樣式
+  設計原因：
+  1. 獨立專頁佈局提供充裕的閱讀版面，避免大量活動紀錄擠壓 /life/ 門牌目錄。
+  2. 頂部提供常駐點歌 Google Forms 快速捷徑卡，與下方歷史放歌紀錄時間軸區隔。
+  3. 各活動紀錄卡片包含等寬字體日期、曲風標籤、DJ 心得與雙操作按鈕，兼顧聽歌與填寫回饋體驗。
+*/
+.playlist-header {
+  padding: 1.5rem 0 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 2.25rem;
+}
+
+.playlist-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: #22c55e;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.playlist-hero-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.65rem;
+  line-height: 1.25;
+}
+
+.playlist-hero-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 680px;
+}
+
+/* 常駐點歌推薦專區 Banner 卡片 */
+.playlist-banner-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(16, 185, 129, 0.04) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1.35rem 1.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.playlist-banner-info {
   display: flex;
   align-items: flex-start;
-  gap: 0.85rem;
+  gap: 1rem;
+  flex: 1;
+  min-width: 260px;
 }
 
-.dj-card-icon {
-  font-size: 1.5rem;
+.playlist-banner-icon {
+  font-size: 1.75rem;
   line-height: 1;
   flex-shrink: 0;
   margin-top: 0.15rem;
 }
 
-.dj-card-title {
+.playlist-banner-title {
   font-size: 1.0625rem;
   font-weight: 700;
   color: var(--text-main);
-  line-height: 1.3;
 }
 
-.dj-card-desc {
-  font-size: 0.8125rem;
+.playlist-banner-desc {
+  font-size: 0.84375rem;
   color: var(--text-muted);
   margin-top: 0.25rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
-.dj-permanent-link {
+.playlist-banner-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  align-self: flex-start;
-  font-size: 0.8125rem;
-  color: var(--accent-primary);
+  gap: 0.45rem;
+  padding: 0.6rem 1.15rem;
+  background: var(--accent-primary);
+  color: #04121d;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: var(--radius-sm);
   text-decoration: none;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  padding: 0.35rem 0.75rem;
-  border-radius: var(--radius-sm);
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-.dj-permanent-link:hover {
-  background: rgba(56, 189, 248, 0.16);
-  border-color: var(--accent-primary);
+.playlist-banner-btn:hover {
+  background: #7dd3fc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
 }
 
-/* 活動紀錄列表 */
-.dj-events-list {
+/* 歷史活動列表時間軸與卡片 */
+.playlist-section-header {
+  margin-bottom: 1.25rem;
+}
+
+.playlist-section-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.playlist-section-sub {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.dj-events-timeline {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  margin-top: 1rem;
+  gap: 1.15rem;
 }
 
-.dj-event-item {
-  background: var(--bg-page);
+.dj-event-card {
+  background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
-  padding: 0.95rem 1.1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  transition: border-color 0.15s ease;
+  border-radius: var(--radius-md);
+  padding: 1.35rem 1.5rem;
+  transition: border-color 0.2s ease, transform 0.15s ease;
 }
 
-.dj-event-item:hover {
-  border-color: var(--border-strong);
+.dj-event-card:hover {
+  border-color: rgba(56, 189, 248, 0.35);
 }
 
-.dj-event-meta {
+.dj-event-header {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.dj-event-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   flex-wrap: wrap;
 }
 
 .dj-event-date {
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: 0.84375rem;
   font-weight: 700;
   color: #38bdf8;
   background: rgba(56, 189, 248, 0.12);
-  padding: 0.15rem 0.55rem;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.2rem 0.65rem;
   border-radius: 4px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+}
+
+.dj-event-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
 }
 
 .dj-event-badge {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--text-main);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-emerald);
+  background: var(--accent-emerald-light);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
 }
 
 .dj-event-note {
-  font-size: 0.84375rem;
-  color: #cbd5e1;
-  line-height: 1.55;
-  background: rgba(255, 255, 255, 0.03);
-  border-left: 2px solid var(--accent-warm);
-  padding: 0.4rem 0.75rem;
-  border-radius: 0 4px 4px 0;
+  background: rgba(255, 255, 255, 0.025);
+  border-left: 3px solid var(--accent-warm);
+  border-radius: 0 6px 6px 0;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dj-note-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-warm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dj-note-text {
+  font-size: 0.90625rem;
+  color: #e2e8f0;
+  line-height: 1.6;
   margin: 0;
 }
 
 .dj-event-actions {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
-  margin-top: 0.2rem;
 }
 
 .dj-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.4rem 0.8rem;
+  gap: 0.5rem;
+  padding: 0.5rem 0.95rem;
   border-radius: var(--radius-sm);
-  font-size: 0.8125rem;
+  font-size: 0.84375rem;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.15s ease;
@@ -205,4 +322,5 @@
   color: #7dd3fc;
   transform: translateY(-1px);
 }
+
 
