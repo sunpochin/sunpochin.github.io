@@ -12,7 +12,7 @@
 sunpochin.github.io/
 ├── index.html       # [作品集首頁] 以孫柏青為核心的前端工程作品集 (包含家健錄旗艦案例與音樂/DJ 介紹)
 ├── styles.css       # Hallmark 典雅出版物感 (Editorial Warm) 樣式表 (摒棄發光漸層與 Glassmorphism AI 樣板)
-├── favicon.svg      # 門牌徽章標誌
+├── favicon.svg      # 🎵 音樂符號網站圖示 (Favicon)
 ├── assets/
 │   └── images/
 │       ├── sunpochin-outdoor.jpg  # 孫柏青野外照片 (配置於 Hero / 工程師簡介區塊)
@@ -214,6 +214,8 @@ life/
 | **直接將多次活動紀錄內嵌在 `/life/` 門牌頁面** | 隨著活動場次增加，大量卡片會使 `/life/` 頁面極端膨脹，干擾知識專區與舞班推薦等其他重要資訊的瀏覽。獨立成專頁（`/life/playlist.html`）能提供最好的擴展性與閱讀沉浸感。 |
 | **直接嵌入 Spotify 播放器 iframe** | iframe 載入資源繁重，顯著拉長頁面 LCP (Largest Contentful Paint) 與增加第三方 Cookie，在手機版面亦會佔據過大版面空間。改採輕量按鈕引導外開原生 App 或 Web 播放。 |
 | **直接覆蓋刪除原 Google Forms 常駐表單** | 常駐表單用於平時長期蒐集舞曲推薦，與特定單場活動的放歌回饋性質不同。保留兩者入口能滿足不同場景。 |
-| **使用不可維護的純文字條列** | 缺乏視覺階層、按鈕點擊熱區過小且易在手機上造成誤觸。元件化封裝便於日後複製 `.dj-event-card` 新增場次。 |
+### 7.3 全站音樂識別 Favicon (Music Note Favicon)
+- **視覺意象**：依使用者指示，將原家庭照護圖示更換為音樂符號（`🎵`），與全站「工程師之外的 Salsa DJ (Pachinko)」個人生活品牌定位一致。
+- **SVG 置中實作**：採用 `<text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="80">🎵</text>` 確保在不同瀏覽器、作業系統與暗/亮分頁列中均能精準置中縮放，兼具零網路開銷與高解析度特點。
 
 
