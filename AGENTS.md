@@ -58,6 +58,11 @@ Never run destructive commands without explicit user approval.
 5. Create a clean commit on a feature branch, and push immediately.
 6. Automatically create a non-draft Pull Request using `gh pr create`.
 
+### 4.1 靜態專案加速與防微操防線 (Static Site Fast-Path & Anti-Micro-Loop Rules)
+* **禁止微操迴圈 (Anti-Micro-Loop)**：凡跨檔案字串更名、網域替換或專有名詞統一，嚴禁使用 `view_file` 與 `replace_file_content` 進行逐段微操（避免因數十次 LLM 往返陷入數百步驟與極高延遲）。
+* **強制優先使用批次工具**：跨檔案字串更名必須優先使用 `scripts/fast-replace.sh` 或 Shell 批次指令一鍵替換，並以 `git diff` 審查變更。
+* **自動化全站驗證**：提交變更前必須執行 `./scripts/check-brand.sh`，確保無殘留舊品牌名稱、無無效網域、JSON 語法完好且關鍵靜態資產齊全。
+
 ---
 
 ## 5. Task Completion Report (任務完成回報規範)
