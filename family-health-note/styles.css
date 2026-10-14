@@ -1,11 +1,11 @@
 /*
-  檔案用途：家簡錄 (Family Health Note) 官方服務說明、定價方案與金流特店審核專頁樣式表
+  檔案用途：家健錄 (Family Health Note) 官方服務說明、定價方案與金流特店審核專頁樣式表
   設計定位：提供藍新金流 (NewebPay) 特店審核人員及廣大照護家庭查閱公開收費標準、功能對照、服務條款、退款政策與特店客服資訊。
-  遵循規範：Prime Directive (繁體中文註解說明決策)、家簡錄 Emerald 照護信任色盤 (Caregiving Trust Palette) 與 WCAG AA 無障礙標準。
+  遵循規範：Prime Directive (繁體中文註解說明決策)、家健錄 Emerald 照護信任色盤 (Caregiving Trust Palette) 與 WCAG AA 無障礙標準。
 */
 
 :root {
-  /* 家簡錄照護信任色盤 (Emerald & Warm Slate Palette) */
+  /* 家健錄照護信任色盤 (Emerald & Warm Slate Palette) */
   --care-bg-page: #f8fafc;
   --care-bg-surface: #ffffff;
   --care-bg-accent-section: #ecfdf5;
@@ -62,7 +62,7 @@
   --care-container-max: 1160px;
 }
 
-/* 覆蓋父層暗色設定，使家簡錄審核專頁擁有專屬明亮溫暖的醫療照護基調 */
+/* 覆蓋父層暗色設定，使家健錄審核專頁擁有專屬明亮溫暖的醫療照護基調 */
 html {
   background-color: var(--care-bg-page) !important;
   color: var(--care-text-main) !important;
@@ -160,7 +160,7 @@ body {
   color: var(--care-text-inverse) !important;
 }
 
-/* Hero 區域：開門見山介紹家簡錄，並立刻導引至第一頁核心收費方案 */
+/* Hero 區域：開門見山介紹家健錄，並立刻導引至第一頁核心收費方案 */
 .care-hero-section {
   padding: 4.5rem 0 3rem;
   text-align: center;
