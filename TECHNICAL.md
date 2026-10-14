@@ -288,6 +288,45 @@ life/
 | **維持「家簡錄」命名** | 「簡」偏向操作簡單或極簡主義，未能直接點出核心「健康 (Health)」意涵，在特店申請分類為「醫療健康」時辨識度稍弱。 |
 | **兩字並用或不統一** | 造成首頁、定價頁與條款內品牌稱謂混亂，容易讓使用者與金流審查人員質疑是否為同一套系統。 |
 
+---
+
+## 11. 靜態站點開發效能優化與批次工具鏈 (Static Site Performance & Batch Toolchain)
+
+### 11.1 決策背景與痛點分析 (Context & Pain Points)
+在進行全站專案代號（如 `jia-jian-log` 遷移至 `family-health-note`）或品牌正名（如「家簡錄」更正為「家健錄」）時，若 AI 代理器採取「單檔開啟 ➔ 單一區塊修改 ➔ 再次開啟」的微操迴圈（Micro-loop），會產生以下嚴重瓶頸：
+1. **極度漫長之 LLM Round-trip**：一次全局改名可能耗費超過 200 個 Tool Call 步驟與 12 分鐘以上等待時間，絕大部分時間浪費在網路傳輸與微小字詞推論。
+2. **缺乏單一指令的自動化驗證機制**：AI 依賴反覆執行 `grep` 與人工比對，容易遺漏邊角檔案（如特定樣式表註解或 JSON 鍵值）。
+
+### 11.2 為什麼不採用 Code Review Graph (CRG)？
+經實測評估，在 `sunpochin.github.io` 靜態專案中引入 CRG 具備以下負面效應：
+* **AST 節點為 0**：CRG 基於 Tree-sitter 針對 TypeScript、JavaScript、Python、Swift、SQL 等高階語言建立 AST 函式調用與依賴半徑（在隔壁 `jia-jian-log` 具有 12,382 個節點與 128,273 條邊）。而本作品集為純靜態網站（HTML、CSS、JSON、Markdown），CRG 掃描結果為 0 檔案、0 節點，完全無法建立關聯圖譜。
+* **無法支援文字替換**：CRG 是「架構查詢工具」，不具備重構與批次字串替換能力。
+* **Prompt 膨脹與推論延遲**：引入 CRG MCP Server 會在每輪對話的 System Prompt 中注入整套工具規格，增加無謂的 Token 開銷並降低回應速度。
+
+### 11.3 批次工具鏈架構設計 (Batch Toolchain Design)
+
+為此專案量身打造輕量無外部依賴的自動化工具：
+1. **`scripts/fast-replace.sh`（全專案安全批次替換工具）**：
+   - 透過 Python 3 內建純字串字面量替換（`str.replace`），徹底克服 macOS BSD `sed` 與 Linux GNU `sed` 的參數相容性問題，並消除包含 URL 斜線時的 RegExp delimiter 轉義陷阱。
+   - 支援 `--dry-run` 預覽匹配數量，執行後自動調用 `git diff --stat` 輸出受影響範圍。
+   - 執行耗時由原本的 12 分鐘降低至 **0.05 秒**（提升數百倍）。
+2. **`scripts/check-brand.sh`（全站品牌正名、網域與靜態資源一致性檢查工具）**：
+   - 一鍵自動化檢查：
+     - 是否殘留歷史廢棄名稱（「家簡錄」）。
+     - 是否殘留舊 Vercel 網域（`jia-jian-log.vercel.app`）。
+     - `services.json` 語法合法性。
+     - 關鍵靜態資源（圖片與專頁）是否存在（防止破圖與 404）。
+   - 結合 `AGENTS.md` 憲法 §4.1，作為提交與發布前之強制驗證防線。
+
+### 11.4 排除的替代方案 (Rejected Alternatives)
+
+| 替代方案 | 排除原因 (Why Rejected) |
+| :--- | :--- |
+| **引入 Code Review Graph (CRG) MCP Server** | 本專案為純 HTML/CSS 靜態站點，CRG 索引結果為 0 節點，且徒增每輪 LLM 的 Prompt Token 消耗。 |
+| **依賴 AI `replace_file_content` 逐段替換** | 單次任務需耗費 200+ 步驟與十數分鐘，大幅浪費 API 費用與開發者等待時間。 |
+| **使用 Bash `sed -i` 進行替換** | macOS (BSD) 與 Linux (GNU) 的 `-i` 參數行為不一致（macOS 強制要求 `-i ''`），且替換包含 `/` 之 URL 時容易因分隔符錯誤損毀檔案。改用 Python 3 純字串字面量替換最穩定安全。 |
+
+
 
 
 
