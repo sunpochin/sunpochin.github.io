@@ -218,9 +218,9 @@ life/
 
 ---
 
-## 8. 家簡錄 (Family Health Note) 官方定價與金流審核專頁架構設計 (Merchant Review Landing Architecture)
+## 8. 家健錄 (Family Health Note) 官方定價與金流審核專頁架構設計 (Merchant Review Landing Architecture)
 
-為解決申請藍新金流（NewebPay）特店時「需要公開商品頁面但尚未能串接信用卡金流」的假循環問題，並嚴格遵循 `jia-jian-log/docs/product/monetization-plan.md`、ADR-011 與 ADR-012 的既定產品決策，於 `family-health-note/` 建立專屬獨立靜態說明專頁：
+為解決申請藍新金流（NewebPay）特店時「需要公開商品頁面但尚未能串接信用卡金流」的假循環問題，並嚴格遵循 `family-health-note/docs/product/monetization-plan.md`、ADR-011 與 ADR-012 的既定產品決策，於 `family-health-note/` 建立專屬獨立靜態說明專頁：
 
 ### 8.1 解決的核心認知盲點與審查補件需求 (Breaking the False Circular Dependency & Review Criteria)
 * **補件緣由**：金流特店申請審核時，藍新金流人員要求商家必須提供公開、透明且完整的收費標準與商品內容說明頁面。
@@ -235,7 +235,7 @@ life/
      - **免費方案 (Free)**：NT$ 0 / 永遠免費（包含每日血壓量測與趨勢分析、血壓危險等級 Telegram 個人即時警報、用藥打卡與提醒、TFDA 健保藥品目錄庫、基礎版藥袋文字辨識每人每日 4 次、Gemini AI 藥袋草稿辨識每家庭每日 3 次、被照顧者上限 2 位、照片保存 30 天、資料隨時可攜與帳號完全刪除權益）。
      - **Premium 家庭方案**：NT$ 150 / 月（定期定額信用卡自動扣款，全家庭共用；包含免費方案所有功能、被照顧者上限擴充至 5 位、AI 藥袋辨識大幅提高至每家庭每日 20 次、個人化進階通知加值包含 LINE 官方推播與日曆到期提醒、照片保存延長至 180 天 VIP 儲存、7 天扣款寬限期與續約日前 7 天 Email 友善提醒）。
 2. **商品與服務說明 (`#features`)**：
-   - 明確標示「家簡錄 Family Health Note」為 PWA 照護協作系統（`jia-jian-log.vercel.app`），提供台印雙向多語介面協作、智慧用藥打卡與 AI 藥袋辨識、血壓趨勢追蹤與危險急迫警報、照護迴路與就診日程整合。
+   - 明確標示「家健錄 Family Health Note」為 PWA 照護協作系統（`family-health-note.vercel.app`），提供台印雙向多語介面協作、智慧用藥打卡與 AI 藥袋辨識、血壓趨勢追蹤與危險急迫警報、照護迴路與就診日程整合。
 3. **購買與開通流程 (`#workflow`)**：
    - 註冊登入 PWA 網頁 → 家庭設定點選升級 Premium → 導向藍新安全收銀台完成線上授權 → 系統驗證簽章自動開通全家共享。
 4. **服務條款 (`#terms`)**：
@@ -253,8 +253,41 @@ life/
 | :--- | :--- |
 | **只在登入後的 App 設定頁呈現價格** | 審核人員無商家測試帳號或無法登入時，將直接判定「無公開收費標準」並退件補件。公開靜態網頁可保證隨時可存取。 |
 | **在頁面隱藏或淡化價格數字** | 違反金流審查對特店商品「價格明確、標示幣別」之核心硬性要求。 |
-| **直接套用好溝通翻譯 (Care Translate) 頁面** | 好溝通翻譯為 LINE Bot 且採 PAYG 預付用量制（units），與家簡錄之家庭 PWA 定期定額訂閱制（月費 NT$ 150）在產品定位與計費模型上截然不同，混用將造成使用者與審查員嚴重混淆。 |
+| **直接套用好溝通翻譯 (Care Translate) 頁面** | 好溝通翻譯為 LINE Bot 且採 PAYG 預付用量制（units），與家健錄之家庭 PWA 定期定額訂閱制（月費 NT$ 150）在產品定位與計費模型上截然不同，混用將造成使用者與審查員嚴重混淆。 |
 | **使用複雜的動態前後端渲染** | 靜態 HTML + 原生 CSS 具備零伺服器故障率、秒開（Sub-second LCP）、永久免維護成本之優勢。 |
+
+---
+
+## 9. 服務命名與網域標準化：全面統一為 `family-health-note` (Unified Service & Domain Naming)
+
+### 9.1 決策背景與動機 (Context & Rationale)
+專案初期在 Vercel 佈署之主網域與 Staging 環境使用了歷史專案代號 `jia-jian-log`（如 `jia-jian-log.vercel.app`、`staging-jia-jian-log`）。隨著家健錄官方收費專頁以 `family-health-note/` 形式確立，且英文正式名稱定調為「Family Health Note」，保留舊代號會導致以下問題：
+1. **金流審查一致性**：藍新金流審查人員比對官方網站入口、定價說明頁面與實際註冊網址時，若主網域為 `jia-jian-log.vercel.app` 而定價頁標示為 `Family Health Note`，容易引發審核人員對特店主體與服務一致性的疑問。
+2. **跨平台認知統一**：包含個人作品集入口 (`index.html`)、服務目錄清單 (`services.json`)、求職技術細節展示頁 (`work/index.html`) 與官方收費標準頁 (`family-health-note/index.html`)，統一採用 `family-health-note.vercel.app`，使全站內外部連結、Staging 標識與文件路徑達成百分之百一致。
+
+### 9.2 排除的替代方案 (Rejected Alternatives)
+
+| 替代方案 | 排除原因 (Why Rejected) |
+| :--- | :--- |
+| **部分保留 `jia-jian-log`（如僅改首頁，保留內部連結）** | 造成站內不同頁面連結分歧，增加維護負擔並給使用者不專業或尚未遷移完成的混亂印象。 |
+| **維持雙網域並存不更新文件與展示連結** | 增加特店審查被要求二次補件說明的風險，且無法展現工程師對專案識別度與標準化架構的嚴謹態度。 |
+
+---
+
+## 10. 官方品牌中文定名：正式確立為「家健錄」 (Official Brand Naming: JiaJian Log)
+
+### 10.1 決策背景與動機 (Context & Rationale)
+專案文案在不同時期曾短暫出現「家簡錄」與「家健錄」兩種中文命名。經整體品牌價值梳理，正式拍板定名為**「家健錄」**：
+1. **核心價值傳遞**：「健」字直接傳達家庭健康監測、慢性病血壓管理與守護家人健康的產品初心；相較於「簡」，更能喚起照護者對健康安全感與醫療專業度的信任。
+2. **全站品牌一致性**：對齊個人作品集入口 (`index.html`)、服務目錄清單 (`services.json`) 與技術細節專頁 (`work/index.html`)，徹底消除同名產品字詞不一的問題，在藍新金流審核與外部履歷展演上呈現一致且專業的品牌形象。
+
+### 10.2 排除的替代方案 (Rejected Alternatives)
+
+| 替代方案 | 排除原因 (Why Rejected) |
+| :--- | :--- |
+| **維持「家簡錄」命名** | 「簡」偏向操作簡單或極簡主義，未能直接點出核心「健康 (Health)」意涵，在特店申請分類為「醫療健康」時辨識度稍弱。 |
+| **兩字並用或不統一** | 造成首頁、定價頁與條款內品牌稱謂混亂，容易讓使用者與金流審查人員質疑是否為同一套系統。 |
+
 
 
 

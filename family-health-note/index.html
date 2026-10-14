@@ -1,7 +1,7 @@
 <!--
-  檔案用途：家簡錄 (Family Health Note) 官方服務介紹、定價方案與藍新金流特店審核專頁
+  檔案用途：家健錄 (Family Health Note) 官方服務介紹、定價方案與藍新金流特店審核專頁
   設計定位：提供藍新金流 (NewebPay) 特店審核人員及終端使用者查閱完整的服務說明、公開收費標準、功能對照、服務條款、退款政策與客服聯繫資訊。
-  遵循規範：Prime Directive (繁體中文註解說明決策)、家簡錄 Emerald 照護信任色盤 (Caregiving Trust Palette) 與 WCAG AA 無障礙標準。
+  遵循規範：Prime Directive (繁體中文註解說明決策)、家健錄 Emerald 照護信任色盤 (Caregiving Trust Palette) 與 WCAG AA 無障礙標準。
 -->
 <!DOCTYPE html>
 <html lang="zh-TW">
@@ -9,15 +9,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>家簡錄 (Family Health Note) | 官方服務說明、收費標準與家庭訂閱方案</title>
-  <meta name="description" content="家簡錄 (Family Health Note) 專為台灣長輩與外籍看護設計的家庭協作照護 App。提供透明公開收費標準、家庭 Premium 方案、服務條款、退款政策與藍新金流安全結帳說明。">
-  <meta name="keywords" content="家簡錄, 家健錄, Family Health Note, 血壓記錄, 用藥提醒, 藥袋辨識, 看護照護, 藍新金流, 訂閱方案, 收費標準">
+  <title>家健錄 (Family Health Note) | 官方服務說明、收費標準與家庭訂閱方案</title>
+  <meta name="description" content="家健錄 (Family Health Note) 專為台灣長輩與外籍看護設計的家庭協作照護 App。提供透明公開收費標準、家庭 Premium 方案、服務條款、退款政策與藍新金流安全結帳說明。">
+  <!-- 品牌關鍵字：統一採用官方正名「家健錄」，利於搜尋引擎索引與品牌識別一致性 -->
+  <meta name="keywords" content="家健錄, Family Health Note, 血壓記錄, 用藥提醒, 藥袋辨識, 看護照護, 藍新金流, 訂閱方案, 收費標準">
   <meta name="author" content="孫柏青 Sun Po-Chin">
   
   <!-- Open Graph 社群卡片 -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sunpochin.github.io/family-health-note/">
-  <meta property="og:title" content="家簡錄 (Family Health Note) | 官方服務說明與收費標準">
+  <meta property="og:title" content="家健錄 (Family Health Note) | 官方服務說明與收費標準">
   <meta property="og:description" content="台印雙語家庭照護協作 PWA。基礎照護永遠免費，進階 AI 藥袋辨識與加值通知家庭訂閱每月 NT$ 150，一人付費全家共用。">
   
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -54,14 +55,14 @@
         Hero 區塊：開門見山向審核員與使用者揭示「這是一套家庭照護協作系統」
         決策：第一頁即顯著提供「查看收費標準與家庭方案」按鈕，並於下方立即緊接收費標準區塊。
       -->
-      <section class="care-hero-section" aria-label="家簡錄服務總覽">
+      <section class="care-hero-section" aria-label="家健錄服務總覽">
         <div class="care-hero-badge">
           <span class="status-dot"></span>
           <span>PWA 居家照護協作系統 · 服務運作中</span>
         </div>
 
         <h1 class="care-hero-title">
-          家簡錄 <span class="care-title-en">Family Health Note</span>
+          家健錄 <span class="care-title-en">Family Health Note</span>
         </h1>
         <p class="care-hero-tagline">
           專為台灣長輩與外籍看護設計的家庭協作照護 App
@@ -71,8 +72,9 @@
         </p>
 
         <div class="care-hero-cta-box">
-          <a href="https://jia-jian-log.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-cta">
-            <span>開啟家簡錄線上體驗 (jia-jian-log.vercel.app)</span>
+          <!-- 避免連向舊網域導致使用者或金流審核人員混淆，統一導向 family-health-note.vercel.app 並標示官方正名「家健錄」 -->
+          <a href="https://family-health-note.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-cta">
+            <span>開啟家健錄線上體驗 (family-health-note.vercel.app)</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
@@ -174,7 +176,8 @@
                 <span>完整照護數據 CSV 匯出、資料隨時可攜與帳號完全刪除權益</span>
               </li>
             </ul>
-            <a href="https://jia-jian-log.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-outline">
+            <!-- 免費方案線上註冊使用入口：統一使用新版 family-health-note.vercel.app 網址 -->
+            <a href="https://family-health-note.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-outline">
               立即免費開啟使用
             </a>
             <div class="card-action-note">免綁信用卡 · 開箱即用</div>
@@ -230,8 +233,9 @@
                 <span><strong>降級安全承諾</strong>：若停止訂閱，所有既有健康數據與長輩資料全數保留，血壓危險警報持續免費送達</span>
               </li>
             </ul>
-            <a href="https://jia-jian-log.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">
-              登入家簡錄線上開通
+            <!-- Premium 線上開通入口：引導登入 family-health-note.vercel.app 後至設定頁完成訂閱 -->
+            <a href="https://family-health-note.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">
+              登入家健錄線上開通
             </a>
             <div class="card-action-note">於網頁版「家庭設定 → 訂閱方案」即可使用藍新金流信用卡定期定額開通</div>
           </div>
@@ -338,9 +342,10 @@
       <section id="features" class="care-section" aria-label="服務核心功能">
         <div class="section-heading-wrap">
           <span class="section-eyebrow">FEATURES</span>
-          <h2 class="section-heading">為什麼照護家庭需要「家簡錄」？</h2>
+          <!-- 服務核心價值標題：對齊品牌正式名稱「家健錄」 -->
+          <h2 class="section-heading">為什麼照護家庭需要「家健錄」？</h2>
           <p class="section-subtext">
-            台灣高齡居家照護現場常面臨長輩慢性病繁複、家庭與外籍看護語言不通、藥品繁雜易混淆的痛點。家簡錄針對家庭實戰情境特化：
+            台灣高齡居家照護現場常面臨長輩慢性病繁複、家庭與外籍看護語言不通、藥品繁雜易混淆的痛點。家健錄針對家庭實戰情境特化：
           </p>
         </div>
 
@@ -408,8 +413,9 @@
         <div class="workflow-steps-grid">
           <div class="workflow-step">
             <div class="step-number">01</div>
-            <h4 class="step-title">登入家簡錄 PWA 網頁</h4>
-            <p class="step-desc">瀏覽器開啟 <code>jia-jian-log.vercel.app</code>，使用 Email 驗證碼登入並加入或建立您的家庭。</p>
+            <h4 class="step-title">登入家健錄 PWA 網頁</h4>
+            <!-- 操作步驟指引：更新網域名稱為 family-health-note.vercel.app 避免用戶造訪錯誤網域 -->
+            <p class="step-desc">瀏覽器開啟 <code>family-health-note.vercel.app</code>，使用 Email 驗證碼登入並加入或建立您的家庭。</p>
           </div>
           <div class="workflow-step">
             <div class="step-number">02</div>
@@ -440,7 +446,7 @@
           <span class="section-eyebrow">TERMS OF SERVICE</span>
           <h2 class="section-heading">服務條款 (Terms of Service)</h2>
           <p class="section-subtext">
-            這份條款用最清楚的方式說明：家簡錄提供哪些服務、家庭方案如何計費與取消，以及醫療免責聲明。建議您在註冊或購買前花幾分鐘閱讀。
+            這份條款用最清楚的方式說明：家健錄提供哪些服務、家庭方案如何計費與取消，以及醫療免責聲明。建議您在註冊或購買前花幾分鐘閱讀。
           </p>
         </div>
 
@@ -453,7 +459,7 @@
                 </svg>
               </div>
               <div class="legal-summary-text">
-                <h3>家簡錄服務條款全文 (共八條)</h3>
+                <h3>家健錄服務條款全文 (共八條)</h3>
                 <p>最後更新日期：2026 年 10 月 14 日 · 輕觸展開，閱讀完整條款內容</p>
               </div>
             </div>
@@ -471,7 +477,7 @@
             <article class="legal-clause">
               <h4>第一條：服務同意與家庭共用認知</h4>
               <p>
-                歡迎使用「家簡錄（Family Health Note）」（以下簡稱「本服務」）。當您註冊、登入本服務，或購買本服務提供的 Premium 家庭方案時，即表示您已閱讀、瞭解並同意本服務條款的全部內容。進階功能以「Premium」家庭方案提供：由家庭擁有者購買，同一個家庭的所有成員與照護對象共用一份方案。基礎功能與危險等級的血壓警報不需要購買。
+                歡迎使用「家健錄（Family Health Note）」（以下簡稱「本服務」）。當您註冊、登入本服務，或購買本服務提供的 Premium 家庭方案時，即表示您已閱讀、瞭解並同意本服務條款的全部內容。進階功能以「Premium」家庭方案提供：由家庭擁有者購買，同一個家庭的所有成員與照護對象共用一份方案。基礎功能與危險等級的血壓警報不需要購買。
               </p>
             </article>
 
@@ -566,7 +572,7 @@
             <article class="legal-clause">
               <h4>一、通訊交易解除權合理例外情事之法定告知 (不適用 7 日鑑賞期)</h4>
               <p>
-                家簡錄 Premium 方案屬於「非以有形媒介提供之數位內容，一經提供即為完成之線上服務」：付款完成後，系統立即為您的家庭開通 5 位被照顧者上限、每日 20 次 AI 藥單辨識及進階通知權限，您與家人當下即可開始使用。
+                家健錄 Premium 方案屬於「非以有形媒介提供之數位內容，一經提供即為完成之線上服務」：付款完成後，系統立即為您的家庭開通 5 位被照顧者上限、每日 20 次 AI 藥單辨識及進階通知權限，您與家人當下即可開始使用。
               </p>
               <p>
                 <strong>法規依據：</strong>依中華民國《消費者保護法》第十九條第二項規定，以及行政院公布之《通訊交易解除權合理例外情事適用準則》第二條第五款規定：「非以有形媒介提供之數位內容或一經提供即為完成之線上服務，經消費者事先同意始提供者」，得排除消費者保護法第十九條第一項七日內無條件解除契約之適用。購買頁會以獨立勾選框請您確認同意，同意後始進行刷卡扣款。
@@ -591,7 +597,7 @@
             <article class="legal-clause">
               <h4>三、取消訂閱與自動終止方式</h4>
               <p>
-                家庭擁有者可隨時於家簡錄網頁版「家庭設定 → 訂閱管理」點選取消續約，無須撥打電話或填寫繁瑣紙本表單。取消後次月起不再自動扣款，已付費之當期權益將完整保留至該月週期結束。
+                家庭擁有者可隨時於家健錄網頁版「家庭設定 → 訂閱管理」點選取消續約，無須撥打電話或填寫繁瑣紙本表單。取消後次月起不再自動扣款，已付費之當期權益將完整保留至該月週期結束。
               </p>
             </article>
 
@@ -622,12 +628,12 @@
           <div class="merchant-card">
             <div class="merchant-card-header">
               <span class="merchant-role">服務營運特店資訊</span>
-              <h3 class="merchant-name">家簡錄 (Family Health Note)</h3>
+              <h3 class="merchant-name">家健錄 (Family Health Note)</h3>
             </div>
             <ul class="merchant-detail-list">
               <li>
                 <span class="label">服務名稱：</span>
-                <span class="value">家簡錄 (Family Health Note)</span>
+                <span class="value">家健錄 (Family Health Note)</span>
               </li>
               <li>
                 <span class="label">營運負責人：</span>
@@ -639,7 +645,8 @@
               </li>
               <li>
                 <span class="label">官方網站：</span>
-                <span class="value"><a href="https://jia-jian-log.vercel.app/" target="_blank" rel="noopener noreferrer" class="contact-link">https://jia-jian-log.vercel.app/</a></span>
+                <!-- 特店資訊揭露：提供正確一致的服務網址以符合藍新金流審查規範 -->
+                <span class="value"><a href="https://family-health-note.vercel.app/" target="_blank" rel="noopener noreferrer" class="contact-link">https://family-health-note.vercel.app/</a></span>
               </li>
               <li>
                 <span class="label">服務時間：</span>
@@ -661,7 +668,7 @@
               <p class="support-desc">
                 若您有金流扣款、發票收據、方案取消或系統操作等疑問，請直接來信客服信箱，信中請提供您的<strong>註冊 Email 與訂單編號</strong>，我們將儘速為您查詢處理。
               </p>
-              <a href="mailto:sunpochin@gmail.com?subject=【家簡錄】方案諮詢與客服支援" class="btn-primary-cta" style="width: 100%; justify-content: center; box-sizing: border-box;">
+              <a href="mailto:sunpochin@gmail.com?subject=【家健錄】方案諮詢與客服支援" class="btn-primary-cta" style="width: 100%; justify-content: center; box-sizing: border-box;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -683,7 +690,7 @@
             <p>
               本服務之線上交易全面委由第三方金流服務商「<strong>藍新金流 (NewebPay)</strong>」提供安全加密結帳環境。
               全站傳輸均符合國際最高規格 <strong>TLS 256-bit SSL</strong> 安全通訊協定與 PCI-DSS 資安標準。
-              家簡錄伺服器<strong>絕不會且無法儲存或經手您的信用卡完整卡號或授權驗證碼</strong>，請安心訂閱。
+              家健錄伺服器<strong>絕不會且無法儲存或經手您的信用卡完整卡號或授權驗證碼</strong>，請安心訂閱。
             </p>
           </div>
         </div>
@@ -697,12 +704,13 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <span class="brand-name">家簡錄 Family Health Note</span>
+          <span class="brand-name">家健錄 Family Health Note</span>
           <span class="footer-desc">© 2026 孫柏青 Sun Po-Chin. All rights reserved.</span>
         </div>
         <div class="footer-links">
           <a href="../">孫柏青個人作品集</a>
-          <a href="https://jia-jian-log.vercel.app/" target="_blank" rel="noopener noreferrer">家簡錄 App</a>
+          <!-- 頁尾外連：保持與專案新網域 family-health-note.vercel.app 及品牌名家健錄一致 -->
+          <a href="https://family-health-note.vercel.app/" target="_blank" rel="noopener noreferrer">家健錄 App</a>
           <a href="#pricing">收費標準</a>
           <a href="#comparison">方案對照</a>
           <a href="#terms">服務條款</a>
