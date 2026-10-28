@@ -2,8 +2,9 @@
   檔案用途：雙人舞、音樂與生活筆記門牌頁面 (Life & Leisure Portal)
   所在層：sunpochin.github.io/life/index.html；收納社交雙人舞、知識分享、Spotify 歌單、podcast 翻譯與歌詞部落格等生活連結
   設計說明：
-  1. 整合 Hallmark 出版物風格 (Editorial Warm) 與 Salsa DJ 形象照片。
-  2. 整合 PR 衝突：完整保留 /life/knowledge/ 知識分享專區入口（首篇 Bachata Footwork Mambo 段教學）、722 血壓量測計時器，以及依序排列之 Dan & Sherry 與 Leo & Latiifah 舞班推薦。
+  1. 整合 Hallmark 出版物風格 (Editorial Warm)，以簡潔高效的連結入口為主體。
+  2. 依使用者需求置頂 /life/playlist.html 播放清單與匿名回饋專頁，並移除自我介紹段落與 DJ 照片，提升視覺直覺度。
+  3. 依序完整保留 /life/knowledge/ 知識分享專區入口、722 血壓量測計時器，以及 Dan & Sherry 與 Leo & Latiifah 舞班推薦。
 -->
 <!DOCTYPE html>
 <html lang="zh-TW">
@@ -56,40 +57,10 @@
     <div class="container">
 
       <!-- 
-        1. Salsa DJ 與個人音樂熱情區塊 (包含 DJ 照片)
-        說明「為什麼這樣做」：依使用者指示，將 DJ 照片與雙人舞音樂介紹集中收納於 /life/ 頁面，供對個人興趣感興趣的人士閱讀。
+        雙人舞與生活筆記卡片區塊
+        說明「為什麼這樣做」：依使用者指示移除原 DJ 大頭照與自介敘事區塊，將精選生活與音樂連結作為生活專區主體，並置頂 Spotify 放歌與回饋專頁入口。
       -->
-      <section class="section-block life-section" style="margin-top: 0; padding-top: 0; border-top: none;" aria-label="Salsa DJ 與個人簡介">
-        <div class="life-grid">
-          
-          <!-- DJ 照片卡片 -->
-          <div class="life-photo-col">
-            <figure class="portrait-card life-card">
-              <img src="../assets/images/sunpochin-dj.jpg" alt="孫柏青 - 戴著耳機的 Salsa DJ 照片" class="portrait-img">
-              <figcaption class="portrait-caption">
-                <strong>Salsa DJ &amp; Social Dancer</strong>
-                <span>孫柏青 (Pachinko)</span>
-              </figcaption>
-            </figure>
-          </div>
-
-          <!-- 音樂與生活介紹敘事 -->
-          <div class="life-text-col">
-            <h2 class="life-title" style="font-size: 1.75rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.85rem;">在程式碼之外：Salsa DJ 與社交雙人舞愛好者</h2>
-            <p class="life-narrative">
-              我是前端工程師、家庭照護產品開發者，同時也是活躍於雙人舞社群的 <strong>Salsa DJ (Pachinko)</strong>。
-            </p>
-            <p class="life-narrative">
-              音樂與舞蹈訓練了我對節奏流暢度、微觀觀察與使用者情感脈動的敏銳度——這也深刻影響了我對 Web 介面互動與使用者體驗 (UX) 的追求。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 
-        2. 雙人舞與生活筆記卡片區塊
-      -->
-      <section class="section-block" aria-label="雙人舞與生活連結" style="margin-top: 3rem;">
+      <section class="section-block" aria-label="雙人舞與生活連結" style="margin-top: 0; padding-top: 0; border-top: none;">
         <div class="section-header">
           <h2 class="section-heading">精選生活與音樂連結</h2>
           <p class="section-subheading">個人精選原創教學、雙人舞課程、翻譯筆記與點歌歌單</p>
@@ -97,6 +68,21 @@
 
         <div class="life-links-list">
           
+          <!-- 
+            精選專區: pachinko Spotify 歌單與匿名回饋專頁入口 (/life/playlist.html)
+            設計原因：依使用者指示將 playlist.html 連結搬移至 /life 最上方置頂，方便剛跳完舞的舞客一進來就能迅速點擊歌單與填寫匿名真心話回饋。
+          -->
+          <a href="./playlist.html" class="life-link-item" style="border-color: rgba(34, 197, 94, 0.35); background: rgba(34, 197, 94, 0.03);">
+            <div class="life-link-icon">🎵</div>
+            <div class="life-link-content">
+              <div class="life-link-title" style="color: var(--text-main); font-weight: 800;">pachinko 的 Spotify 歌單與活動回饋列表</div>
+              <div class="life-link-desc">歷次 DJ 派對 (Social) 現場播歌 Spotify 歌單、匿名真心話回饋與常駐點歌推薦表單</div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
           <!-- 精選專區: 雙人舞與拉丁音樂知識分享專區 (/life/knowledge/) -->
           <!-- 說明「為什麼這樣做」：以精緻天藍細線微光突顯原創知識專區，符合全站 Slate Dark Editorial 色彩體系 -->
           <a href="./knowledge/" class="life-link-item" style="border-color: rgba(56, 189, 248, 0.35); background: rgba(56, 189, 248, 0.04);">
@@ -146,24 +132,7 @@
             </svg>
           </a>
 
-          <!-- 
-            連結 3: pachinko Spotify 歌單與匿名回饋專頁入口 (/life/playlist.html)
-            設計原因：
-            1. 依使用者指示，將多次活動放歌紀錄、Spotify 歌單與回饋表單獨立收納於專頁 /life/playlist.html，避免 /life/ 門牌目錄內容過度冗長。
-            2. 維持與上方「知識專區」、「血壓測量計時器」相同規格之 .life-link-item 排版，保有一致的視覺層次與點擊期待感。
-          -->
-          <a href="./playlist.html" class="life-link-item" style="border-color: rgba(34, 197, 94, 0.35); background: rgba(34, 197, 94, 0.03);">
-            <div class="life-link-icon">🎵</div>
-            <div class="life-link-content">
-              <div class="life-link-title" style="color: var(--text-main); font-weight: 800;">pachinko 的 Spotify 歌單與活動回饋列表</div>
-              <div class="life-link-desc">歷次 DJ 派對 (Social) 現場播歌 Spotify 歌單、匿名真心話回饋與常駐點歌推薦表單</div>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-
-          <!-- 連結 4: Salsa 舞班專頁 (維持 Dan & Sherry 在前、Leo & Latiifah 在後) -->
+          <!-- 連結 3: Salsa 舞班專頁 (維持 Dan & Sherry 在前、Leo & Latiifah 在後) -->
           <div class="dance-classes-box">
             <span class="dance-box-label">💃 推薦 Salsa 莎莎舞班：</span>
             <a href="https://www.instagram.com/sherry_is_dancing/" target="_blank" rel="noopener noreferrer" class="inline-dance-link">Dan &amp; Sherry Salsa</a>
