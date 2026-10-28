@@ -196,7 +196,7 @@ life/
 ```
 
 1. **門牌目錄與專頁職責分離 (`/life/` vs `/life/playlist.html`)**：
-   - `/life/index.html` 維持高概括性門牌目錄，避免單一項目包含過多詳細活動紀錄而破壞全頁視覺平衡。
+   - `/life/index.html` 維持高概括性門牌目錄，將 `/life/playlist.html` 放歌與回饋入口置頂呈現，並移除冗餘之個人簡介敘事與大頭照，專注於高效實用的生活與音樂連結導覽。
    - `/life/playlist.html` 作為專用紀錄專頁，具備麵包屑導覽（Breadcrumb Nav），供舞者在各頁面間順暢切換。
 2. **常駐點歌推薦專區 (`.playlist-banner-box`)**：
    - 頁面頂部以柔和漸層與天藍邊框設立獨立橫幅，保留 Google Forms 常駐點歌與舞曲推薦連結（`https://forms.gle/BX6eccCHhBU4E4f98`），供舞客平日隨時推薦新歌。
