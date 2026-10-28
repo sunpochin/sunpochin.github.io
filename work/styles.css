@@ -1,38 +1,38 @@
 /*
-  /work/ 頁面專屬樣式表
-  採用高質感暗色調 (Dark Glassmorphism) 與高級科技漸層，
-  展現資深前端工程師與系統架構師的專業形象與作品展示。
-*/
-
-/*
-檔案用途：求職作品集頁面專用樣式表 (Work Portfolio Stylesheet)
-所在層：sunpochin.github.io/work/styles.css
-主要關聯：由 sunpochin.github.io/work/index.html 載入，定義暗色科技質感與卡片佈局
+  /work/ 頁面專屬樣式表 (Work Portfolio Stylesheet)
+  遵循 Prime Directive 與 ui-ux-pro-max 規範，
+  採用高可讀性 Clean Editorial Slate 設計系統，
+  展現資深前端工程師與系統架構師的專業形象、清晰版型與全棧作品展演。
 */
 
 :root {
-  --bg-primary: #090d16;
-  --bg-card: rgba(18, 24, 38, 0.75);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --card-hover-border: rgba(129, 140, 248, 0.4);
+  --bg-primary: #f8fafc;
+  --bg-card: #ffffff;
+  --card-border: #e2e8f0;
+  --card-hover-border: #93c5fd;
   
-  --text-primary: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-subtle: #64748b;
+  --text-primary: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --text-subtle: #94a3b8;
   
-  --accent-cyan: #38bdf8;
-  --accent-indigo: #818cf8;
-  --accent-purple: #c084fc;
-  --grad-hero: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-  --grad-card-top: linear-gradient(90deg, #38bdf8, #818cf8);
+  --accent-cyan: #0284c7;
+  --accent-indigo: #4338ca;
+  --accent-purple: #6d28d9;
+  --grad-hero: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0284c7 100%);
+  --grad-card-top: linear-gradient(90deg, #0284c7, #4f46e5);
   
-  --tag-bg: rgba(255, 255, 255, 0.05);
-  --tag-border: rgba(255, 255, 255, 0.1);
-  --tag-text: #cbd5e1;
+  --tag-bg: #f1f5f9;
+  --tag-border: #e2e8f0;
+  --tag-text: #334155;
   
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
+  
+  --shadow-subtle: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+  --shadow-card: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+  --shadow-hover: 0 12px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
   
   --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans TC", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -47,8 +47,8 @@
 html {
   font-family: var(--font-main);
   background-color: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.6;
+  color: var(--text-body);
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
 }
@@ -58,9 +58,10 @@ body {
   display: flex;
   flex-direction: column;
   background: 
-    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.07) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(192, 132, 252, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 10% 20%, rgba(2, 132, 199, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(79, 70, 229, 0.03) 0%, transparent 40%),
     var(--bg-primary);
+  color: var(--text-body);
 }
 
 .container {
@@ -70,55 +71,21 @@ body {
   padding: 0 1.5rem;
 }
 
-/* 全站膠囊導覽列 (Portal Navigation Bar) */
-.portal-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.nav-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 1.1rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--card-border);
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-decoration: none;
-  backdrop-filter: blur(10px);
-  transition: all 0.2s ease;
-}
-
-.nav-item:hover {
-  background: rgba(255, 255, 255, 0.09);
-  color: var(--text-primary);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-1px);
-}
-
-.nav-item.active {
-  background: rgba(99, 102, 241, 0.2);
-  color: #ffffff;
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
-}
-
 /* Header 導覽區 */
 .work-header {
-  padding: 2.5rem 0 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.25rem 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 2rem;
 }
 
 .nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .home-link {
@@ -127,18 +94,20 @@ body {
   gap: 0.5rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text-primary);
   text-decoration: none;
-  padding: 0.4rem 0.85rem;
+  padding: 0.45rem 0.95rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
+  background: #ffffff;
   border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-subtle);
   transition: all 0.2s ease;
 }
 
 .home-link:hover {
   color: var(--accent-cyan);
   border-color: var(--card-hover-border);
+  background: #f8fafc;
 }
 
 .home-link svg {
@@ -151,29 +120,29 @@ body {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.8125rem;
-  color: #34d399;
-  background: rgba(52, 211, 153, 0.1);
+  color: #15803d;
+  background: #dcfce7;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
-  border: 1px solid rgba(52, 211, 153, 0.25);
-  font-weight: 500;
+  border: 1px solid #86efac;
+  font-weight: 600;
 }
 
 .status-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #34d399;
-  box-shadow: 0 0 8px #34d399;
+  background: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
 }
 
 /* Hero 個人品牌區 */
 .hero-section {
-  padding: 3.5rem 0 2.5rem;
+  padding: 2.5rem 0 2rem;
 }
 
 .hero-title-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero-name {
@@ -181,22 +150,19 @@ body {
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.15;
-  background: var(--grad-hero);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--text-primary);
-  opacity: 0.9;
+  color: var(--accent-cyan);
 }
 
 .hero-bio {
   font-size: 1.05rem;
-  color: var(--text-muted);
+  color: var(--text-body);
   max-width: 750px;
   line-height: 1.7;
   margin-bottom: 1.75rem;
@@ -212,40 +178,44 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.65rem 1.25rem;
-  border-radius: var(--radius-md);
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-sm);
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
 .btn-primary {
-  background: var(--grad-hero);
+  background: #0f172a;
   color: #ffffff;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.45);
+  background: #1e293b;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.25);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
+  background: #ffffff;
   color: var(--text-primary);
   border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-subtle);
 }
 
 .btn-secondary:hover {
   border-color: var(--card-hover-border);
   color: var(--accent-cyan);
+  background: #f8fafc;
 }
 
 /* 區塊共通標題 */
 .section-title {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -275,7 +245,7 @@ body {
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   padding: 1.5rem;
-  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-subtle);
 }
 
 .skill-category {
@@ -293,7 +263,7 @@ body {
 
 .tag {
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 0.3rem 0.75rem;
   border-radius: 6px;
   background: var(--tag-bg);
@@ -304,7 +274,7 @@ body {
 
 /* 代表作品區塊 (Featured Projects) */
 .projects-section {
-  padding: 2.5rem 0 4rem;
+  padding: 2rem 0 3.5rem;
 }
 
 .projects-grid {
@@ -319,7 +289,7 @@ body {
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
   padding: 1.75rem;
-  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-card);
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
@@ -335,13 +305,13 @@ body {
   border-top-left-radius: var(--radius-lg);
   border-top-right-radius: var(--radius-lg);
   background: var(--grad-card-top);
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   border-color: var(--card-hover-border);
-  box-shadow: 0 15px 35px -10px rgba(99, 102, 241, 0.2);
+  box-shadow: var(--shadow-hover);
 }
 
 .project-header {
@@ -353,7 +323,7 @@ body {
 
 .project-title {
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text-primary);
 }
 
@@ -362,15 +332,15 @@ body {
   font-weight: 600;
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
-  background: rgba(99, 102, 241, 0.15);
-  color: var(--accent-indigo);
-  border: 1px solid rgba(129, 140, 248, 0.3);
+  background: #e0e7ff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
 }
 
 .project-desc {
   font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.6;
+  color: var(--text-body);
+  line-height: 1.65;
   margin-bottom: 1.25rem;
 }
 
@@ -381,8 +351,7 @@ body {
 
 .project-highlights li {
   font-size: 0.875rem;
-  color: var(--text-primary);
-  opacity: 0.9;
+  color: var(--text-body);
   margin-bottom: 0.35rem;
 }
 
@@ -390,11 +359,11 @@ body {
   margin-top: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
   padding-top: 1.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--card-border);
 }
 
 .project-link {
@@ -409,7 +378,7 @@ body {
 }
 
 .project-link:hover {
-  color: var(--accent-purple);
+  color: #0369a1;
 }
 
 .project-link svg {
@@ -418,12 +387,11 @@ body {
 }
 
 /* 專案技術細節與架構亮點區塊 */
-/* 避免直接使用 ad-hoc 內聯樣式，確保細節展示維持整體暗色科技視覺與動態響應 */
 .tech-stack-details {
   margin: 1rem 0 1.25rem 0;
-  padding: 1rem 1.15rem;
-  background: rgba(15, 23, 42, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.15rem 1.25rem;
+  background: var(--tag-bg);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
 }
 
@@ -441,9 +409,9 @@ body {
 }
 
 .tech-stack-list li {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.6;
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.65;
   margin-bottom: 0.45rem;
 }
 
@@ -451,39 +419,24 @@ body {
   color: var(--text-primary);
 }
 
-/* 工程架構哲學 (Architecture Principles) */
-.philosophy-section {
-  padding: 2.5rem 0 4rem;
-}
-
-.philosophy-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px dashed rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-}
-
-.philosophy-quote {
-  font-size: 1.15rem;
-  font-style: italic;
+.tech-stack-list code {
+  background: #ffffff;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid var(--card-border);
   color: var(--accent-cyan);
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-.philosophy-text {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.75;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
 }
 
 /* Footer */
 .work-footer {
   padding: 2.5rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--card-border);
+  background: #ffffff;
   text-align: center;
   font-size: 0.875rem;
-  color: var(--text-subtle);
+  color: var(--text-muted);
 }
 
 @media (min-width: 640px) {
@@ -492,6 +445,6 @@ body {
   }
 
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }

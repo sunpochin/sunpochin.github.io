@@ -1,27 +1,26 @@
 /*
 檔案用途：生活筆記專用樣式表 (Life Portal Stylesheet)
 所在層：sunpochin.github.io/life/styles.css
-主要關聯：由 sunpochin.github.io/life/index.html 載入，繼承主門牌暗色 Glassmorphism 樣式
+主要關聯：由 sunpochin.github.io/life/index.html 載入，繼承主門牌 Clean Editorial Slate 樣式
 */
 
 /* 引入主門牌共享 Token 與基本卡片網格樣式 */
 @import "../styles.css";
 
-/* Life 專區微調與動態漸層特色 */
+/* Life 專區特色標頭 */
 .life-header {
   padding: 3rem 0 1.5rem;
 }
 
 .life-badge {
-  background: rgba(168, 85, 247, 0.15);
-  border-color: rgba(168, 85, 247, 0.3);
-  color: #c084fc;
+  background: var(--accent-warm-light);
+  border-color: var(--accent-warm-border);
+  color: #b45309;
 }
 
 .life-title {
-  background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f43f5e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
 }
 
 /*
@@ -38,7 +37,7 @@
 }
 
 .breadcrumb-link {
-  color: var(--text-muted, #94a3b8);
+  color: var(--text-muted);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -47,16 +46,16 @@
 }
 
 .breadcrumb-link:hover {
-  color: var(--accent-primary, #38bdf8);
+  color: var(--accent-primary);
 }
 
 .breadcrumb-separator {
-  color: var(--text-subtle, #64748b);
+  color: var(--text-subtle);
   font-size: 0.75rem;
 }
 
 .breadcrumb-current {
-  color: var(--text-main, #f8fafc);
+  color: var(--text-main);
   font-weight: 600;
 }
 
@@ -79,9 +78,9 @@
   gap: 0.4rem;
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-pill);
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid rgba(34, 197, 94, 0.25);
-  color: #22c55e;
+  background: var(--accent-emerald-light);
+  border: 1px solid var(--accent-emerald-border);
+  color: #15803d;
   font-size: 0.8125rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -99,7 +98,7 @@
 
 .playlist-hero-desc {
   font-size: 1rem;
-  color: var(--text-muted);
+  color: var(--text-body);
   line-height: 1.65;
   max-width: 680px;
 }
@@ -110,11 +109,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(16, 185, 129, 0.04) 100%);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 1.35rem 1.5rem;
   margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-card);
   flex-wrap: wrap;
 }
 
@@ -141,7 +141,7 @@
 
 .playlist-banner-desc {
   font-size: 0.84375rem;
-  color: var(--text-muted);
+  color: var(--text-body);
   margin-top: 0.25rem;
   line-height: 1.55;
 }
@@ -150,21 +150,22 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.6rem 1.15rem;
-  background: var(--accent-primary);
-  color: #04121d;
+  padding: 0.65rem 1.25rem;
+  background: #0f172a;
+  color: #ffffff;
   font-weight: 700;
   font-size: 0.875rem;
   border-radius: var(--radius-sm);
   text-decoration: none;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .playlist-banner-btn:hover {
-  background: #7dd3fc;
+  background: #1e293b;
+  color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
 }
 
 /* 歷史活動列表時間軸與卡片 */
@@ -196,11 +197,14 @@
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 1.35rem 1.5rem;
-  transition: border-color 0.2s ease, transform 0.15s ease;
+  box-shadow: var(--shadow-subtle);
+  transition: border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .dj-event-card:hover {
-  border-color: rgba(56, 189, 248, 0.35);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
 
 .dj-event-header {
@@ -223,9 +227,9 @@
   font-family: var(--font-mono);
   font-size: 0.84375rem;
   font-weight: 700;
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #0369a1;
+  background: var(--accent-primary-light);
+  border: 1px solid var(--accent-primary-border);
   padding: 0.2rem 0.65rem;
   border-radius: 4px;
   letter-spacing: 0.03em;
@@ -241,15 +245,16 @@
 .dj-event-badge {
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--accent-emerald);
+  color: #15803d;
   background: var(--accent-emerald-light);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border: 1px solid var(--accent-emerald-border);
   padding: 0.2rem 0.55rem;
   border-radius: var(--radius-pill);
 }
 
 .dj-event-note {
-  background: rgba(255, 255, 255, 0.025);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
   border-left: 3px solid var(--accent-warm);
   border-radius: 0 6px 6px 0;
   padding: 0.75rem 1rem;
@@ -262,14 +267,14 @@
 .dj-note-label {
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--accent-warm);
+  color: #b45309;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .dj-note-text {
   font-size: 0.90625rem;
-  color: #e2e8f0;
+  color: var(--text-body);
   line-height: 1.6;
   margin: 0;
 }
@@ -298,29 +303,25 @@
 }
 
 .dj-btn-spotify {
-  background: rgba(29, 185, 84, 0.12);
-  color: #22c55e;
-  border: 1px solid rgba(34, 197, 94, 0.3);
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
 }
 
 .dj-btn-spotify:hover {
-  background: rgba(29, 185, 84, 0.22);
-  border-color: #22c55e;
-  color: #4ade80;
+  background: #bbf7d0;
+  color: #166534;
   transform: translateY(-1px);
 }
 
 .dj-btn-tally {
-  background: rgba(56, 189, 248, 0.12);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: var(--accent-primary-light);
+  color: #0369a1;
+  border: 1px solid var(--accent-primary-border);
 }
 
 .dj-btn-tally:hover {
-  background: rgba(56, 189, 248, 0.22);
-  border-color: #38bdf8;
-  color: #7dd3fc;
+  background: #bae6fd;
+  color: #0284c7;
   transform: translateY(-1px);
 }
-
-

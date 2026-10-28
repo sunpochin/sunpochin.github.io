@@ -11,7 +11,7 @@
 ```text
 sunpochin.github.io/
 ├── index.html       # [作品集首頁] 以孫柏青為核心的前端工程作品集 (包含家健錄旗艦案例與音樂/DJ 介紹)
-├── styles.css       # Hallmark 典雅出版物感 (Editorial Warm) 樣式表 (摒棄發光漸層與 Glassmorphism AI 樣板)
+├── styles.css       # Clean Editorial Slate 全站樣式表 (高閱讀舒適度與 WCAG AAA 對比度)
 ├── favicon.svg      # 門牌徽章標誌
 ├── assets/
 │   └── images/
@@ -21,7 +21,7 @@ sunpochin.github.io/
 │
 └── work/
     ├── index.html   # [Work 履歷專頁] 💻 資深前端/架構師履歷、全棧作品與技術棧展演
-    └── styles.css   # 作品集專屬高階暗色主題 CSS
+    └── styles.css   # 作品集專屬 Clean Editorial Slate 樣式表
 ```
 
 * **作品集首頁 (`/`)**：
@@ -287,6 +287,39 @@ life/
 | :--- | :--- |
 | **維持「家簡錄」命名** | 「簡」偏向操作簡單或極簡主義，未能直接點出核心「健康 (Health)」意涵，在特店申請分類為「醫療健康」時辨識度稍弱。 |
 | **兩字並用或不統一** | 造成首頁、定價頁與條款內品牌稱謂混亂，容易讓使用者與金流審查人員質疑是否為同一套系統。 |
+
+---
+
+## 11. UI/UX 全站色彩系統重構：Clean Editorial Slate 設計系統 (High-Readability Clean Editorial Slate Design System)
+
+### 11.1 決策背景與動機 (Context & Rationale)
+原有站點採用深暗石墨底色 (`#090d16`)、Slate 400 低對比灰字 (`#94a3b8`) 搭配高飽和電競天藍 (`#38bdf8`) 按鈕。此配色在使用者體驗與視覺設計上存在以下關鍵缺陷：
+1. **閱讀眩光與眼部疲勞 (Halation & Visual Fatigue)**：在深暗底色下閱讀長篇文章、工程架構與案例解說時，散光使用者容易產生邊緣模糊光暈，灰底白字長時間注視易引發眼睛乾澀與閱讀疲憊。
+2. **色彩語彙廉價且同質化**：純黑底搭配霓虹天藍與漸層，常呈現早期加密貨幣或 AI 玩具專案的模板感，與孫柏青資深工程師背景、以及旗艦代表作「家健錄 (JiaJian Log)」以家人與看護長照健康為核心的溫潤、嚴謹信賴形象格格不入。
+3. **站內頁面斷層與割裂**：子專頁（如 `/care-translate/` 與 `/family-health-note/`）已採用溫暖清爽的淺色照護信任色盤，但首頁 (`/`)、履歷 (`/work/`) 與生活專區 (`/life/`) 卻維持深黑底色，造成站內跳轉時強烈的視覺割裂感。
+
+### 11.2 設計系統重構規格 (Design Tokens Specification)
+依據 `ui-ux-pro-max` 現代無障礙標準與 WCAG AAA 規範，全面確立 **Clean Editorial Slate** 統一設計語彙：
+- **畫布底色 (Page Canvas)**：採用微藍暖灰 `--bg-page: #f8fafc;`，避免純白眩光，營造紙本般平靜舒適的閱讀基底。
+- **卡片容器 (Card Surface)**：採用純白 `--bg-surface: #ffffff;` 搭配柔和邊框 `--border-subtle: #e2e8f0;` 與微層次陰影，形成明確的視覺容器層次。
+- **文字系統 (Typography Hierarchy)**：
+  - 標題與重點：深墨石板黑 `--text-main: #0f172a;`（對比度 >15:1，WCAG AAA 極高標準）。
+  - 內文與段落：高易讀石板深灰 `--text-body: #334155;`（對比度 >7:1，保證長時間閱讀流暢無負擔）。
+  - 次要輔助資訊：石板中灰 `--text-muted: #64748b;`（對比度 >4.5:1）。
+- **品牌強調色 (Accents & Buttons)**：
+  - 核心行動按鈕：採用沈穩內斂的深石板黑 (`#0f172a`) 與白色字體，懸停時微升與陰影擴散，展現資深軟體工程師之穩健質感。
+  - 主強調色：專業海洋藍 `--accent-primary: #0284c7;`，搭配淺藍標籤背景 (`#e0f2fe`)。
+  - 健康照護語意：自然翡翠綠 `--accent-emerald: #059669;`，用於家健錄狀態燈號與成功標記。
+  - 生活與音樂語意：暖調金琥珀 `--accent-warm: #d97706;`，用於雙人舞與拉丁音樂文化標註。
+
+### 11.3 排除的替代方案 (Rejected Alternatives)
+
+| 替代方案 | 排除原因 (Why Rejected) |
+| :--- | :--- |
+| **維持黑底僅調亮文字顏色** | 根本問題在於暗黑底色與家健錄照護主題之溫暖專業特質衝突，且在一般日常日光環境下文字閱讀性仍不如淺色底紙本感。 |
+| **採用極高飽和度亮白 (#ffffff) 作為整個 Body 背景** | 大面積純白缺乏空間層次感，且在 OLED/高亮度螢幕上容易產生刺眼眩光。改用 `#f8fafc` 暖灰畫布搭配 `#ffffff` 卡片能營造兼具層次與護眼的現代感。 |
+| **首頁改淺色但 `/work/` 仍保留黑色電競風** | 破壞全站品牌統一性，使求職面試官在首頁與工程作品頁跳轉時感受割裂。統一為 Clean Editorial Slate 能一以貫之地展現設計敏銳度與專業水準。 |
+
 
 
 
