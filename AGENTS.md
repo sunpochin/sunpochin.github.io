@@ -36,7 +36,7 @@ Every code modification, regardless of size, must execute these 4 steps:
    - **Auto PR Creation & Auto-Merge (自動開立 PR 與例行內容自動合併上線)**:
      - 功能或修正完成、驗證、提交並推送到遠端分支後，必須**立即**使用 `gh pr create` 自動開立**非 Draft** 的 Pull Request（目標分支通常為 `main` 或專案之預設基線分支，如 `staging`）。不得等待使用者額外提醒，也不得讓遠端分支推上去卻沒有 PR。
      - PR 內容須包含：變更摘要、動機原因、受影響範圍與驗證結果。
-     - **例行內容自動合併與部署 (Routine Content Auto-Merge & Deploy)**：針對如 DJ 現場播歌紀錄、Spotify 歌單新增與 Tally 回饋連結更新（例如 `/life/playlist.html`）等低風險例行靜態內容變更，開立 PR 且驗證無誤後，一律直接自動執行 `gh pr merge --merge` 合併進 `main` 分支並確認 GitHub Pages 部署上線，提供正式線上連結供使用者直接檢閱。
+     - **例行內容自動合併與部署 (Routine Content Auto-Merge & Deploy)**：針對如現場播歌紀錄、Spotify 歌單新增與 Tally 回饋連結更新（例如 `/life/playlist.html`）等低風險例行靜態內容變更，開立 PR 且驗證無誤後，一律直接自動執行 `gh pr merge --merge` 合併進 `main` 分支並確認 GitHub Pages 部署上線，提供正式線上連結供使用者直接檢閱。
 
 ---
 
@@ -58,7 +58,7 @@ Never run destructive commands without explicit user approval.
 4. Inspect `git diff` carefully before preparing the commit.
 5. Create a clean commit on a feature branch, and push immediately.
 6. Automatically create a non-draft Pull Request using `gh pr create`.
-7. **Routine Fast-Track (例行快速通道)**：針對低風險例行靜態更新（如 DJ 播歌歌單與 Tally 回饋表單），PR 開立後直接執行 `gh pr merge --merge`，並驗證 GitHub Pages 正式部署上線，提供最終網址供使用者直接檢視。
+7. **Routine Fast-Track (例行快速通道)**：針對低風險例行靜態更新（如現場播歌歌單與 Tally 回饋表單），PR 開立後直接執行 `gh pr merge --merge`，並驗證 GitHub Pages 正式部署上線，提供最終網址供使用者直接檢視。
 
 ---
 
@@ -77,4 +77,18 @@ When finishing implementation or git-related work, the final response must end w
 - **Commit**: `<short-sha>` (if a commit was created)
 - **PR**: Query via `gh pr view --json url --jq '.url'`
   - Pull Request URL: `https://github.com/<owner>/<repo>/pull/<number>`
+
+---
+
+## 6. Humility & Music Sharing Constitution (稱謂謙遜與播歌憲法)
+
+嚴格遵守以下稱謂與文案規範，避免自我膨脹並保持對音樂與舞池的謙遜：
+
+* **嚴格禁止自稱或標榜為「DJ」**：
+  - 核心精神：老師提醒現場放歌要常懷謙遜，不用稱自己是 DJ。
+  - 全站統一改用「**播歌**」或「**播歌者**」：全站公開頁面（包含 Title, Meta, Hero 標題、作者與團隊簡介、個人標籤等）、技術文件、代碼註解及活動紀錄中，全面禁止使用「DJ」稱謂（例如：原「Salsa DJ」改為「Salsa 播歌」或「現場播歌」，原「DJ 歌單」改為「播歌歌單」，原「Salsa & Bachata DJ」改為「Salsa & Bachata 播歌者與社交舞者」）。
+* **活動心得欄位標籤固定為「播歌心裡話」**：
+  - 現場播歌專頁（如 `/life/playlist.html`）中的心得標籤一律統一為「**播歌心裡話**」，嚴格禁止使用「DJ 碎碎念」或「DJ 心得」。
+* **防範原則**：
+  - 未來任何新增或更新之頁面、代碼註解與活動紀錄，皆不得再次出現自稱「DJ」或「DJ 碎碎念」之字眼。
 

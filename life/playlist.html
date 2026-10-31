@@ -1,10 +1,11 @@
 <!--
-  檔案用途：Salsa DJ 現場播歌 Spotify 歌單與匿名回饋記錄專頁 (DJ Playlists & Feedback)
+  檔案用途：現場播歌 Spotify 歌單與匿名回饋記錄專頁 (Playlists & Feedback)
   所在層：sunpochin.github.io/life/playlist.html
   設計原因：
   1. 將每次舞會活動之現場歌單與舞客匿名回饋獨立為專屬頁面，保持 /life/ 門牌目錄乾淨清爽。
-  2. 頂部提供常駐 Google Forms 隨喜點歌推薦入口，下方依日期由新至舊列出歷史活動紀錄。
-  3. 符合全站 Slate Dark Editorial 色彩體系與響應式排版，手機與電腦皆具備最佳按鈕點擊體驗。
+  2. 依音樂老師提醒放歌要保持謙遜，全站統一代稱「現場播歌」與「播歌心裡話」，不自稱 DJ。
+  3. 頂部提供常駐 Google Forms 隨喜點歌推薦入口，下方依日期由新至舊列出歷史活動紀錄。
+  4. 符合全站 Slate Dark Editorial 色彩體系與響應式排版，手機與電腦皆具備最佳按鈕點擊體驗。
 -->
 <!DOCTYPE html>
 <html lang="zh-TW">
@@ -13,8 +14,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>pachinko 的 Spotify 歌單與活動回饋 | SunPoChin (Life &amp; Leisure)</title>
-  <meta name="description" content="孫柏青 Pachinko 的 Salsa DJ 現場播歌紀錄！收錄每次雙人舞派對 (Social) 現場放歌 Spotify 歌單與舞客匿名真心話回饋表單。">
-  <meta name="keywords" content="SunPoChin, Pachinko, Salsa DJ, 雙人舞, Spotify 歌單, Copa Friday Social, 匿名回饋, Tally, Google Forms, 拉丁舞曲">
+  <meta name="description" content="孫柏青 Pachinko 的現場播歌紀錄！收錄每次雙人舞派對 (Social) 現場放歌 Spotify 歌單與舞客匿名真心話回饋表單。">
+  <meta name="keywords" content="SunPoChin, Pachinko, 現場播歌, 雙人舞, Spotify 歌單, Copa Friday Social, 匿名回饋, Tally, Google Forms, 拉丁舞曲">
   <meta name="author" content="孫柏青 SunPoChin (Pachinko)">
   
   <!-- Open Graph 社群卡片設定 -->
@@ -75,7 +76,7 @@
       <!-- 頁面 Hero 標頭區 -->
       <div class="playlist-header">
         <div class="playlist-badge">
-          <span>🎧 Salsa DJ &amp; Social Dancing</span>
+          <span>🎧 現場播歌 &amp; Social Dancing</span>
         </div>
         <h1 class="playlist-hero-title">pachinko 的 Spotify 歌單與活動回饋</h1>
         <p class="playlist-hero-desc">
@@ -113,7 +114,7 @@
             【活動紀錄範本】新增場次時直接複製此 .dj-event-card 區塊並置頂即可：
             1. 更新 datetime 與日期文字（例如 10.30）
             2. 更新活動名稱（如 Copa Friday Social (上半場)）與曲風標籤
-            3. 更新 DJ 心得文字
+            3. 更新播歌心裡話文字（依憲法保持謙遜，不用 DJ 稱謂）
             4. 更新 Spotify 歌單連結與 Tally 回饋連結
           -->
 
@@ -130,9 +131,9 @@
               <span class="dj-event-badge">Salsa &amp; Pop Salsa</span>
             </div>
 
-            <!-- DJ 心得備忘：引述當晚 Tally 表單提問與致謝心得，保持真實互動感 -->
+            <!-- 播歌心裡話備忘：依憲法保持謙遜，標籤統一為播歌心裡話，保持真實互動感 -->
             <div class="dj-event-note">
-              <span class="dj-note-label">DJ 碎碎念</span>
+              <span class="dj-note-label">播歌心裡話</span>
               <p class="dj-note-text">因為「我的第一堂 Salsa 課」，前面選了流行歌改編的 Salsa，意圖讓新朋友敢下場，然而沒有用... 不喜歡的歌 / Set、喜歡的歌 / Set，什麼都可以說，謝謝大家來跳舞！</p>
             </div>
 
@@ -167,9 +168,9 @@
               <span class="dj-event-badge">Salsa &amp; Bachata</span>
             </div>
 
-            <!-- DJ 心得備忘：直接引述當晚 Tally 表單提問與致謝心得，保持真實互動感 -->
+            <!-- 播歌心裡話備忘：依憲法保持謙遜，直接引述當晚 Tally 表單提問與致謝心得，保持真實互動感 -->
             <div class="dj-event-note">
-              <span class="dj-note-label">DJ 碎碎念</span>
+              <span class="dj-note-label">播歌心裡話</span>
               <p class="dj-note-text">謝謝現場馬上提醒我播歌太快的老師！不喜歡的歌 / Set、喜歡的歌 / Set，什麼都可以說，謝謝大家！</p>
             </div>
 
@@ -201,9 +202,9 @@
               <span class="dj-event-badge">90% Salsa</span>
             </div>
 
-            <!-- DJ 心得備忘 -->
+            <!-- 播歌心裡話備忘：放歌心得與現場檢討 -->
             <div class="dj-event-note">
-              <span class="dj-note-label">DJ 碎碎念</span>
+              <span class="dj-note-label">播歌心裡話</span>
               <p class="dj-note-text">抱歉 Anacaona 放到爛尾檔案，謝謝大家來跳舞。</p>
             </div>
 
