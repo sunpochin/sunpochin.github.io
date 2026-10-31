@@ -33,9 +33,10 @@ Every code modification, regardless of size, must execute these 4 steps:
    - 所有修正都必須開新分支。每做好一件事立刻 commit 且 push，不累積。
    - Commit Message Format: `type: Title\n\nDetailed why-explanation`
    - **Git Workflow Strict Rule**: If committing on a branch other than `main`, automatically and directly push the changes to the remote Git repository without waiting for user instructions. Do not push directly to the `main` branch.
-   - **Auto PR Creation (自動開立 PR 省使用者時間，參考 Jia-Jian Log 憲法規範)**:
+   - **Auto PR Creation & Auto-Merge (自動開立 PR 與例行內容自動合併上線)**:
      - 功能或修正完成、驗證、提交並推送到遠端分支後，必須**立即**使用 `gh pr create` 自動開立**非 Draft** 的 Pull Request（目標分支通常為 `main` 或專案之預設基線分支，如 `staging`）。不得等待使用者額外提醒，也不得讓遠端分支推上去卻沒有 PR。
      - PR 內容須包含：變更摘要、動機原因、受影響範圍與驗證結果。
+     - **例行內容自動合併與部署 (Routine Content Auto-Merge & Deploy)**：針對如 DJ 現場播歌紀錄、Spotify 歌單新增與 Tally 回饋連結更新（例如 `/life/playlist.html`）等低風險例行靜態內容變更，開立 PR 且驗證無誤後，一律直接自動執行 `gh pr merge --merge` 合併進 `main` 分支並確認 GitHub Pages 部署上線，提供正式線上連結供使用者直接檢閱。
 
 ---
 
