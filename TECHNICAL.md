@@ -10,13 +10,13 @@
 
 ```text
 sunpochin.github.io/
-├── index.html       # [作品集首頁] 以孫柏青為核心的前端工程作品集 (包含家健錄旗艦案例與音樂/DJ 介紹)
+├── index.html       # [作品集首頁] 以孫柏青為核心的前端工程作品集 (包含家健錄旗艦案例與音樂/播歌介紹)
 ├── styles.css       # Clean Editorial Slate 全站樣式表 (高閱讀舒適度與 WCAG AAA 對比度)
 ├── favicon.svg      # 門牌徽章標誌
 ├── assets/
 │   └── images/
 │       ├── sunpochin-outdoor.jpg  # 孫柏青野外照片 (配置於 Hero / 工程師簡介區塊)
-│       └── sunpochin-dj.jpg       # 孫柏青 DJ 照片 (配置於 Life / 音樂與社交雙人舞區塊)
+│       └── sunpochin-dj.jpg       # 孫柏青耳機播歌照片 (配置於 Life / 音樂與社交雙人舞區塊)
 ├── services.json    # 服務與連結數據
 │
 └── work/
@@ -28,7 +28,7 @@ sunpochin.github.io/
   - **Hero 工程師定位**：展示孫柏青前端工程特質，搭配高山草原野外照片（`sunpochin-outdoor.jpg`），建立真實自信的第一印象。
   - **旗艦案例（家健錄 JiaJian Log）**：深入展示「媽媽今天吃的是新藥單，還是上週的舊藥單？」真實需求、中印雙語 UI、Supabase RLS 資料庫層存取防護與 92.9% Vitest 測試。
   - **精選專案 (Care Translate & Cloudflare Workers)**：收納印尼語照護翻譯 LINE Bot 與無伺服器通知整合。
-  - **人生的地方（Salsa DJ & Social Dancing）**：搭配 DJ 耳機照（`sunpochin-dj.jpg`），展示對介面流暢度與使用者感情脈動的敏銳觀察。
+  - **人生的地方（Salsa 播歌 & Social Dancing）**：搭配耳機播歌照片（`sunpochin-dj.jpg`），展示對介面流暢度與使用者感情脈動的敏銳觀察。
 * **Work 履歷專頁 (`/work/`)**：提供求職面試官與獵頭極詳細的全棧技術棧、系統架構設計決策與工作履歷展演。
 
 ---
@@ -58,7 +58,7 @@ pm2 serve . 4173 --name sunpochin-preview
 | :--- | :--- |
 | **使用典型暗色 Glassmorphism 與藍紫發光漸層** | 容易形成同質化的「AI SaaS Template / API Response 穿西裝」廉價感。改採 Hallmark Editorial Warm 典雅溫暖風格，更具個性與專業度。 |
 | **首頁僅作為純服務選單 (Service Catalog)** | 無法在 5 秒內讓面試官理解「孫柏青是誰、能力為何」，缺乏前端工程師個人辨識度。 |
-| **完全刪除社交雙人舞與音樂筆記** | 個人跨領域愛好（Salsa DJ）是強大的記憶點與人文辨識度，能使工程形象更加立體生動。 |
+| **完全刪除社交雙人舞與音樂筆記** | 個人跨領域愛好（Salsa 播歌）是強大的記憶點與人文辨識度，能使工程形象更加立體生動。 |
 | **採用 `/portfolio/` 或 `/hire-me/` 路徑** | `/work/` 比 `/portfolio/` 更簡潔專業，且不若 `/hire-me/` 過於著急求職。 |
 
 ---
@@ -104,7 +104,7 @@ life/
 1. **跨世代雙版本對比**：
    - **原版 (1972)**：Joe Dassin《Taka takata (La femme du toréro)》（改編自 Paco Paco 與 Al Verlane），聚焦於幽默法語香頌、西班牙鬥牛步 (Paso Doble) 與佛朗明哥響板。
    - **古巴大樂團改編版 (2015)**：Buena Vista Social Club 音樂總監 Demetrio Muñiz & Cuban Sound Project，將歐洲流行歌改造成純血古巴 Big Band Salsa / Son Montuno。
-2. **舞者與 DJ 視角解析**：
+2. **舞者與播歌視角解析**：
    - 拆解長號組重擊（Trombone Breaks）、鋼琴 Montuno 滾動與天巴鼓牛鈴（Campana）推進機制。
    - 分析古巴傳統呼應結構（Coro-Pregón）如何將「Taka-taka」轉化為舞池全場的狂歡號角。
    - 附上雙 YouTube 播放器嵌入與雙人舞實戰應對技巧（前奏、主歌、Solo Shines）。
@@ -182,27 +182,27 @@ life/
 | **使用 AI SaaS 常見的高彩度霓虹漸層與大型玻璃擬態 (Glassmorphism)** | 造成浮誇不實的「AI 套版 Startup」廉價感，減損照護家庭對醫療溝通與金流交易的真實信賴度。 |
 ---
 
-## 7. DJ 現場播歌歌單與匿名回饋專頁架構 (DJ Playlists & Feedback Subpage Architecture)
+## 7. 現場播歌歌單與匿名回饋專頁架構 (Playlists & Feedback Subpage Architecture)
 
-為滿足 Salsa DJ (Pachinko) 於各社交舞會（Social）放歌後的現場歌單公開與舞客匿名回饋蒐集需求，建立專屬頁面 `/life/playlist.html`，並於 `/life/` 門牌提供一致的導覽入口：
+為滿足社交舞會（Social）現場播歌後的歌單公開與舞客匿名回饋蒐集需求，並恪遵「稱謂謙遜憲法規範（不自稱 DJ，統一代稱為現場播歌；心得欄標籤正名為播歌心裡話）」，建立專屬頁面 `/life/playlist.html`，並於 `/life/` 門牌提供一致的導覽入口：
 
 ### 7.1 目錄結構與架構設計 (Architecture & Navigation)
 ```text
 life/
 ├── index.html       # [Life 入口] 雙人舞與生活筆記 (提供 /life/playlist.html 入口卡片)
 ├── styles.css       # 生活專區與播放清單專頁共用樣式表
-├── playlist.html    # [DJ 歌單專頁] 🎧 現場播歌 Spotify 歌單與匿名回饋專屬歷史紀錄
+├── playlist.html    # [播歌歌單專頁] 🎧 現場播歌 Spotify 歌單與匿名回饋專屬歷史紀錄
 └── knowledge/       # 雙人舞與拉丁音樂知識專區
 ```
 
 1. **門牌目錄與專頁職責分離 (`/life/` vs `/life/playlist.html`)**：
-   - `/life/index.html` 維持高概括性門牌目錄，將 `/life/playlist.html` 放歌與回饋入口置頂呈現，並移除冗餘之個人簡介敘事與大頭照，專注於高效實用的生活與音樂連結導覽。
+   - `/life/index.html` 維持高概括性門牌目錄，將 `/life/playlist.html` 播歌與回饋入口置頂呈現，並依謙遜原則不自稱 DJ，專注於高效實用的生活與音樂連結導覽。
    - `/life/playlist.html` 作為專用紀錄專頁，具備麵包屑導覽（Breadcrumb Nav），供舞者在各頁面間順暢切換。
 2. **常駐點歌推薦專區 (`.playlist-banner-box`)**：
    - 頁面頂部以柔和漸層與天藍邊框設立獨立橫幅，保留 Google Forms 常駐點歌與舞曲推薦連結（`https://forms.gle/BX6eccCHhBU4E4f98`），供舞客平日隨時推薦新歌。
 3. **活動時間軸與卡片設計 (`.dj-events-timeline`, `.dj-event-card`)**：
    - **日期與場次標籤 (`.dj-event-date`, `.dj-event-badge`)**：採用石墨暗色等寬字體與琥珀/天藍色標籤（如 `10.30 (五) Copa Friday Social 上半場`、`10.27 (二) Brass Monkey 週二 Latin Night`、`10.02 (五) Copa Friday social 上半場`），支援直覺由新至舊按時間倒序排列。
-   - **DJ 心得備忘欄 (`.dj-event-note`)**：以暖琥珀邊條提示 DJ 的即時心得或重要備註（例如：致謝舞客與現場即時提醒之調整心得）。
+   - **播歌心裡話備忘欄 (`.dj-event-note`)**：以暖琥珀邊條提示現場播歌者的即時心得或重要備註（例如：致謝舞客與現場即時提醒之調整心得），標籤固定為「播歌心裡話」，不使用「DJ 碎碎念」或「DJ 心得」。
    - **雙操作按鈕 (`.dj-event-actions`)**：
      - **Spotify 歌單按鈕 (`.dj-btn-spotify`)**：採用 Spotify 官方綠色調，一鍵直達當晚播放清單。
      - **Tally 匿名回饋按鈕 (`.dj-btn-tally`)**：採用天藍對比色調，引導舞客填寫匿名點評與曲風喜好。
@@ -211,6 +211,7 @@ life/
 
 | 替代方案 | 排除原因 (Why Rejected) |
 | :--- | :--- |
+| **自稱「DJ」或使用「DJ 碎碎念」標籤** | 違反音樂謙遜憲法原則。老師提醒放歌要保持謙遜，不用自稱 DJ。以「現場播歌」與「播歌心裡話」更能傳遞對音樂的尊重與舞客真實平等的交流。 |
 | **直接將多次活動紀錄內嵌在 `/life/` 門牌頁面** | 隨著活動場次增加，大量卡片會使 `/life/` 頁面極端膨脹，干擾知識專區與舞班推薦等其他重要資訊的瀏覽。獨立成專頁（`/life/playlist.html`）能提供最好的擴展性與閱讀沉浸感。 |
 | **直接嵌入 Spotify 播放器 iframe** | iframe 載入資源繁重，顯著拉長頁面 LCP (Largest Contentful Paint) 與增加第三方 Cookie，在手機版面亦會佔據過大版面空間。改採輕量按鈕引導外開原生 App 或 Web 播放。 |
 | **直接覆蓋刪除原 Google Forms 常駐表單** | 常駐表單用於平時長期蒐集舞曲推薦，與特定單場活動的放歌回饋性質不同。保留兩者入口能滿足不同場景。 |
