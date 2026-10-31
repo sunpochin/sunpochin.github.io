@@ -201,7 +201,7 @@ life/
 2. **常駐點歌推薦專區 (`.playlist-banner-box`)**：
    - 頁面頂部以柔和漸層與天藍邊框設立獨立橫幅，保留 Google Forms 常駐點歌與舞曲推薦連結（`https://forms.gle/BX6eccCHhBU4E4f98`），供舞客平日隨時推薦新歌。
 3. **活動時間軸與卡片設計 (`.dj-events-timeline`, `.dj-event-card`)**：
-   - **日期與場次標籤 (`.dj-event-date`, `.dj-event-badge`)**：採用石墨暗色等寬字體與琥珀/天藍色標籤（如 `10.27 (二) Brass Monkey 週二 Latin Night`、`10.02 (五) Copa Friday social 上半場`），支援直覺由新至舊按時間倒序排列。
+   - **日期與場次標籤 (`.dj-event-date`, `.dj-event-badge`)**：採用石墨暗色等寬字體與琥珀/天藍色標籤（如 `10.30 (五) Copa Friday Social 上半場`、`10.27 (二) Brass Monkey 週二 Latin Night`、`10.02 (五) Copa Friday social 上半場`），支援直覺由新至舊按時間倒序排列。
    - **DJ 心得備忘欄 (`.dj-event-note`)**：以暖琥珀邊條提示 DJ 的即時心得或重要備註（例如：致謝舞客與現場即時提醒之調整心得）。
    - **雙操作按鈕 (`.dj-event-actions`)**：
      - **Spotify 歌單按鈕 (`.dj-btn-spotify`)**：採用 Spotify 官方綠色調，一鍵直達當晚播放清單。
