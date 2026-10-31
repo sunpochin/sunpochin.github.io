@@ -58,6 +58,7 @@ Never run destructive commands without explicit user approval.
 4. Inspect `git diff` carefully before preparing the commit.
 5. Create a clean commit on a feature branch, and push immediately.
 6. Automatically create a non-draft Pull Request using `gh pr create`.
+7. **Routine Fast-Track (例行快速通道)**：針對低風險例行靜態更新（如 DJ 播歌歌單與 Tally 回饋表單），PR 開立後直接執行 `gh pr merge --merge`，並驗證 GitHub Pages 正式部署上線，提供最終網址供使用者直接檢視。
 
 ---
 
