@@ -89,6 +89,14 @@ When finishing implementation or git-related work, the final response must end w
   - 全站統一改用「**播歌**」或「**播歌者**」：全站公開頁面（包含 Title, Meta, Hero 標題、作者與團隊簡介、個人標籤等）、技術文件、代碼註解及活動紀錄中，全面禁止使用「DJ」稱謂（例如：原「Salsa DJ」改為「Salsa 播歌」或「現場播歌」，原「DJ 歌單」改為「播歌歌單」，原「Salsa & Bachata DJ」改為「Salsa & Bachata 播歌者與社交舞者」）。
 * **活動心得欄位標籤固定為「播歌心裡話」**：
   - 現場播歌專頁（如 `/life/playlist.html`）中的心得標籤一律統一為「**播歌心裡話**」，嚴格禁止使用「DJ 碎碎念」或「DJ 心得」。
+* **Tally 匿名回饋與現場歌單固定更新網頁位置 (Tally & Playlist Fixed Location)**：
+  - **唯一目標網頁**：固定為 **`/life/playlist.html`**（本地檔案路徑：[`life/playlist.html`](file:///Users/pac/codes/interview/family-care-ops/sunpochin.github.io/life/playlist.html)，正式線上網址：`https://sunpochin.github.io/life/playlist.html`）。
+  - **自動定位**：日後只要使用者提供 Tally 表單連結（如 `https://tally.so/r/...`）或現場播歌歌單，一律自動置頂新增至 `/life/playlist.html` 的時間軸（`.dj-events-timeline`）頂端，無須使用者再次提醒加到哪裡。
+  - **自動萃取規格**：
+    1. 抓取 Tally 頁面標題作為活動名稱與日期（如 `11.10 Brass Monkey 週二 Salsa Bachata night`）。
+    2. 自動抓取表單說明欄中的 Spotify 播放清單連結作為綠色按鈕。
+    3. 自動將問卷提問或說明文字填入「播歌心裡話」備忘欄。
+    4. 恪遵例行快速通道，完成驗證後自動發 PR 並 `--merge` 部署上線。
 * **防範原則**：
   - 未來任何新增或更新之頁面、代碼註解與活動紀錄，皆不得再次出現自稱「DJ」或「DJ 碎碎念」之字眼。
 
